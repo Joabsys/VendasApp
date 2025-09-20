@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VendasApp.Views
 {
-    public partial class Frm_login : Form
+    public partial class FrmLogin : Form
     {
-        public Frm_login()
+        public FrmLogin()
         {
             InitializeComponent();
         }
@@ -24,7 +24,10 @@ namespace VendasApp.Views
 
             if (usuario == "master" && senha == "123456")
             {
-             
+                FrmPrincipal form = new FrmPrincipal();
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
             }
             else
             {

@@ -1,6 +1,6 @@
 ﻿namespace VendasApp.Views
 {
-    partial class Frm_login
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.

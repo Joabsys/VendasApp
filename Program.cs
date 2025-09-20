@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendasApp.Views;
 
@@ -17,7 +14,7 @@ namespace VendasApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_login());
+            Application.Run(new FrmLogin());
         }
     }
 }

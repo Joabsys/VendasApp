@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace VendasApp.Views
 {
-    public partial class Frm_principal : Form
+    public partial class FrmPrincipal : Form
     {
-        public Frm_principal()
+        public FrmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
