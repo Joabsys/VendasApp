@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{02EA681E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp.Data", "VendasApp.Data\VendasApp.Data.csproj", "{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp.Models", "..\ClassLibrary1\VendasApp.Models.csproj", "{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp.Models", "VendasApp.Models\VendasApp.Models.csproj", "{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
