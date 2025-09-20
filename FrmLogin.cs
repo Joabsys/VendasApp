@@ -24,6 +24,9 @@ namespace VendasApp.Views
 
             if (usuario == "master" && senha == "123456")
             {
+                Data.Contexto contexto = new Data.Contexto();
+                    
+
                 FrmPrincipal form = new FrmPrincipal();
                 this.Hide();
                 form.ShowDialog();
