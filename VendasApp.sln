@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Views", "Views", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp.Models", "..\VendasApp.Models\VendasApp.Models.csproj", "{6A1AA120-C805-4FC0-85E6-76CCD05E0150}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp.Data", "VendasApp.Data\VendasApp.Data.csproj", "{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp.Models", "..\ClassLibrary1\VendasApp.Models.csproj", "{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,17 +27,22 @@ Global
 		{73678A47-DE0A-4549-9880-689A76F311E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73678A47-DE0A-4549-9880-689A76F311E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73678A47-DE0A-4549-9880-689A76F311E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A1AA120-C805-4FC0-85E6-76CCD05E0150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A1AA120-C805-4FC0-85E6-76CCD05E0150}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A1AA120-C805-4FC0-85E6-76CCD05E0150}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A1AA120-C805-4FC0-85E6-76CCD05E0150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{73678A47-DE0A-4549-9880-689A76F311E1} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{6A1AA120-C805-4FC0-85E6-76CCD05E0150} = {AE5B0A90-8C24-4FCD-8384-9D8D0AECBE57}
+		{C46A7099-5D81-4EAB-8AA5-56FA9D30CE9C} = {6E421A23-4276-44D9-82E8-113FB3D75137}
+		{8AAD4E9C-AE0C-486D-BEC9-F337367AF302} = {AE5B0A90-8C24-4FCD-8384-9D8D0AECBE57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3629AE8-B5C0-4919-B49A-1EA00D189DFF}
