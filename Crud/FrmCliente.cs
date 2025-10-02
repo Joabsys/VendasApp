@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace VendasApp.Crud
 {
-    public partial class FrmProduto : Form
+    public partial class FrmCliente : Form
     {
-        public FrmProduto()
+        public FrmCliente()
         {
             InitializeComponent();
-        }
-
-        private void FrmProduto_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
