@@ -26,5 +26,10 @@ namespace VendasApp.Crud
         {
             /// Deleta o registro 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

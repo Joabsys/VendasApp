@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendasApp", "VendasApp.csproj", "{73678A47-DE0A-4549-9880-689A76F311E1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8AAD4E9C-AE0C-486D-BEC9-F337367AF302} = {8AAD4E9C-AE0C-486D-BEC9-F337367AF302}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{AE5B0A90-8C24-4FCD-8384-9D8D0AECBE57}"
 EndProject
