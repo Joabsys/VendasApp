@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace VendasApp.Processamento
 {
-    public partial class FrmProcessarUsuario : Form
+    public partial class FrmProcessarProduto : Form
     {
-        public FrmProcessarUsuario()
+        public FrmProcessarProduto()
         {
             InitializeComponent();
-        }
-
-        private void FrmProcessarUsuario_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
