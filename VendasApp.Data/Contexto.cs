@@ -9,9 +9,11 @@ namespace VendasApp.Data
     {
         public Contexto() : base()
         {
+            //Comando que força a criação do banco de dados através do entity framework 
             Database.EnsureCreated();
         }
 
+        //Mapeaia as tabelas do banco de dados através das classes
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }

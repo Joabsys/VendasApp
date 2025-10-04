@@ -263,6 +263,14 @@
       <Project>{c46a7099-5d81-4eab-8aa5-56fa9d30ce9c}</Project>
       <Name>VendasApp.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="VendasApp.Models\VendasApp.Models.csproj">
+      <Project>{8AAD4E9C-AE0C-486D-BEC9-F337367AF302}</Project>
+      <Name>VendasApp.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="VendasApp.Repository\VendasApp.Repository.csproj">
+      <Project>{8d11c5b8-e923-40d1-a65c-48ffbd6dd4a3}</Project>
+      <Name>VendasApp.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('packages\SQLitePCLRaw.lib.e_sqlite3.2.0.4\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
