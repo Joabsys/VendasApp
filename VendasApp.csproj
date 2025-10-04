@@ -178,6 +178,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Processamento\FrmProcessarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processamento\FrmProcessarCliente.Designer.cs">
+      <DependentUpon>FrmProcessarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processamento\FrmProcessarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processamento\FrmProcessarProduto.Designer.cs">
+      <DependentUpon>FrmProcessarProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Processamento\FrmProcessarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Crud\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processamento\FrmProcessarCliente.resx">
+      <DependentUpon>FrmProcessarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processamento\FrmProcessarProduto.resx">
+      <DependentUpon>FrmProcessarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Processamento\FrmProcessarUsuario.resx">
       <DependentUpon>FrmProcessarUsuario.cs</DependentUpon>
