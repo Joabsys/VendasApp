@@ -1,12 +1,15 @@
-﻿using System;
+﻿using SQLitePCL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendasApp.Data;
 using VendasApp.Models;
 using VendasApp.Repository;
 
@@ -23,19 +26,28 @@ namespace VendasApp.Views
         {
             string usuario = maskedTextBoxUsuario.Text;
             string senha = maskedTextBoxSenha.Text;
-
-            //Validar se o usuario existe no banco de dados
-            if (usuario == "xxx")
+            Contexto contexto = new Contexto();
+            // bool valida = VerificaSeUsuarioExiste(usuario, senha);
+            
+            UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
+            Usuario usuarioInserir = new Usuario();
+            var val = usuarioInserir;
+            usuarioInserir = usuarioRepository?.BuscarPorLogin(usuario);
+            val = usuarioInserir;
+            if ( val != null )
             {
                 
-                FrmPrincipal form = new FrmPrincipal();
+
+                    FrmPrincipal form = new FrmPrincipal();
+
+
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
             }
-            else
+            else 
             {
-                DialogResult dialogResult = MessageBox.Show("Deseja criar o usuario?", "Usuario invalido", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Usuário não existe!.Deseja criar um novo usuario?", "Atenção", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     //Deseja criar o usuario 
@@ -43,15 +55,13 @@ namespace VendasApp.Views
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("usuario invalido");
+                    MessageBox.Show("TCHAU!!");
                     
                 }
                 
             }
         }
-
-
-        private void ExemploCriacaoUsuario(string usuario, string senha) {
+            private void ExemploCriacaoUsuario(string usuario, string senha) {
             Data.Contexto contexto = new Data.Contexto();
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
             Usuario usuarioInserir = new Usuario();
@@ -62,6 +72,6 @@ namespace VendasApp.Views
             usuarioRepository.Inserir(usuarioInserir);
         }
 
-
+               
     }
 }
