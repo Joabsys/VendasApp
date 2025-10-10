@@ -26,13 +26,13 @@ namespace VendasApp.Views
         {
             string usuario = maskedTextBoxUsuario.Text;
             string senha = maskedTextBoxSenha.Text;
-            Contexto contexto = new Contexto();
-                 
+
+            Contexto contexto = new Contexto();  
+
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
             Usuario usuarioInserir = new Usuario();
-            var val = usuarioInserir;
             usuarioInserir = usuarioRepository.BuscarPorLogin(usuario);
-            val = usuarioInserir;
+            var val = usuarioInserir;
             if ( val != null && usuarioInserir.Ativo == true )
             {
                FrmPrincipal form = new FrmPrincipal();
