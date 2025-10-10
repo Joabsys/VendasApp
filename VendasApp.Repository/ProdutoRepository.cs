@@ -57,28 +57,20 @@ namespace VendasApp.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Usuario BuscarPorId(int id)
+        public Produto BuscarPorId(int id)
         {
-            return _contexto.Usuarios.Find(id);
+            return _contexto.Produtos.Find(id);
         }
 
         /// <summary>
         /// Seleciona todos os registros da tabela
         /// </summary>
         /// <returns></returns>
-        public List<Usuario> BuscarTodos()
+        public List<Produto> BuscarTodos()
         {
-            return _contexto.Usuarios.ToList();
+            return _contexto.Produtos.ToList();
         }
 
-        /// <summary>
-        /// Seleciona o registro da tabela pelo login
-        /// </summary>
-        /// <param name="login"></param>
-        /// <returns></returns>
-        public Usuario BuscarPorLogin(string login)
-        {
-            return _contexto.Usuarios.FirstOrDefault(u => u.Login == login);
-        }
+        
     }
 }

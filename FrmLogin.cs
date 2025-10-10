@@ -27,19 +27,15 @@ namespace VendasApp.Views
             string usuario = maskedTextBoxUsuario.Text;
             string senha = maskedTextBoxSenha.Text;
             Contexto contexto = new Contexto();
-            // bool valida = VerificaSeUsuarioExiste(usuario, senha);
-            
+                 
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
             Usuario usuarioInserir = new Usuario();
             var val = usuarioInserir;
-            usuarioInserir = usuarioRepository?.BuscarPorLogin(usuario);
+            usuarioInserir = usuarioRepository.BuscarPorLogin(usuario);
             val = usuarioInserir;
-            if ( val != null )
+            if ( val != null && usuarioInserir.Ativo == true )
             {
-                
-
-                    FrmPrincipal form = new FrmPrincipal();
-
+               FrmPrincipal form = new FrmPrincipal();
 
                 this.Hide();
                 form.ShowDialog();
