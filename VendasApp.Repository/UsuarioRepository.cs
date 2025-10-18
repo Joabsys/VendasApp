@@ -80,5 +80,15 @@ namespace VendasApp.Repository
         {
             return _contexto.Usuarios.FirstOrDefault(u => u.Login == login);
         }
+
+        /// <summary>
+        /// Seleciona o registro da tabela pelo login
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        public Usuario Login(string login,string senha)
+        {
+            return _contexto.Usuarios.FirstOrDefault(u => u.Login == login && u.Senha == senha && u.Ativo == true);
+        }
     }
 }

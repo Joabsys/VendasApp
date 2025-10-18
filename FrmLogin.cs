@@ -24,16 +24,12 @@ namespace VendasApp.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario = maskedTextBoxUsuario.Text;
+            string login = maskedTextBoxUsuario.Text;
             string senha = maskedTextBoxSenha.Text;
-
             Contexto contexto = new Contexto();  
-
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
-            Usuario usuarioInserir = new Usuario();
-            usuarioInserir = usuarioRepository.BuscarPorLogin(usuario);
-            var val = usuarioInserir;
-            if ( val != null && usuarioInserir.Ativo == true )
+            Usuario usuario = usuarioRepository.Login(login,senha);
+            if (usuario != null)
             {
                FrmPrincipal form = new FrmPrincipal();
 
@@ -47,7 +43,7 @@ namespace VendasApp.Views
                 if (dialogResult == DialogResult.Yes)
                 {
                     //Deseja criar o usuario 
-                    ExemploCriacaoUsuario(usuario, senha);
+                    ExemploCriacaoUsuario(login, senha);
                 }
                 else if (dialogResult == DialogResult.No)
                 {

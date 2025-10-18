@@ -7,19 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendasApp.Models;
+using VendasApp.Repository;
 
 namespace VendasApp.Crud
 {
     public partial class FrmCliente : Form
     {
+        private ClienteRepository clienteRepository;
+
         public FrmCliente()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            clienteRepository = new ClienteRepository(new Data.Contexto());
         }
     }
 }
