@@ -28,5 +28,17 @@ namespace VendasApp.Views
             FrmUsuario form = new FrmUsuario();
             form.Show();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente Form = new FrmCliente();
+            Form.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProduto Form = new FrmProduto();
+            Form.Show();
+        }
     }
 }

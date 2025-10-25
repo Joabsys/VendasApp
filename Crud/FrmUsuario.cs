@@ -59,6 +59,7 @@ namespace VendasApp.Crud
 
         private void CarregaDados() {
             Bs_Usuario.DataSource = usuarioRepository.BuscarTodos();
+            
         }
 
         private void Bindings() {
@@ -73,6 +74,11 @@ namespace VendasApp.Crud
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             Bindings();
+        }
+
+        private void Bs_Usuario_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
