@@ -49,12 +49,15 @@ namespace VendasApp.Crud
         private void Bindings()
         {
 
-            //Associa o componente ao meu bindingSource e a minha propriedade da minha classe Usuario 
+            //Associa o componente ao meu bindingSource e a minha propriedade da minha classe Produto 
             maskedTextBoxCodigo.DataBindings.Add(new Binding("Text", BS_Produto, nameof(Produto.Id), true));
             maskedTextBoxPreco.DataBindings.Add(new Binding("Text", BS_Produto, nameof(Produto.Preco), true));
             maskedTextBoxQuantidade.DataBindings.Add(new Binding("Text", BS_Produto, nameof(Produto.Quantidade), true));
             maskedTextBoxDescricao.DataBindings.Add(new Binding("Text", BS_Produto, nameof(Produto.Descricao), true));
-            checkBoxAtivo.DataBindings.Add(new Binding("Checked", BS_Produto, nameof(Usuario.Ativo), true));
+            checkBoxAtivo.DataBindings.Add(new Binding("Checked", BS_Produto, nameof(Produto.Ativo), true));
+            dateTimePickerDTValidade.DataBindings.Add(new Binding("Value", BS_Produto, nameof(Produto.DataValidade), true));
+            dateTimePickerDTInclusao.DataBindings.Add(new Binding("Value", BS_Produto, nameof(Produto.DataInclusao), true));
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,6 +74,44 @@ namespace VendasApp.Crud
                 MessageBox.Show("Produto deletado com sucesso!", "Sucesso!");
 
             }
+        }
+
+        private void maskedTextBoxDescricao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Produto produto = BS_Produto.Current as Produto;
+            BS_Produto.AddNew();
+            dateTimePickerDTInclusao.Value = DateTime.Now;
+            produto.DataInclusao = dateTimePickerDTInclusao.Value;
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            Produto produto = BS_Produto.Current as Produto;
+            if (produto.Id == null)
+            {
+                produto.DataInclusao = dateTimePickerDTInclusao.Value;
+               
+                produtoRepository.Inserir(produto);
+
+               
+            }
+            else
+            {
+                produtoRepository.Atualizar(produto);
+            }
+            MessageBox.Show("Produto salvo com sucesso!");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

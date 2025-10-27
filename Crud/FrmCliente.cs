@@ -37,11 +37,14 @@ namespace VendasApp.Crud
             maskedTextBoxEndereco.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Endereco), true));
             maskedTextBoxCep.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Cep), true));
             maskedTextBoxCidade.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Cidade), true));
+            maskedTextBoxBairro.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Bairro), true));
         }
 
         private void FrmCliente_Shown(object sender, EventArgs e)
         {
             CarregaDados();
+            
+        
         }
         private void CarregaDados()
         {
@@ -72,6 +75,24 @@ namespace VendasApp.Crud
                 MessageBox.Show("Cliente deletado com sucesso!", "Sucesso!");
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Bs_Cliente.AddNew();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = Bs_Cliente.Current as Cliente;
+            if (cliente.Id == null)
+            {
+                clienteRepository.Inserir(cliente);
+            }
+            else {
+                clienteRepository.Atualizar(cliente);
+            }
+            MessageBox.Show("Cliente salvo com sucesso!");
         }
     }
 }

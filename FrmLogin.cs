@@ -31,8 +31,7 @@ namespace VendasApp.Views
             Usuario usuario = usuarioRepository.Login(login,senha);
             if (usuario != null)
             {
-                InserirProduto();
-                InserirCliente();
+                
                 FrmPrincipal form = new FrmPrincipal();
 
                 this.Hide();
@@ -50,7 +49,7 @@ namespace VendasApp.Views
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    MessageBox.Show("TCHAU!!");
+                    
                     
                 }
                 
@@ -66,36 +65,8 @@ namespace VendasApp.Views
             usuarioInserir.DataUltimoLogin = DateTime.Now;
             usuarioRepository.Inserir(usuarioInserir);
         }
-        private void InserirCliente()
-        {
-            Data.Contexto contexto = new Data.Contexto();
-            ClienteRepository clienteRepository = new ClienteRepository(contexto);
-            Cliente clienteInserir = new Cliente();
-            
-            clienteInserir.Ativo = true;
-            clienteInserir.Bairro = "centro";
-            clienteInserir.Cep = "35500-001";
-            clienteInserir.Tipodocumento = 01;
-            clienteInserir.Documento = "12345678";
-            clienteInserir.Endereco = "rua Goias, 600";
-            clienteInserir.Cidade = "Divinópolis";
-            clienteInserir.Nome = "Supermercados ABC";
-            clienteRepository.Inserir(clienteInserir);
-        }
-        private void InserirProduto()
-        {
-            Data.Contexto contexto = new Data.Contexto();
-            ProdutoRepository produtoRepository = new ProdutoRepository(contexto);
-            Produto produtoInserir = new Produto();
-
-            produtoInserir.Ativo = true;
-            produtoInserir.Quantidade = 10;
-            produtoInserir.Descricao = "Agua";
-            produtoInserir.Preco = 5;
-            produtoInserir.DataInclusao = DateTime.Now;
-            produtoInserir.DataValidade = DateTime.MaxValue;
-            produtoRepository.Inserir(produtoInserir);
-        }
+        
+        
 
     }
 }
