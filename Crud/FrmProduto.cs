@@ -88,10 +88,7 @@ namespace VendasApp.Crud
             Produto produto = BS_Produto.Current as Produto;
             produto.DataInclusao = DateTime.Now;
             BS_Produto.ResetCurrentItem();
-            
-            
-
-
+           
 
         }
 
