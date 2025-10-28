@@ -83,11 +83,16 @@ namespace VendasApp.Crud
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Produto produto = BS_Produto.Current as Produto;
+           
             BS_Produto.AddNew();
-            dateTimePickerDTInclusao.Value = DateTime.Now;
-            produto.DataInclusao = dateTimePickerDTInclusao.Value;
+            Produto produto = BS_Produto.Current as Produto;
+            produto.DataInclusao = DateTime.Now;
+            BS_Produto.ResetCurrentItem();
             
+            
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -96,7 +101,7 @@ namespace VendasApp.Crud
             Produto produto = BS_Produto.Current as Produto;
             if (produto.Id == null)
             {
-                produto.DataInclusao = dateTimePickerDTInclusao.Value;
+                
                
                 produtoRepository.Inserir(produto);
 
@@ -110,6 +115,11 @@ namespace VendasApp.Crud
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerDTValidade_ValueChanged(object sender, EventArgs e)
         {
 
         }

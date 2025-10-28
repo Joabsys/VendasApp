@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxQuantidade = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPreco = new System.Windows.Forms.MaskedTextBox();
@@ -144,9 +144,9 @@
             // precoDataGridViewTextBoxColumn
             // 
             this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
             this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
             this.precoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -270,6 +270,7 @@
             this.dateTimePickerDTValidade.Name = "dateTimePickerDTValidade";
             this.dateTimePickerDTValidade.Size = new System.Drawing.Size(187, 20);
             this.dateTimePickerDTValidade.TabIndex = 17;
+            this.dateTimePickerDTValidade.ValueChanged += new System.EventHandler(this.dateTimePickerDTValidade_ValueChanged);
             // 
             // dateTimePickerDTInclusao
             // 
