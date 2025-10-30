@@ -49,7 +49,7 @@ namespace VendasApp.Views
                 }
                 else if (dialogResult == DialogResult.No)
                 {
-                    
+                    MessageBox.Show("Usuario ou Senha incorreto(s), Verifique!");
                     
                 }
                 
@@ -65,8 +65,16 @@ namespace VendasApp.Views
             usuarioInserir.DataUltimoLogin = DateTime.Now;
             usuarioRepository.Inserir(usuarioInserir);
         }
-        
+
         
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        
+
+        
     }
 }
