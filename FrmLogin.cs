@@ -73,8 +73,19 @@ namespace VendasApp.Views
             this.Close();
         }
 
-        
+        private void maskedTextBoxUsuario_Click(object sender, EventArgs e)
+        {
+            maskedTextBoxUsuario.Text = ""; 
+        }
 
-        
+        private void pictureBoxFechar_MouseHover(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.Hand;
+        }
+
+        private void maskedTextBoxSenha_Enter(object sender, EventArgs e)
+        {
+            maskedTextBoxSenha.Text = "";
+        }
     }
 }
