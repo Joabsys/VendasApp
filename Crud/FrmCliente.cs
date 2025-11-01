@@ -7,15 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VendasApp.Models;
-using VendasApp.Repository;
 using VendasApp.Data;
+using VendasApp.Models;
+using VendasApp.Models.Enums;
+using VendasApp.Repository;
+using VendasApp.Validacoes;
+using static VendasApp.Models.Enums.TipoDocumentoEnums;
 
 namespace VendasApp.Crud
 {
     public partial class FrmCliente : Form
     {
-        
+
         private ClienteRepository clienteRepository;
 
         public FrmCliente()
@@ -25,7 +28,7 @@ namespace VendasApp.Crud
 
 
         }
-        
+
         private void Bindings()
         {
             //Associa o componente ao meu bindingSource e a minha propriedade da minha classe Cliente 
@@ -43,17 +46,20 @@ namespace VendasApp.Crud
         private void FrmCliente_Shown(object sender, EventArgs e)
         {
             CarregaDados();
-            
-        
+
+
         }
         private void CarregaDados()
         {
             Bs_Cliente.DataSource = clienteRepository.BuscarTodos();
         }
 
-       
+
         private void FrmCliente_Load(object sender, EventArgs e)
         {
+
+
+
             Bindings();
         }
         private void Bs_Cliente_CurrentChanged(object sender, EventArgs e)
@@ -84,15 +90,49 @@ namespace VendasApp.Crud
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Cliente cliente = Bs_Cliente.Current as Cliente;
-            if (cliente.Id == null)
+            if (Validacao(cliente)) {
+
+
+                if (cliente.Id == null)
+                {
+                    clienteRepository.Inserir(cliente);
+                }
+                else
+                {
+                    clienteRepository.Atualizar(cliente);
+                }
+                MessageBox.Show("Cliente salvo com sucesso!");
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+        private bool Validacao(Cliente cliente)
+        {
+            ValidacaoCliente validacaoCliente = new ValidacaoCliente();
+            if (!validacaoCliente.Documento(cliente)) {
+                MessageBox.Show("Documento selecionado Invalido!");
+                return false;
+            } 
+            return true;
+
+        }
+        private void comboBoxTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxTipoDocumento.SelectedIndex == 0)
             {
-                clienteRepository.Inserir(cliente);
+                maskedTextBoxDocumento.Text = "";
+                maskedTextBoxDocumento.Mask = "999.999.999-99";
             }
-            else {
-                clienteRepository.Atualizar(cliente);
+            else
+            {
+                maskedTextBoxDocumento.Text = "";
+                maskedTextBoxDocumento.Mask = "99.999.999/9999-99";
             }
-            MessageBox.Show("Cliente salvo com sucesso!");
         }
     }
 }

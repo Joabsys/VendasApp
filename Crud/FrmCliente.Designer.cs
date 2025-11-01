@@ -74,7 +74,7 @@
             // 
             // maskedTextBoxDocumento
             // 
-            this.maskedTextBoxDocumento.Location = new System.Drawing.Point(102, 159);
+            this.maskedTextBoxDocumento.Location = new System.Drawing.Point(162, 159);
             this.maskedTextBoxDocumento.Name = "maskedTextBoxDocumento";
             this.maskedTextBoxDocumento.Size = new System.Drawing.Size(135, 20);
             this.maskedTextBoxDocumento.TabIndex = 1;
@@ -98,11 +98,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 139);
+            this.label2.Location = new System.Drawing.Point(159, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Documento";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -241,10 +242,14 @@
             "CNPJ"});
             this.comboBoxTipoDocumento.FormatString = "N2";
             this.comboBoxTipoDocumento.FormattingEnabled = true;
+            this.comboBoxTipoDocumento.Items.AddRange(new object[] {
+            "CPF",
+            "CNPJ"});
             this.comboBoxTipoDocumento.Location = new System.Drawing.Point(12, 159);
             this.comboBoxTipoDocumento.Name = "comboBoxTipoDocumento";
-            this.comboBoxTipoDocumento.Size = new System.Drawing.Size(84, 21);
+            this.comboBoxTipoDocumento.Size = new System.Drawing.Size(144, 21);
             this.comboBoxTipoDocumento.TabIndex = 9;
+            this.comboBoxTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoDocumento_SelectedIndexChanged);
             // 
             // label4
             // 

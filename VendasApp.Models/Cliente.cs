@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using VendasApp.Models.Enums;
 
 namespace VendasApp.Models
 {
@@ -11,7 +12,7 @@ namespace VendasApp.Models
         public bool? Ativo { get; set; }
         public string Nome { get; set; }
         public string Cep { get; set; }
-        public int? Tipodocumento { get; set; }
+        public TipoDocumentoEnums.Tipodocumento? Tipodocumento { get; set; }
         public string Documento { get; set; }
         public string Bairro { get; set; }
         public string Endereco { get; set; }
