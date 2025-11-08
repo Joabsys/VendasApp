@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendasApp.Crud;
+using VendasApp.Processamento;
 using VendasApp.Relatorios;
 
 namespace VendasApp.Views
@@ -52,6 +53,12 @@ namespace VendasApp.Views
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmRelatorioUsuario Form = new FrmRelatorioUsuario();
+            Form.Show();
+        }
+
+        private void InventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmInventario Form = new FrmInventario();
             Form.Show();
         }
     }
