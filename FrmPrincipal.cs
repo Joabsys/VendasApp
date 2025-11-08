@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VendasApp.Crud;
 using VendasApp.Processamento;
 using VendasApp.Relatorios;
+using VendasApp.Relatorios.FiltroRelatorio;
 
 namespace VendasApp.Views
 {
@@ -60,6 +61,13 @@ namespace VendasApp.Views
         {
             FrmInventario Form = new FrmInventario();
             Form.Show();
+        }
+
+        private void relatorioClienteDocumentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioClienteFiltro Form = new FrmRelatorioClienteFiltro();
+            Form.Show();
+
         }
     }
 }

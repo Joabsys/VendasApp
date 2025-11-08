@@ -41,6 +41,7 @@
             this.processamentosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.VendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatorioClienteDocumentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +98,8 @@
             this.clientesToolStripMenuItem1,
             this.toolStripMenuItem2,
             this.usuariosToolStripMenuItem1,
-            this.estoqueToolStripMenuItem});
+            this.estoqueToolStripMenuItem,
+            this.relatorioClienteDocumentoToolStripMenuItem});
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(117, 24);
             this.relatoriosToolStripMenuItem.Text = "2 - Relátorios";
@@ -151,6 +153,13 @@
             this.VendasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.VendasToolStripMenuItem.Text = "2 - Vendas";
             // 
+            // relatorioClienteDocumentoToolStripMenuItem
+            // 
+            this.relatorioClienteDocumentoToolStripMenuItem.Name = "relatorioClienteDocumentoToolStripMenuItem";
+            this.relatorioClienteDocumentoToolStripMenuItem.Size = new System.Drawing.Size(324, 26);
+            this.relatorioClienteDocumentoToolStripMenuItem.Text = "5 - Relatorio Cliente/ Documento";
+            this.relatorioClienteDocumentoToolStripMenuItem.Click += new System.EventHandler(this.relatorioClienteDocumentoToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,5 +197,6 @@
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem InventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem VendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatorioClienteDocumentoToolStripMenuItem;
     }
 }
