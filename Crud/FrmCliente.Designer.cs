@@ -77,7 +77,7 @@
             this.maskedTextBoxDocumento.Location = new System.Drawing.Point(162, 159);
             this.maskedTextBoxDocumento.Name = "maskedTextBoxDocumento";
             this.maskedTextBoxDocumento.Size = new System.Drawing.Size(135, 20);
-            this.maskedTextBoxDocumento.TabIndex = 1;
+            this.maskedTextBoxDocumento.TabIndex = 4;
             // 
             // maskedTextBoxNome
             // 
@@ -133,7 +133,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(776, 170);
-            this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.TabIndex = 10;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -141,6 +141,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 125;
             // 
             // ativoDataGridViewTextBoxColumn
@@ -149,6 +150,7 @@
             this.ativoDataGridViewTextBoxColumn.HeaderText = "Ativo";
             this.ativoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.ativoDataGridViewTextBoxColumn.Name = "ativoDataGridViewTextBoxColumn";
+            this.ativoDataGridViewTextBoxColumn.ReadOnly = true;
             this.ativoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ativoDataGridViewTextBoxColumn.Width = 125;
@@ -159,6 +161,7 @@
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
             this.nomeDataGridViewTextBoxColumn.Width = 125;
             // 
             // cepDataGridViewTextBoxColumn
@@ -167,6 +170,7 @@
             this.cepDataGridViewTextBoxColumn.HeaderText = "Cep";
             this.cepDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cepDataGridViewTextBoxColumn.Name = "cepDataGridViewTextBoxColumn";
+            this.cepDataGridViewTextBoxColumn.ReadOnly = true;
             this.cepDataGridViewTextBoxColumn.Width = 125;
             // 
             // tipodocumentoDataGridViewTextBoxColumn
@@ -175,6 +179,7 @@
             this.tipodocumentoDataGridViewTextBoxColumn.HeaderText = "Tipodocumento";
             this.tipodocumentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tipodocumentoDataGridViewTextBoxColumn.Name = "tipodocumentoDataGridViewTextBoxColumn";
+            this.tipodocumentoDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipodocumentoDataGridViewTextBoxColumn.Width = 125;
             // 
             // documentoDataGridViewTextBoxColumn
@@ -183,6 +188,7 @@
             this.documentoDataGridViewTextBoxColumn.HeaderText = "Documento";
             this.documentoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.documentoDataGridViewTextBoxColumn.Name = "documentoDataGridViewTextBoxColumn";
+            this.documentoDataGridViewTextBoxColumn.ReadOnly = true;
             this.documentoDataGridViewTextBoxColumn.Width = 125;
             // 
             // bairroDataGridViewTextBoxColumn
@@ -191,6 +197,7 @@
             this.bairroDataGridViewTextBoxColumn.HeaderText = "Bairro";
             this.bairroDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.bairroDataGridViewTextBoxColumn.Name = "bairroDataGridViewTextBoxColumn";
+            this.bairroDataGridViewTextBoxColumn.ReadOnly = true;
             this.bairroDataGridViewTextBoxColumn.Width = 125;
             // 
             // enderecoDataGridViewTextBoxColumn
@@ -199,6 +206,7 @@
             this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereco";
             this.enderecoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
+            this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
             this.enderecoDataGridViewTextBoxColumn.Width = 125;
             // 
             // cidadeDataGridViewTextBoxColumn
@@ -207,6 +215,7 @@
             this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
             this.cidadeDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
             this.cidadeDataGridViewTextBoxColumn.Width = 125;
             // 
             // Bs_Cliente
@@ -218,10 +227,12 @@
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
+            this.checkBoxAtivo.Checked = true;
+            this.checkBoxAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAtivo.Location = new System.Drawing.Point(162, 55);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
             this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
-            this.checkBoxAtivo.TabIndex = 7;
+            this.checkBoxAtivo.TabIndex = 1;
             this.checkBoxAtivo.Text = "Ativo";
             this.checkBoxAtivo.UseVisualStyleBackColor = true;
             // 
@@ -230,7 +241,7 @@
             this.button1.Location = new System.Drawing.Point(12, 411);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 9;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -248,7 +259,7 @@
             this.comboBoxTipoDocumento.Location = new System.Drawing.Point(12, 159);
             this.comboBoxTipoDocumento.Name = "comboBoxTipoDocumento";
             this.comboBoxTipoDocumento.Size = new System.Drawing.Size(144, 21);
-            this.comboBoxTipoDocumento.TabIndex = 9;
+            this.comboBoxTipoDocumento.TabIndex = 3;
             this.comboBoxTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoDocumento_SelectedIndexChanged);
             // 
             // label4
@@ -265,14 +276,14 @@
             this.maskedTextBoxEndereco.Location = new System.Drawing.Point(367, 54);
             this.maskedTextBoxEndereco.Name = "maskedTextBoxEndereco";
             this.maskedTextBoxEndereco.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndereco.TabIndex = 11;
+            this.maskedTextBoxEndereco.TabIndex = 5;
             // 
             // maskedTextBoxCidade
             // 
             this.maskedTextBoxCidade.Location = new System.Drawing.Point(524, 52);
             this.maskedTextBoxCidade.Name = "maskedTextBoxCidade";
             this.maskedTextBoxCidade.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCidade.TabIndex = 12;
+            this.maskedTextBoxCidade.TabIndex = 6;
             // 
             // maskedTextBoxCep
             // 
@@ -280,7 +291,7 @@
             this.maskedTextBoxCep.Mask = "00000-000";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCep.TabIndex = 13;
+            this.maskedTextBoxCep.TabIndex = 7;
             // 
             // button2
             // 
@@ -334,7 +345,7 @@
             this.maskedTextBoxBairro.Location = new System.Drawing.Point(524, 112);
             this.maskedTextBoxBairro.Name = "maskedTextBoxBairro";
             this.maskedTextBoxBairro.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxBairro.TabIndex = 19;
+            this.maskedTextBoxBairro.TabIndex = 8;
             // 
             // label8
             // 
@@ -405,6 +416,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource Bs_Cliente;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxBairro;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
@@ -414,8 +428,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bairroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxBairro;
-        private System.Windows.Forms.Label label8;
     }
 }

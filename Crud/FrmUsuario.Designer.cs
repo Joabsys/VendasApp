@@ -38,13 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Bs_Usuario = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataUltimoLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Bs_Usuario = new System.Windows.Forms.BindingSource(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Usuario)).BeginInit();
             this.SuspendLayout();
@@ -138,6 +138,21 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Bs_Usuario
+            // 
+            this.Bs_Usuario.DataSource = typeof(VendasApp.Models.Usuario);
+            this.Bs_Usuario.CurrentChanged += new System.EventHandler(this.Bs_Usuario_CurrentChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(637, 414);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Deletar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -156,6 +171,7 @@
             this.ativoDataGridViewTextBoxColumn.ReadOnly = true;
             this.ativoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ativoDataGridViewTextBoxColumn.ToolTipText = "Sim";
             this.ativoDataGridViewTextBoxColumn.Width = 125;
             // 
             // loginDataGridViewTextBoxColumn
@@ -184,21 +200,6 @@
             this.dataUltimoLoginDataGridViewTextBoxColumn.Name = "dataUltimoLoginDataGridViewTextBoxColumn";
             this.dataUltimoLoginDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataUltimoLoginDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Bs_Usuario
-            // 
-            this.Bs_Usuario.DataSource = typeof(VendasApp.Models.Usuario);
-            this.Bs_Usuario.CurrentChanged += new System.EventHandler(this.Bs_Usuario_CurrentChanged);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(637, 414);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Deletar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FrmUsuario
             // 

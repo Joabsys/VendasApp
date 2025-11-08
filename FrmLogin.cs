@@ -26,36 +26,38 @@ namespace VendasApp.Views
         {
             string login = maskedTextBoxUsuario.Text;
             string senha = maskedTextBoxSenha.Text;
-            Contexto contexto = new Contexto();  
+            Contexto contexto = new Contexto();
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
-            Usuario usuario = usuarioRepository.Login(login,senha);
+            Usuario usuario = usuarioRepository.Login(login, senha);
             if (usuario != null)
             {
-                
+
                 FrmPrincipal form = new FrmPrincipal();
 
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
-                
+
             }
-            else 
+            else
             {
                 DialogResult dialogResult = MessageBox.Show("Usuário não existe!.Deseja criar um novo usuario?", "Atenção", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+
                     //Deseja criar o usuario 
                     ExemploCriacaoUsuario(login, senha);
                 }
                 else if (dialogResult == DialogResult.No)
                 {
                     MessageBox.Show("Usuario ou Senha incorreto(s), Verifique!");
-                    
+
                 }
-                
+
             }
         }
-            private void ExemploCriacaoUsuario(string usuario, string senha) {
+        private void ExemploCriacaoUsuario(string usuario, string senha)
+        {
             Data.Contexto contexto = new Data.Contexto();
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
             Usuario usuarioInserir = new Usuario();
@@ -66,8 +68,6 @@ namespace VendasApp.Views
             usuarioRepository.Inserir(usuarioInserir);
         }
 
-        
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -75,7 +75,7 @@ namespace VendasApp.Views
 
         private void maskedTextBoxUsuario_Click(object sender, EventArgs e)
         {
-            maskedTextBoxUsuario.Text = ""; 
+            maskedTextBoxUsuario.Text = "";
         }
 
         private void pictureBoxFechar_MouseHover(object sender, EventArgs e)

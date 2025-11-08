@@ -76,49 +76,52 @@ namespace VendasApp.Crud
             }
         }
 
-        private void maskedTextBoxDescricao_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+
             BS_Produto.AddNew();
+            button3.Enabled = false;
             Produto produto = BS_Produto.Current as Produto;
             produto.DataInclusao = DateTime.Now;
+            checkBoxAtivo.CheckState = CheckState.Unchecked;
             BS_Produto.ResetCurrentItem();
-           
+
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
             Produto produto = BS_Produto.Current as Produto;
-            if (produto.Id == null)
+            if (produto.Preco == null || produto.DataInclusao == null ||
+                produto.DataValidade == null || produto.Quantidade == null
+                || produto.Descricao == "" || produto.Ativo == false)
             {
-                
-               
-                produtoRepository.Inserir(produto);
-
-               
+                MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
             else
             {
-                produtoRepository.Atualizar(produto);
+                if (produto.Id == null)
+                {
+
+
+                    produtoRepository.Inserir(produto);
+
+
+                }
+                else
+                {
+                    produtoRepository.Atualizar(produto);
+                }
+                MessageBox.Show("Produto salvo com sucesso!");
+
+                button3.Enabled = true;
             }
-            MessageBox.Show("Produto salvo com sucesso!");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       
 
-        }
-
-        private void dateTimePickerDTValidade_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

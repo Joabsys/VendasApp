@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendasApp.Crud;
+using VendasApp.Relatorios;
 
 namespace VendasApp.Views
 {
@@ -20,7 +21,8 @@ namespace VendasApp.Views
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
+            FrmRelatorioProduto Form = new FrmRelatorioProduto();
+            Form.Show();
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,6 +40,18 @@ namespace VendasApp.Views
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmProduto Form = new FrmProduto();
+            Form.Show();
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioCliente Form = new FrmRelatorioCliente();
+            Form.Show();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioUsuario Form = new FrmRelatorioUsuario();
             Form.Show();
         }
     }

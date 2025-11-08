@@ -29,19 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxQuantidade = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPreco = new System.Windows.Forms.MaskedTextBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataInclusaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataValidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Produto = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +48,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePickerDTValidade = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDTInclusao = new System.Windows.Forms.DateTimePicker();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataInclusaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataValidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Produto)).BeginInit();
             this.SuspendLayout();
@@ -66,13 +66,14 @@
             this.maskedTextBoxCodigo.ReadOnly = true;
             this.maskedTextBoxCodigo.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxCodigo.TabIndex = 0;
+            this.maskedTextBoxCodigo.TabStop = false;
             // 
             // maskedTextBoxQuantidade
             // 
             this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(12, 160);
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
             this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(213, 20);
-            this.maskedTextBoxQuantidade.TabIndex = 1;
+            this.maskedTextBoxQuantidade.TabIndex = 3;
             // 
             // maskedTextBoxPreco
             // 
@@ -84,10 +85,12 @@
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
+            this.checkBoxAtivo.Checked = true;
+            this.checkBoxAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAtivo.Location = new System.Drawing.Point(154, 42);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
             this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
-            this.checkBoxAtivo.TabIndex = 3;
+            this.checkBoxAtivo.TabIndex = 1;
             this.checkBoxAtivo.Text = "Ativo";
             this.checkBoxAtivo.UseVisualStyleBackColor = true;
             // 
@@ -109,62 +112,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(776, 184);
             this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ativoDataGridViewTextBoxColumn
-            // 
-            this.ativoDataGridViewTextBoxColumn.DataPropertyName = "Ativo";
-            this.ativoDataGridViewTextBoxColumn.HeaderText = "Ativo";
-            this.ativoDataGridViewTextBoxColumn.Name = "ativoDataGridViewTextBoxColumn";
-            this.ativoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ativoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // descricaoDataGridViewTextBoxColumn
-            // 
-            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
-            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quantidadeDataGridViewTextBoxColumn
-            // 
-            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
-            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
-            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precoDataGridViewTextBoxColumn
-            // 
-            this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
-            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
-            this.precoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataInclusaoDataGridViewTextBoxColumn
-            // 
-            this.dataInclusaoDataGridViewTextBoxColumn.DataPropertyName = "DataInclusao";
-            this.dataInclusaoDataGridViewTextBoxColumn.HeaderText = "DataInclusao";
-            this.dataInclusaoDataGridViewTextBoxColumn.Name = "dataInclusaoDataGridViewTextBoxColumn";
-            this.dataInclusaoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataInclusaoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // dataValidadeDataGridViewTextBoxColumn
-            // 
-            this.dataValidadeDataGridViewTextBoxColumn.DataPropertyName = "DataValidade";
-            this.dataValidadeDataGridViewTextBoxColumn.HeaderText = "DataValidade";
-            this.dataValidadeDataGridViewTextBoxColumn.Name = "dataValidadeDataGridViewTextBoxColumn";
-            this.dataValidadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // BS_Produto
             // 
@@ -233,8 +180,7 @@
             this.maskedTextBoxDescricao.Location = new System.Drawing.Point(337, 42);
             this.maskedTextBoxDescricao.Name = "maskedTextBoxDescricao";
             this.maskedTextBoxDescricao.Size = new System.Drawing.Size(187, 20);
-            this.maskedTextBoxDescricao.TabIndex = 11;
-            this.maskedTextBoxDescricao.TextChanged += new System.EventHandler(this.maskedTextBoxDescricao_TextChanged);
+            this.maskedTextBoxDescricao.TabIndex = 4;
             // 
             // button3
             // 
@@ -269,8 +215,7 @@
             this.dateTimePickerDTValidade.Location = new System.Drawing.Point(337, 103);
             this.dateTimePickerDTValidade.Name = "dateTimePickerDTValidade";
             this.dateTimePickerDTValidade.Size = new System.Drawing.Size(187, 20);
-            this.dateTimePickerDTValidade.TabIndex = 17;
-            this.dateTimePickerDTValidade.ValueChanged += new System.EventHandler(this.dateTimePickerDTValidade_ValueChanged);
+            this.dateTimePickerDTValidade.TabIndex = 5;
             // 
             // dateTimePickerDTInclusao
             // 
@@ -280,7 +225,63 @@
             this.dateTimePickerDTInclusao.Location = new System.Drawing.Point(337, 161);
             this.dateTimePickerDTInclusao.Name = "dateTimePickerDTInclusao";
             this.dateTimePickerDTInclusao.Size = new System.Drawing.Size(187, 20);
-            this.dateTimePickerDTInclusao.TabIndex = 18;
+            this.dateTimePickerDTInclusao.TabIndex = 0;
+            this.dateTimePickerDTInclusao.TabStop = false;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ativoDataGridViewTextBoxColumn
+            // 
+            this.ativoDataGridViewTextBoxColumn.DataPropertyName = "Ativo";
+            this.ativoDataGridViewTextBoxColumn.HeaderText = "Ativo";
+            this.ativoDataGridViewTextBoxColumn.Name = "ativoDataGridViewTextBoxColumn";
+            this.ativoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ativoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // descricaoDataGridViewTextBoxColumn
+            // 
+            this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
+            this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // quantidadeDataGridViewTextBoxColumn
+            // 
+            this.quantidadeDataGridViewTextBoxColumn.DataPropertyName = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.HeaderText = "Quantidade";
+            this.quantidadeDataGridViewTextBoxColumn.Name = "quantidadeDataGridViewTextBoxColumn";
+            this.quantidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precoDataGridViewTextBoxColumn
+            // 
+            this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
+            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
+            this.precoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataInclusaoDataGridViewTextBoxColumn
+            // 
+            this.dataInclusaoDataGridViewTextBoxColumn.DataPropertyName = "DataInclusao";
+            this.dataInclusaoDataGridViewTextBoxColumn.HeaderText = "DataInclusao";
+            this.dataInclusaoDataGridViewTextBoxColumn.Name = "dataInclusaoDataGridViewTextBoxColumn";
+            this.dataInclusaoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataInclusaoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataValidadeDataGridViewTextBoxColumn
+            // 
+            this.dataValidadeDataGridViewTextBoxColumn.DataPropertyName = "DataValidade";
+            this.dataValidadeDataGridViewTextBoxColumn.HeaderText = "DataValidade";
+            this.dataValidadeDataGridViewTextBoxColumn.Name = "dataValidadeDataGridViewTextBoxColumn";
+            this.dataValidadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // FrmProduto
             // 

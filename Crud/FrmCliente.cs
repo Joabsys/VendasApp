@@ -85,26 +85,41 @@ namespace VendasApp.Crud
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             Bs_Cliente.AddNew();
+            checkBoxAtivo.CheckState = CheckState.Unchecked;
+            button3.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Cliente cliente = Bs_Cliente.Current as Cliente;
-            if (Validacao(cliente)) {
-
-
-                if (cliente.Id == null)
-                {
-                    clienteRepository.Inserir(cliente);
-                }
-                else
-                {
-                    clienteRepository.Atualizar(cliente);
-                }
-                MessageBox.Show("Cliente salvo com sucesso!");
+            if (cliente.Cep == "" || cliente.Bairro == "" ||
+                cliente.Tipodocumento == null || cliente.Documento == ""
+                || cliente.Cidade == "" || cliente.Endereco == "" || cliente.Ativo == false)
+            {
+                MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
+            else
+            {
+                if (Validacao(cliente))
+                {
+
+
+                    if (cliente.Id == null)
+                    {
+                        clienteRepository.Inserir(cliente);
+                    }
+                    else
+                    {
+                        clienteRepository.Atualizar(cliente);
+                    }
+                    MessageBox.Show("Cliente salvo com sucesso!");
+
+                    button3.Enabled = true;
+                }
+            }
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -114,10 +129,11 @@ namespace VendasApp.Crud
         private bool Validacao(Cliente cliente)
         {
             ValidacaoCliente validacaoCliente = new ValidacaoCliente();
-            if (!validacaoCliente.Documento(cliente)) {
+            if (!validacaoCliente.Documento(cliente))
+            {
                 MessageBox.Show("Documento selecionado Invalido!");
                 return false;
-            } 
+            }
             return true;
 
         }
