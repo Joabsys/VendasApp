@@ -17,6 +17,8 @@ namespace VendasApp.Views
 {
     public partial class FrmLogin : Form
     {
+
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -29,11 +31,15 @@ namespace VendasApp.Views
             Contexto contexto = new Contexto();
             UsuarioRepository usuarioRepository = new UsuarioRepository(contexto);
             Usuario usuario = usuarioRepository.Login(login, senha);
+            FrmLogin frl = new FrmLogin();
+            frl.maskedTextBoxUsuario.Text = login;
+
+            
             if (usuario != null)
             {
 
                 FrmPrincipal form = new FrmPrincipal();
-
+                form.textBox2.Text = frl.maskedTextBoxUsuario.Text;
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
@@ -67,6 +73,7 @@ namespace VendasApp.Views
             usuarioInserir.DataUltimoLogin = DateTime.Now;
             usuarioRepository.Inserir(usuarioInserir);
         }
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

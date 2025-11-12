@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendasApp.Crud;
+using VendasApp.Models;
 using VendasApp.Processamento;
 using VendasApp.Relatorios;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VendasApp.Views
 {
@@ -60,6 +62,24 @@ namespace VendasApp.Views
         {
             FrmInventario Form = new FrmInventario();
             Form.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
+            
+            
+        }
+
+        public void FrmPrincipal_Shown(object sender, EventArgs e)
+        {
+            textBox1.Text = DateTime.Now.ToString();
+            
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

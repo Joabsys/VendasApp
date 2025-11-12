@@ -142,15 +142,15 @@
             // 
             // pictureBoxFechar
             // 
-            this.pictureBoxFechar.Image = global::VendasApp.Properties.Resources.Close_Icon;
-            this.pictureBoxFechar.Location = new System.Drawing.Point(618, 0);
+            this.pictureBoxFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxFechar.Image = global::VendasApp.Properties.Resources.cerrar;
+            this.pictureBoxFechar.Location = new System.Drawing.Point(605, 0);
             this.pictureBoxFechar.Name = "pictureBoxFechar";
-            this.pictureBoxFechar.Size = new System.Drawing.Size(15, 15);
+            this.pictureBoxFechar.Size = new System.Drawing.Size(28, 24);
             this.pictureBoxFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFechar.TabIndex = 7;
             this.pictureBoxFechar.TabStop = false;
             this.pictureBoxFechar.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBoxFechar.MouseHover += new System.EventHandler(this.pictureBoxFechar_MouseHover);
             // 
             // panel1
             // 

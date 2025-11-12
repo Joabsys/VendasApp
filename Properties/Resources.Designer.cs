@@ -63,9 +63,29 @@ namespace VendasApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Close_Icon {
+        internal static System.Drawing.Bitmap cadastro {
             get {
-                object obj = ResourceManager.GetObject("Close_Icon", resourceCulture);
+                object obj = ResourceManager.GetObject("cadastro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cerrar {
+            get {
+                object obj = ResourceManager.GetObject("cerrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clientes {
+            get {
+                object obj = ResourceManager.GetObject("clientes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +96,16 @@ namespace VendasApp.Properties {
         internal static System.Drawing.Bitmap linha {
             get {
                 object obj = ResourceManager.GetObject("linha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Market {
+            get {
+                object obj = ResourceManager.GetObject("Market", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,7 +48,8 @@ namespace VendasApp.Processamento
         private void button1_Click(object sender, EventArgs e)
         {
             Inventario inventario = bs_Inventario.Current as Inventario;
-            if (inventario != null) { 
+            if (inventario != null)
+            {
                 Produto produto = produtoBindingSource.Current as Produto;
                 DialogResult dialogResult = MessageBox.Show($"Deseja realmente atualizar o estoque do produto {produto.Id} - {produto.Descricao} ?", "Atenção", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -55,16 +57,29 @@ namespace VendasApp.Processamento
                     //Aqui eu faço a operação
                     if (inventario.Operacao == Models.Enums.OperacaoEnum.Operacao.Soma)
                     {
-                        var teste = 0;
+                        produto.Quantidade += inventario.Quantidade;
+
+                        produtoRepository.Atualizar(produto);
+
+                        produtoBindingSource.ResetCurrentItem();
+                        MessageBox.Show("Produto atualizado com sucesso!");
                     }
-                    else {
-                        var teste = 0;
+                    else
+                    {
+                        inventario.Operacao = Models.Enums.OperacaoEnum.Operacao.Subtracao;
+                        produto.Quantidade -= inventario.Quantidade;
+                        produtoBindingSource.ResetCurrentItem();
+                        MessageBox.Show("Produto atualizado com sucesso!");
                     }
                 }
             }
             return;
         }
-        
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+
+        }
     }
 }
