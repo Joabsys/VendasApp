@@ -71,6 +71,10 @@ namespace VendasApp.Repository
             return _contexto.Clientes.ToList();
         }
 
+        public List<Cliente> BuscarPorDocumento(Models.Enums.TipoDocumentoEnums.Tipodocumento tipodocumento)
+        {
+            return _contexto.Clientes.Where(a=>a.Tipodocumento == tipodocumento).ToList();
+        }
 
     }
 }
