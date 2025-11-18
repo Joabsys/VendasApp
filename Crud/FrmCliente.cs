@@ -34,13 +34,13 @@ namespace VendasApp.Crud
             //Associa o componente ao meu bindingSource e a minha propriedade da minha classe Cliente 
             maskedTextBoxCodigo.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Id), true));
             checkBoxAtivo.DataBindings.Add(new Binding("Checked", Bs_Cliente, nameof(Cliente.Ativo), true));
-            maskedTextBoxNome.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Nome), true));
+            textBoxNome.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Nome), true));
             comboBoxTipoDocumento.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Tipodocumento), true));
             maskedTextBoxDocumento.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Documento), true));
-            maskedTextBoxEndereco.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Endereco), true));
+            textBoxEndereco.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Endereco), true));
             maskedTextBoxCep.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Cep), true));
-            maskedTextBoxCidade.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Cidade), true));
-            maskedTextBoxBairro.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Bairro), true));
+            textBoxCidade.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Cidade), true));
+            textBoxBairro.DataBindings.Add(new Binding("Text", Bs_Cliente, nameof(Cliente.Bairro), true));
         }
 
         private void FrmCliente_Shown(object sender, EventArgs e)
@@ -94,15 +94,15 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Cliente cliente = Bs_Cliente.Current as Cliente;
-            if (cliente.Cep == "" || cliente.Bairro == "" ||
+            if (cliente.Cep == "" || cliente.Bairro.ToUpper() == "" ||
                 cliente.Tipodocumento == null || cliente.Documento == ""
-                || cliente.Cidade == "" || cliente.Endereco == "" || cliente.Ativo == false)
+                || cliente.Cidade.ToUpper() == "" || cliente.Endereco.ToUpper() == "" || cliente.Ativo == false)
             {
                 MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
             else
             {
-                if (Validacao(cliente))
+              //  if (Validacao(cliente))
                 {
 
 

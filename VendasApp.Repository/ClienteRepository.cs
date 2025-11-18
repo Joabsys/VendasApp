@@ -2,6 +2,8 @@
 using System.Linq;
 using VendasApp.Data;
 using VendasApp.Models;
+using VendasApp.Models.Dto;
+using static VendasApp.Models.Enums.TipoDocumentoEnums;
 
 namespace VendasApp.Repository
 {
@@ -73,7 +75,18 @@ namespace VendasApp.Repository
 
         public List<Cliente> BuscarPorDocumento(Models.Enums.TipoDocumentoEnums.Tipodocumento tipodocumento)
         {
-            return _contexto.Clientes.Where(a=>a.Tipodocumento == tipodocumento).ToList();
+            return _contexto.Clientes.Where(b => b.Tipodocumento == tipodocumento).ToList();
+        }
+        public List<Cliente> BuscarClienteAtivo(FiltraClientesAtivos filtraClientesAtivos)
+        {
+            return _contexto.Clientes.Where(b => b.Tipodocumento == filtraClientesAtivos.Tipodocumento && b.Ativo == filtraClientesAtivos.Ativo).ToList();
+        }
+        public List<Cliente> BuscarClienteCidade( FiltraClientesPorCidade filtraClientesPorCidade) {
+            return _contexto.Clientes.Where(b => b.Cidade == filtraClientesPorCidade.Cidade).ToList();
+        }
+        public List<Cliente> BuscarClienteBairro(FiltraClientePorBairro filtraClientePorBairro)
+        {
+            return _contexto.Clientes.Where(b => b.Bairro == filtraClientePorBairro.Bairro).ToList();
         }
 
     }

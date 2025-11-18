@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxDocumento = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxNome = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,16 +49,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBoxTipoDocumento = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBoxEndereco = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxCidade = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxCep = new System.Windows.Forms.MaskedTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.maskedTextBoxBairro = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxEndereco = new System.Windows.Forms.TextBox();
+            this.textBoxBairro = new System.Windows.Forms.TextBox();
+            this.textBoxCidade = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Cliente)).BeginInit();
             this.SuspendLayout();
@@ -78,13 +78,6 @@
             this.maskedTextBoxDocumento.Name = "maskedTextBoxDocumento";
             this.maskedTextBoxDocumento.Size = new System.Drawing.Size(135, 20);
             this.maskedTextBoxDocumento.TabIndex = 4;
-            // 
-            // maskedTextBoxNome
-            // 
-            this.maskedTextBoxNome.Location = new System.Drawing.Point(12, 112);
-            this.maskedTextBoxNome.Name = "maskedTextBoxNome";
-            this.maskedTextBoxNome.Size = new System.Drawing.Size(225, 20);
-            this.maskedTextBoxNome.TabIndex = 2;
             // 
             // label1
             // 
@@ -271,27 +264,13 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Tipo documento";
             // 
-            // maskedTextBoxEndereco
-            // 
-            this.maskedTextBoxEndereco.Location = new System.Drawing.Point(367, 54);
-            this.maskedTextBoxEndereco.Name = "maskedTextBoxEndereco";
-            this.maskedTextBoxEndereco.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxEndereco.TabIndex = 5;
-            // 
-            // maskedTextBoxCidade
-            // 
-            this.maskedTextBoxCidade.Location = new System.Drawing.Point(524, 52);
-            this.maskedTextBoxCidade.Name = "maskedTextBoxCidade";
-            this.maskedTextBoxCidade.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCidade.TabIndex = 6;
-            // 
             // maskedTextBoxCep
             // 
-            this.maskedTextBoxCep.Location = new System.Drawing.Point(367, 112);
+            this.maskedTextBoxCep.Location = new System.Drawing.Point(577, 116);
             this.maskedTextBoxCep.Mask = "00000-000";
             this.maskedTextBoxCep.Name = "maskedTextBoxCep";
             this.maskedTextBoxCep.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCep.TabIndex = 7;
+            this.maskedTextBoxCep.TabIndex = 8;
             // 
             // button2
             // 
@@ -306,7 +285,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(521, 36);
+            this.label5.Location = new System.Drawing.Point(574, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 15;
@@ -324,7 +303,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(364, 96);
+            this.label7.Location = new System.Drawing.Point(574, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(26, 13);
             this.label7.TabIndex = 17;
@@ -340,37 +319,63 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // maskedTextBoxBairro
-            // 
-            this.maskedTextBoxBairro.Location = new System.Drawing.Point(524, 112);
-            this.maskedTextBoxBairro.Name = "maskedTextBoxBairro";
-            this.maskedTextBoxBairro.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxBairro.TabIndex = 8;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(524, 93);
+            this.label8.Location = new System.Drawing.Point(364, 100);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Bairro";
+            // 
+            // textBoxNome
+            // 
+            this.textBoxNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxNome.Location = new System.Drawing.Point(15, 116);
+            this.textBoxNome.Name = "textBoxNome";
+            this.textBoxNome.Size = new System.Drawing.Size(282, 20);
+            this.textBoxNome.TabIndex = 2;
+            // 
+            // textBoxEndereco
+            // 
+            this.textBoxEndereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxEndereco.Location = new System.Drawing.Point(367, 55);
+            this.textBoxEndereco.Name = "textBoxEndereco";
+            this.textBoxEndereco.Size = new System.Drawing.Size(193, 20);
+            this.textBoxEndereco.TabIndex = 5;
+            // 
+            // textBoxBairro
+            // 
+            this.textBoxBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxBairro.Location = new System.Drawing.Point(367, 116);
+            this.textBoxBairro.Name = "textBoxBairro";
+            this.textBoxBairro.Size = new System.Drawing.Size(193, 20);
+            this.textBoxBairro.TabIndex = 6;
+            // 
+            // textBoxCidade
+            // 
+            this.textBoxCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxCidade.Location = new System.Drawing.Point(576, 52);
+            this.textBoxCidade.Name = "textBoxCidade";
+            this.textBoxCidade.Size = new System.Drawing.Size(101, 20);
+            this.textBoxCidade.TabIndex = 7;
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxCidade);
+            this.Controls.Add(this.textBoxBairro);
+            this.Controls.Add(this.textBoxEndereco);
+            this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.maskedTextBoxBairro);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.maskedTextBoxCep);
-            this.Controls.Add(this.maskedTextBoxCidade);
-            this.Controls.Add(this.maskedTextBoxEndereco);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxTipoDocumento);
             this.Controls.Add(this.button1);
@@ -379,7 +384,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBoxNome);
             this.Controls.Add(this.maskedTextBoxDocumento);
             this.Controls.Add(this.maskedTextBoxCodigo);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
@@ -399,7 +403,6 @@
 
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxDocumento;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxNome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -408,8 +411,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBoxTipoDocumento;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxEndereco;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCidade;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCep;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
@@ -417,7 +418,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource Bs_Cliente;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxBairro;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewTextBoxColumn;
@@ -428,5 +428,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bairroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.TextBox textBoxEndereco;
+        private System.Windows.Forms.TextBox textBoxBairro;
+        private System.Windows.Forms.TextBox textBoxCidade;
     }
 }

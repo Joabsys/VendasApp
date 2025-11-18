@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
-            this.maskedTextBoxUsuario = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxSenha = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,25 +38,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxFechar = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.maskedTextBoxUsuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFechar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // maskedTextBoxUsuario
-            // 
-            this.maskedTextBoxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.maskedTextBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBoxUsuario.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBoxUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.maskedTextBoxUsuario.Location = new System.Drawing.Point(258, 94);
-            this.maskedTextBoxUsuario.Name = "maskedTextBoxUsuario";
-            this.maskedTextBoxUsuario.Size = new System.Drawing.Size(323, 20);
-            this.maskedTextBoxUsuario.TabIndex = 0;
-            this.maskedTextBoxUsuario.Text = "USUARIO";
-            this.maskedTextBoxUsuario.Click += new System.EventHandler(this.maskedTextBoxUsuario_Click);
             // 
             // maskedTextBoxSenha
             // 
@@ -163,6 +150,20 @@
             this.panel1.Size = new System.Drawing.Size(220, 321);
             this.panel1.TabIndex = 9;
             // 
+            // maskedTextBoxUsuario
+            // 
+            this.maskedTextBoxUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.maskedTextBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBoxUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.maskedTextBoxUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxUsuario.ForeColor = System.Drawing.Color.White;
+            this.maskedTextBoxUsuario.Location = new System.Drawing.Point(258, 94);
+            this.maskedTextBoxUsuario.Margin = new System.Windows.Forms.Padding(0);
+            this.maskedTextBoxUsuario.Multiline = true;
+            this.maskedTextBoxUsuario.Name = "maskedTextBoxUsuario";
+            this.maskedTextBoxUsuario.Size = new System.Drawing.Size(323, 23);
+            this.maskedTextBoxUsuario.TabIndex = 1;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,8 +199,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxUsuario;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxSenha;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
@@ -209,5 +208,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox maskedTextBoxUsuario;
     }
 }

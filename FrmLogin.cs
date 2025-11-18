@@ -39,7 +39,9 @@ namespace VendasApp.Views
             {
 
                 FrmPrincipal form = new FrmPrincipal();
-                form.textBox2.Text = frl.maskedTextBoxUsuario.Text;
+                //exibe usuario logado no sistema
+
+                form.textBoxUsuarioLogado.Text = frl.maskedTextBoxUsuario.Text;
                 this.Hide();
                 form.ShowDialog();
                 this.Close();

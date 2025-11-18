@@ -229,6 +229,12 @@
     <Compile Include="FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteRelatorio.Designer.cs">
+      <DependentUpon>FrmRelatorioClienteRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteFiltro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,9 +295,13 @@
     <EmbeddedResource Include="Relatorios\Designer\ReportUsuario.rdlc" />
     <EmbeddedResource Include="Relatorios\Designer\ReportCliente.rdlc" />
     <EmbeddedResource Include="Relatorios\Designer\RportProduto.rdlc" />
+    <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteRelatorio.resx">
+      <DependentUpon>FrmRelatorioClienteRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteFiltro.resx">
       <DependentUpon>FrmRelatorioClienteFiltro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FiltroRelatorio\ReportRelatorioCliente.rdlc" />
     <EmbeddedResource Include="Relatorios\FrmRelatorioCliente.resx">
       <DependentUpon>FrmRelatorioCliente.cs</DependentUpon>
     </EmbeddedResource>

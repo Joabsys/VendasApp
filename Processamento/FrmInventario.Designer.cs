@@ -43,6 +43,7 @@
             this.bs_Inventario = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNome = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bs_Inventario)).BeginInit();
@@ -58,7 +59,7 @@
             this.quantidadeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.produtoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(2, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -100,7 +101,7 @@
             "Soma",
             "Subtracao"});
             this.comboBoxOperacao.Location = new System.Drawing.Point(544, 15);
-            this.comboBoxOperacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxOperacao.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxOperacao.Name = "comboBoxOperacao";
             this.comboBoxOperacao.Size = new System.Drawing.Size(150, 21);
             this.comboBoxOperacao.TabIndex = 1;
@@ -118,7 +119,7 @@
             // maskedTextBoxQuantidade
             // 
             this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(547, 72);
-            this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(2);
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
             this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(76, 20);
             this.maskedTextBoxQuantidade.TabIndex = 3;
@@ -136,7 +137,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(544, 112);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 26);
             this.button1.TabIndex = 5;
@@ -165,11 +166,21 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Filtrar Por Nome:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(547, 262);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 316);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxNome);
             this.Controls.Add(this.button1);
@@ -179,7 +190,7 @@
             this.Controls.Add(this.comboBoxOperacao);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmInventario";
             this.Text = "Inventario";
             this.Load += new System.EventHandler(this.FrmInventario_Load);
@@ -207,5 +218,6 @@
         private System.Windows.Forms.BindingSource produtoBindingSource;
         private System.Windows.Forms.TextBox textBoxNome;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+﻿using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +12,8 @@ using System.Windows.Forms;
 using VendasApp.Models;
 using VendasApp.Models.Dto;
 using VendasApp.Repository;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace VendasApp.Processamento
 {
@@ -78,8 +81,23 @@ namespace VendasApp.Processamento
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+
+
+            
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
 
         }
+
+        
+        
+
+        
+        
+            
     }
 }

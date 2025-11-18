@@ -70,7 +70,8 @@ namespace VendasApp.Repository
         {
             return _contexto.Produtos.ToList();
         }
-
         
+
+
     }
 }
