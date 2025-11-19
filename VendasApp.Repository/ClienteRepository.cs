@@ -88,6 +88,13 @@ namespace VendasApp.Repository
         {
             return _contexto.Clientes.Where(b => b.Bairro == filtraClientePorBairro.Bairro).ToList();
         }
+        public List<Cliente> BuscaClientesAtivosPorCidade(FiltraClientesAtivosPorCidade filtraClientesAtivosPorCidade) {
+            return _contexto.Clientes.Where(b => b.Ativo == filtraClientesAtivosPorCidade.Ativo && b.Tipodocumento == filtraClientesAtivosPorCidade.Tipodocumento && b.Cidade == filtraClientesAtivosPorCidade.Cidade).ToList();
+        }
+        public List<Cliente> BuscaClientesAtivosPorBairro(FiltraClientesAtivosPorBairro filtraClientesAtivosPorBairro)
+        {
+            return _contexto.Clientes.Where(b => b.Ativo == filtraClientesAtivosPorBairro.Ativo && b.Tipodocumento == filtraClientesAtivosPorBairro.Tipodocumento && b.Bairro == filtraClientesAtivosPorBairro.Bairro).ToList();
+        }
 
     }
 }

@@ -26,12 +26,16 @@ namespace VendasApp.Relatorios.FiltroRelatorio
         private FiltraClientesPorCidade filtraClientePorCidade;
         private FiltraClientePorBairro filtraClientePorBairro;
         private FiltraClientesAtivos filtraClientesAtivos;
+        private FiltraClientesAtivosPorCidade filtraClientesAtivosPorCidade;
+        private FiltraClientesAtivosPorBairro filtraClientesAtivosPorBairro;
         public FrmRelatorioClienteFiltro()
         {
             InitializeComponent();
             filtraClientesAtivos = new FiltraClientesAtivos();
             filtraClientePorBairro = new FiltraClientePorBairro();
             filtraClientePorCidade = new FiltraClientesPorCidade();
+            filtraClientesAtivosPorBairro = new FiltraClientesAtivosPorBairro();
+            filtraClientesAtivosPorCidade = new FiltraClientesAtivosPorCidade();
         }
 
 
@@ -43,28 +47,71 @@ namespace VendasApp.Relatorios.FiltroRelatorio
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked == true)
+            if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked && textBoxCidade.Text == string.Empty && textBoxBairro.Text == string.Empty)
             {
 
                 filtraClientesAtivos.Ativo = CheckBoxAtivo.Checked;
                 filtraClientesAtivos.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CPF;
+
                 FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivos);
                 form.ShowDialog();
             }
-            else if (comboBox1.SelectedIndex == 1 && CheckBoxAtivo.Checked == true)
+            else if (comboBox1.SelectedIndex == 1 && CheckBoxAtivo.Checked && textBoxCidade.Text == string.Empty && textBoxBairro.Text == string.Empty)
             {
 
                 filtraClientesAtivos.Ativo = CheckBoxAtivo.Checked;
                 filtraClientesAtivos.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CNPJ;
+
                 FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivos);
                 form.ShowDialog();
             }
-            else if (comboBox1.SelectedIndex == -1 && CheckBoxAtivo.Checked != true && textBoxCidade.Text == "" && textBoxBairro.Text == "")
-            {
-                filtraClientesAtivos.Cidade = textBoxCidade.Text;
-                FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio();
+            else if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked == true && textBoxCidade.Text != string.Empty) {
+                filtraClientesAtivosPorCidade.Cidade = textBoxCidade.Text;
+                filtraClientesAtivosPorCidade.Ativo = CheckBoxAtivo.Checked;
+                filtraClientesAtivosPorCidade.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CPF;
+                FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivosPorCidade);
                 form.ShowDialog();
 
+            }
+            else if (comboBox1.SelectedIndex == 1 && CheckBoxAtivo.Checked == true && textBoxCidade.Text != string.Empty)
+            {
+                filtraClientesAtivosPorCidade.Cidade = textBoxCidade.Text;
+                filtraClientesAtivosPorCidade.Ativo = CheckBoxAtivo.Checked;
+                filtraClientesAtivosPorCidade.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CNPJ;
+                FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivosPorCidade);
+                form.ShowDialog();
+
+            }
+            else if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked == true && textBoxBairro.Text != string.Empty)
+            {
+                filtraClientesAtivosPorBairro.Bairro = textBoxBairro.Text;
+                filtraClientesAtivosPorBairro.Ativo = CheckBoxAtivo.Checked;
+                filtraClientesAtivosPorBairro.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CPF;
+                FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivosPorBairro);
+                form.ShowDialog();
+
+            }
+            else if (comboBox1.SelectedIndex == 1 && CheckBoxAtivo.Checked == true && textBoxBairro.Text != string.Empty)
+            {
+                filtraClientesAtivosPorBairro.Bairro = textBoxBairro.Text;
+                filtraClientesAtivosPorBairro.Ativo = CheckBoxAtivo.Checked;
+                filtraClientesAtivosPorBairro.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CNPJ;
+                FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivosPorBairro);
+                form.ShowDialog();
+
+            }
+            else if (comboBox1.SelectedIndex == -1 && CheckBoxAtivo.Checked != true && textBoxCidade.Text == string.Empty && textBoxBairro.Text == string.Empty)
+            {
+                DialogResult dialogResult = MessageBox.Show("Nenhum campo foi preenchido, portanto a consulta retornará todos os dados. Confirma?", "Atenção", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio();
+                    form.ShowDialog();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    MessageBox.Show("Preencha os campos para nova consulta!");
+                }
             }
             else if (textBoxCidade.Text != "")
             {
@@ -74,20 +121,17 @@ namespace VendasApp.Relatorios.FiltroRelatorio
 
             }
             else if (textBoxBairro.Text != "") {
-               filtraClientePorBairro.Bairro = textBoxBairro.Text;
+                filtraClientePorBairro.Bairro = textBoxBairro.Text;
                 FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientePorBairro);
                 form.ShowDialog();
             }
 
+        }
 
-
-
-
-
-
-
-
-
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CheckBoxAtivo.Checked = true;
+            CheckBoxAtivo.Enabled = false;
         }
     }
 }

@@ -11,6 +11,7 @@ using VendasApp.Crud;
 using VendasApp.Models;
 using VendasApp.Processamento;
 using VendasApp.Relatorios;
+using VendasApp.Relatorios.FiltroRelatorio;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VendasApp.Views
@@ -80,6 +81,12 @@ namespace VendasApp.Views
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void clientesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioClienteFiltro form = new FrmRelatorioClienteFiltro();
+            form.Show();
         }
     }
 }

@@ -44,8 +44,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxUsuarioLogado = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,7 +66,7 @@
             this.relatoriosToolStripMenuItem,
             this.processamentosToolStripMenuItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.menuStrip1.Location = new System.Drawing.Point(0, 137);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 122);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(277, 800);
@@ -79,7 +81,7 @@
             this.produtosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.usuariosToolStripMenuItem});
-            this.cadastrosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cadastrosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.cadastrosToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.DarkGray;
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
@@ -117,8 +119,9 @@
             this.relatoriosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem1,
             this.toolStripMenuItem2,
-            this.usuariosToolStripMenuItem1});
-            this.relatoriosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuariosToolStripMenuItem1,
+            this.consultasToolStripMenuItem});
+            this.relatoriosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.relatoriosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.relatoriosToolStripMenuItem.Name = "relatoriosToolStripMenuItem";
             this.relatoriosToolStripMenuItem.Size = new System.Drawing.Size(210, 50);
@@ -153,7 +156,7 @@
             this.processamentosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.InventarioToolStripMenuItem,
             this.VendasToolStripMenuItem});
-            this.processamentosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.processamentosToolStripMenuItem.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.processamentosToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.processamentosToolStripMenuItem.Name = "processamentosToolStripMenuItem";
             this.processamentosToolStripMenuItem.Size = new System.Drawing.Size(210, 50);
@@ -179,8 +182,9 @@
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 44);
+            this.panel2.Size = new System.Drawing.Size(650, 23);
             this.panel2.TabIndex = 9;
             // 
             // pictureBox2
@@ -188,9 +192,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = global::VendasApp.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(758, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(620, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(39, 41);
+            this.pictureBox2.Size = new System.Drawing.Size(27, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -200,9 +204,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox1.Image = global::VendasApp.Properties.Resources.clientes;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 23);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 93);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 99);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -212,7 +217,8 @@
             this.textBox1.BackColor = System.Drawing.Color.DimGray;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(71, 117);
+            this.textBox1.Location = new System.Drawing.Point(71, 102);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(206, 20);
@@ -220,25 +226,27 @@
             this.textBox1.TabStop = false;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // textBoxUsuarioLogado
             // 
-            this.textBox2.BackColor = System.Drawing.Color.DimGray;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(71, 95);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(206, 26);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.TabStop = false;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxUsuarioLogado.BackColor = System.Drawing.Color.DimGray;
+            this.textBoxUsuarioLogado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxUsuarioLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsuarioLogado.Location = new System.Drawing.Point(71, 76);
+            this.textBoxUsuarioLogado.Margin = new System.Windows.Forms.Padding(0);
+            this.textBoxUsuarioLogado.Multiline = true;
+            this.textBoxUsuarioLogado.Name = "textBoxUsuarioLogado";
+            this.textBoxUsuarioLogado.Size = new System.Drawing.Size(206, 26);
+            this.textBoxUsuarioLogado.TabIndex = 16;
+            this.textBoxUsuarioLogado.TabStop = false;
+            this.textBoxUsuarioLogado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.DimGray;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(71, 44);
+            this.textBox3.Location = new System.Drawing.Point(71, 23);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(206, 53);
@@ -247,6 +255,21 @@
             this.textBox3.Text = "\r\nUsuario Logado:";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clientesToolStripMenuItem2});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.consultasToolStripMenuItem.Text = "4 - Consultas";
+            // 
+            // clientesToolStripMenuItem2
+            // 
+            this.clientesToolStripMenuItem2.Name = "clientesToolStripMenuItem2";
+            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.clientesToolStripMenuItem2.Text = "Clientes";
+            this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,10 +277,10 @@
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.BackgroundImage = global::VendasApp.Properties.Resources.Market;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(650, 450);
             this.ControlBox = false;
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxUsuarioLogado);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -275,7 +298,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
             this.menuStrip1.ResumeLayout(false);
@@ -305,8 +327,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBoxUsuarioLogado;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem2;
     }
 }

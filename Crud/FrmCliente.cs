@@ -94,9 +94,9 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Cliente cliente = Bs_Cliente.Current as Cliente;
-            if (cliente.Cep == "" || cliente.Bairro.ToUpper() == "" ||
+            if (cliente.Cep == "" || cliente.Nome == ""|| cliente.Bairro == "" ||
                 cliente.Tipodocumento == null || cliente.Documento == ""
-                || cliente.Cidade.ToUpper() == "" || cliente.Endereco.ToUpper() == "" || cliente.Ativo == false)
+                || cliente.Cidade == "" || cliente.Endereco == "" || cliente.Ativo == false)
             {
                 MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
