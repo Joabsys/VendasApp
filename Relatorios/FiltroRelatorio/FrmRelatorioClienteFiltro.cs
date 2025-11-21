@@ -28,6 +28,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
         private FiltraClientesAtivos filtraClientesAtivos;
         private FiltraClientesAtivosPorCidade filtraClientesAtivosPorCidade;
         private FiltraClientesAtivosPorBairro filtraClientesAtivosPorBairro;
+        private FiltraClientesInativos clientesInativos;
         public FrmRelatorioClienteFiltro()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             filtraClientePorCidade = new FiltraClientesPorCidade();
             filtraClientesAtivosPorBairro = new FiltraClientesAtivosPorBairro();
             filtraClientesAtivosPorCidade = new FiltraClientesAtivosPorCidade();
+            clientesInativos = new FiltraClientesInativos();
         }
 
 
@@ -65,7 +67,8 @@ namespace VendasApp.Relatorios.FiltroRelatorio
                 FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientesAtivos);
                 form.ShowDialog();
             }
-            else if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked == true && textBoxCidade.Text != string.Empty) {
+            else if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked == true && textBoxCidade.Text != string.Empty)
+            {
                 filtraClientesAtivosPorCidade.Cidade = textBoxCidade.Text;
                 filtraClientesAtivosPorCidade.Ativo = CheckBoxAtivo.Checked;
                 filtraClientesAtivosPorCidade.Tipodocumento = TipoDocumentoEnums.Tipodocumento.CPF;
@@ -100,7 +103,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
                 form.ShowDialog();
 
             }
-            else if (comboBox1.SelectedIndex == -1 && CheckBoxAtivo.Checked != true && textBoxCidade.Text == string.Empty && textBoxBairro.Text == string.Empty)
+            else if (comboBox1.SelectedIndex == -1 && CheckBoxAtivo.Checked != true && textBoxCidade.Text == string.Empty && textBoxBairro.Text == string.Empty && checkBoxInativos.Checked == false)
             {
                 DialogResult dialogResult = MessageBox.Show("Nenhum campo foi preenchido, portanto a consulta retornará todos os dados. Confirma?", "Atenção", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -120,10 +123,18 @@ namespace VendasApp.Relatorios.FiltroRelatorio
                 form.ShowDialog();
 
             }
-            else if (textBoxBairro.Text != "") {
+            else if (textBoxBairro.Text != "")
+            {
                 filtraClientePorBairro.Bairro = textBoxBairro.Text;
                 FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(filtraClientePorBairro);
                 form.ShowDialog();
+            }
+            else if (checkBoxInativos.Checked == true)
+            {
+                clientesInativos.Ativo = false;
+                FrmRelatorioClienteRelatorio form = new FrmRelatorioClienteRelatorio(clientesInativos);
+                form.ShowDialog();
+
             }
 
         }
@@ -132,6 +143,27 @@ namespace VendasApp.Relatorios.FiltroRelatorio
         {
             CheckBoxAtivo.Checked = true;
             CheckBoxAtivo.Enabled = false;
+        }
+
+        private void checkBoxInativos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxInativos.Checked == true)
+            {
+
+                comboBox1.Enabled = false;
+                CheckBoxAtivo.Enabled = false;
+                textBoxCidade.Enabled = false;
+                textBoxBairro.Enabled = false;
+
+            }
+            else
+            {
+                comboBox1.Enabled = true;
+                CheckBoxAtivo.Enabled = true;
+                textBoxCidade.Enabled = true;
+                textBoxBairro.Enabled = true;
+
+            }
         }
     }
 }

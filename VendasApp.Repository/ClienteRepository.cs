@@ -95,6 +95,10 @@ namespace VendasApp.Repository
         {
             return _contexto.Clientes.Where(b => b.Ativo == filtraClientesAtivosPorBairro.Ativo && b.Tipodocumento == filtraClientesAtivosPorBairro.Tipodocumento && b.Bairro == filtraClientesAtivosPorBairro.Bairro).ToList();
         }
+        public List<Cliente> BuscaClientesInativos(FiltraClientesInativos clientesInativos) {
+
+            return _contexto.Clientes.Where(b => b.Ativo == clientesInativos.Ativo).ToList();
+        }
 
     }
 }

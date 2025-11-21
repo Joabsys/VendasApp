@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBairro = new System.Windows.Forms.TextBox();
             this.labelBairro = new System.Windows.Forms.Label();
+            this.checkBoxInativos = new System.Windows.Forms.CheckBox();
+            this.labelSoCliInT = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -115,11 +117,33 @@
             this.labelBairro.TabIndex = 11;
             this.labelBairro.Text = "Bairro";
             // 
+            // checkBoxInativos
+            // 
+            this.checkBoxInativos.AutoSize = true;
+            this.checkBoxInativos.Location = new System.Drawing.Point(290, 16);
+            this.checkBoxInativos.Name = "checkBoxInativos";
+            this.checkBoxInativos.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxInativos.TabIndex = 12;
+            this.checkBoxInativos.Text = "Inatvos";
+            this.checkBoxInativos.UseVisualStyleBackColor = true;
+            this.checkBoxInativos.CheckedChanged += new System.EventHandler(this.checkBoxInativos_CheckedChanged);
+            // 
+            // labelSoCliInT
+            // 
+            this.labelSoCliInT.AutoSize = true;
+            this.labelSoCliInT.Location = new System.Drawing.Point(255, 44);
+            this.labelSoCliInT.Name = "labelSoCliInT";
+            this.labelSoCliInT.Size = new System.Drawing.Size(133, 13);
+            this.labelSoCliInT.TabIndex = 13;
+            this.labelSoCliInT.Text = "Somente Clientes Inatvos?";
+            // 
             // FrmRelatorioClienteFiltro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 161);
+            this.Controls.Add(this.labelSoCliInT);
+            this.Controls.Add(this.checkBoxInativos);
             this.Controls.Add(this.labelBairro);
             this.Controls.Add(this.textBoxBairro);
             this.Controls.Add(this.label2);
@@ -146,5 +170,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxBairro;
         private System.Windows.Forms.Label labelBairro;
+        private System.Windows.Forms.CheckBox checkBoxInativos;
+        private System.Windows.Forms.Label labelSoCliInT;
     }
 }

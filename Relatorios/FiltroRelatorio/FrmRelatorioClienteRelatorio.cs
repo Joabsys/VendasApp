@@ -24,6 +24,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
         private FiltraClientePorBairro _filtraClientePorBairro;
         private FiltraClientesAtivosPorCidade _filtraClienteAtivoPorClidade;
         private FiltraClientesAtivosPorBairro _filtraClientesAtivosPorBairro;
+        private FiltraClientesInativos _clientesInativos;
         public FrmRelatorioClienteRelatorio()
         {
             InitializeComponent();
@@ -67,6 +68,12 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             _filtraClientesAtivosPorBairro = filtraClientesAtivosPorBairro;
 
         }
+        public FrmRelatorioClienteRelatorio(FiltraClientesInativos clientesInativos) {
+            InitializeComponent();
+            clienteRepository = new ClienteRepository(new Data.Contexto());
+            _clientesInativos = clientesInativos;
+
+        }
 
         private void FrmRelatorioClienteRelatorio_Load(object sender, EventArgs e)
         {
@@ -107,6 +114,12 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             {
                 reportViewer1.LocalReport.DataSources.Clear();
                 ReportDataSource reportdatasource = new ReportDataSource("DataSetRelatorioTipoDocumento", clienteRepository.BuscarClienteCidade(_filtraClientesPorCidade));
+                reportViewer1.LocalReport.DataSources.Add(reportdatasource);
+                this.reportViewer1.RefreshReport();
+            }
+            else if (_clientesInativos != null) {
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource reportdatasource = new ReportDataSource("DataSetRelatorioTipoDocumento", clienteRepository.BuscaClientesInativos(_clientesInativos));
                 reportViewer1.LocalReport.DataSources.Add(reportdatasource);
                 this.reportViewer1.RefreshReport();
             }
