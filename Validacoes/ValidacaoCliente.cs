@@ -29,7 +29,7 @@ namespace VendasApp.Validacoes
             int soma = 0;
             int primeiro_digito = 0;
             int segundo_digito = 0;
-            int resto = 0;
+            
 
             int[] multiplicadores = { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
 
@@ -40,7 +40,7 @@ namespace VendasApp.Validacoes
 
             multiplicadores = new int[] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
             soma = 0;
-            resto = 0;
+            
             string cpf_concatenado = cpf_digitado.Substring(0, 9) + primeiro_digito.ToString();
 
             soma = CalculadigitoCPF(multiplicadores, cpf_concatenado);

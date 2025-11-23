@@ -88,5 +88,11 @@ namespace VendasApp.Views
             FrmRelatorioClienteFiltro form = new FrmRelatorioClienteFiltro();
             form.Show();
         }
+
+        private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioProdutoFiltro Form = new FrmRelatorioProdutoFiltro();
+            Form.Show();
+        }
     }
 }

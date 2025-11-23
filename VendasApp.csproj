@@ -209,12 +209,6 @@
     <Compile Include="Processamento\FrmProcessarProduto.Designer.cs">
       <DependentUpon>FrmProcessarProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Processamento\FrmProcessarUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Processamento\FrmProcessarUsuario.Designer.cs">
-      <DependentUpon>FrmProcessarUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmLogin.cs">
@@ -240,6 +234,18 @@
     </Compile>
     <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteFiltro.Designer.cs">
       <DependentUpon>FrmRelatorioClienteFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoFiltro.Designer.cs">
+      <DependentUpon>FrmRelatorioProdutoFiltro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoRelatorio.Designer.cs">
+      <DependentUpon>FrmRelatorioProdutoRelatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Relatorios\FrmRelatorioCliente.cs">
       <SubType>Form</SubType>
@@ -278,9 +284,6 @@
     <EmbeddedResource Include="Processamento\FrmProcessarProduto.resx">
       <DependentUpon>FrmProcessarProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Processamento\FrmProcessarUsuario.resx">
-      <DependentUpon>FrmProcessarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -301,7 +304,14 @@
     <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteFiltro.resx">
       <DependentUpon>FrmRelatorioClienteFiltro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoFiltro.resx">
+      <DependentUpon>FrmRelatorioProdutoFiltro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoRelatorio.resx">
+      <DependentUpon>FrmRelatorioProdutoRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FiltroRelatorio\ReportRelatorioCliente.rdlc" />
+    <EmbeddedResource Include="Relatorios\FiltroRelatorio\ReportRelatorioProduto.rdlc" />
     <EmbeddedResource Include="Relatorios\FrmRelatorioCliente.resx">
       <DependentUpon>FrmRelatorioCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +326,7 @@
     <None Include="Properties\DataSources\VendasApp.Models.Dto.Inventario.datasource" />
     <None Include="Properties\DataSources\VendasApp.Models.Produto.datasource" />
     <None Include="Properties\DataSources\VendasApp.Models.Usuario.datasource" />
+    <None Include="Properties\DataSources\VendasApp.Processamento.FrmInventario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

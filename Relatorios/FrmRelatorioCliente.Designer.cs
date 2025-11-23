@@ -55,7 +55,7 @@
             this.Name = "FrmRelatorioCliente";
             this.Opacity = 0.95D;
             this.ShowIcon = false;
-            this.Text = "FrmRelatorioCliente";
+            this.Text = "Relatorio de Cliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRelatorioCliente_Load);
             this.ResumeLayout(false);

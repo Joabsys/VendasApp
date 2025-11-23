@@ -49,7 +49,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmRelatorioClienteRelatorio";
-            this.Text = "FrmRelatorioCliente";
+            this.ShowIcon = false;
+            this.Text = "RelatorioCliente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmRelatorioClienteRelatorio_Load);
             this.ResumeLayout(false);

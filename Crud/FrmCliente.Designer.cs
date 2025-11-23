@@ -388,7 +388,8 @@
             this.Controls.Add(this.maskedTextBoxCodigo);
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.Name = "FrmCliente";
-            this.Text = "FrmCliente";
+            this.ShowIcon = false;
+            this.Text = "Cadastro de Cliente";
             this.TransparencyKey = System.Drawing.Color.LightGray;
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.Shown += new System.EventHandler(this.FrmCliente_Shown);

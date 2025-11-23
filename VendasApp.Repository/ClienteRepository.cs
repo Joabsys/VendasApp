@@ -81,23 +81,31 @@ namespace VendasApp.Repository
         {
             return _contexto.Clientes.Where(b => b.Tipodocumento == filtraClientesAtivos.Tipodocumento && b.Ativo == filtraClientesAtivos.Ativo).ToList();
         }
-        public List<Cliente> BuscarClienteCidade( FiltraClientesPorCidade filtraClientesPorCidade) {
+        public List<Cliente> BuscarClienteCidade(FiltraClientesPorCidade filtraClientesPorCidade)
+        {
             return _contexto.Clientes.Where(b => b.Cidade == filtraClientesPorCidade.Cidade).ToList();
         }
         public List<Cliente> BuscarClienteBairro(FiltraClientePorBairro filtraClientePorBairro)
         {
             return _contexto.Clientes.Where(b => b.Bairro == filtraClientePorBairro.Bairro).ToList();
         }
-        public List<Cliente> BuscaClientesAtivosPorCidade(FiltraClientesAtivosPorCidade filtraClientesAtivosPorCidade) {
+        public List<Cliente> BuscaClientesAtivosPorCidade(FiltraClientesAtivosPorCidade filtraClientesAtivosPorCidade)
+        {
             return _contexto.Clientes.Where(b => b.Ativo == filtraClientesAtivosPorCidade.Ativo && b.Tipodocumento == filtraClientesAtivosPorCidade.Tipodocumento && b.Cidade == filtraClientesAtivosPorCidade.Cidade).ToList();
         }
         public List<Cliente> BuscaClientesAtivosPorBairro(FiltraClientesAtivosPorBairro filtraClientesAtivosPorBairro)
         {
             return _contexto.Clientes.Where(b => b.Ativo == filtraClientesAtivosPorBairro.Ativo && b.Tipodocumento == filtraClientesAtivosPorBairro.Tipodocumento && b.Bairro == filtraClientesAtivosPorBairro.Bairro).ToList();
         }
-        public List<Cliente> BuscaClientesInativos(FiltraClientesInativos clientesInativos) {
+        public List<Cliente> BuscaClientesInativos(FiltraClientesInativos clientesInativos)
+        {
 
             return _contexto.Clientes.Where(b => b.Ativo == clientesInativos.Ativo).ToList();
+        }
+        public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)     
+        {
+            return _contexto.Produtos.Where(b => b.Ativo == filtraProdutoAtivo.Ativo && b.Quantidade >= filtraProdutoAtivo.Quantidade).ToList();
+
         }
 
     }
