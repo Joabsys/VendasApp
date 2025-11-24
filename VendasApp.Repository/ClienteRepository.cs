@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using VendasApp.Data;
 using VendasApp.Models;
 using VendasApp.Models.Dto;
@@ -102,10 +105,15 @@ namespace VendasApp.Repository
 
             return _contexto.Clientes.Where(b => b.Ativo == clientesInativos.Ativo).ToList();
         }
-        public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)     
+        public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)
         {
             return _contexto.Produtos.Where(b => b.Ativo == filtraProdutoAtivo.Ativo && b.Quantidade >= filtraProdutoAtivo.Quantidade).ToList();
 
+        }
+        public  List<Produto> BuscaProdutosPreco(FiltraProdutoPreco filtraProdutoPreco)
+        {
+
+            return _contexto.Produtos.Where(b => b.Preco == filtraProdutoPreco.Preco).ToList();
         }
 
     }

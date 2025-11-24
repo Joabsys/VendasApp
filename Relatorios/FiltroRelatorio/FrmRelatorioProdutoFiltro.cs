@@ -14,18 +14,28 @@ namespace VendasApp.Relatorios.FiltroRelatorio
     public partial class FrmRelatorioProdutoFiltro : Form
     {
         private FiltraProdutoAtivo filtraProdutoAtivo;
+        private FiltraProdutoPreco filtraProdutoPreco;
         public FrmRelatorioProdutoFiltro()
         {
             InitializeComponent();
             filtraProdutoAtivo = new FiltraProdutoAtivo();
+            filtraProdutoPreco = new FiltraProdutoPreco();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(maskedTextBoxQuantidade.Text) >= 0 && checkBoxAtivo.Checked != false) {
+           
+            if (maskedTextBoxQuantidade.Text != string.Empty && checkBoxAtivo.Checked != false && maskedTextBoxPreco.Text == string.Empty)
+            {
                 filtraProdutoAtivo.Quantidade = Convert.ToInt32(maskedTextBoxQuantidade.Text);
                 filtraProdutoAtivo.Ativo = checkBoxAtivo.Checked;
                 FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(filtraProdutoAtivo);
+                form.ShowDialog();
+            }
+            else if (maskedTextBoxPreco.Text != string.Empty && maskedTextBoxQuantidade.Text == string.Empty && checkBoxAtivo.Checked != true)
+            {
+                filtraProdutoPreco.Preco = Convert.ToDecimal(maskedTextBoxPreco.Text);
+                FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(filtraProdutoPreco);
                 form.ShowDialog();
             }
         }

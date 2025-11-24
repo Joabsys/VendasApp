@@ -136,7 +136,6 @@
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
             this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxQuantidade.TabIndex = 12;
-            this.maskedTextBoxQuantidade.ValidatingType = typeof(int);
             // 
             // maskedTextBoxPreco
             // 
@@ -145,7 +144,6 @@
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
             this.maskedTextBoxPreco.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBoxPreco.TabIndex = 13;
-            this.maskedTextBoxPreco.ValidatingType = typeof(int);
             // 
             // FrmRelatorioProdutoFiltro
             // 

@@ -132,21 +132,21 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(185, 26);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.clientesToolStripMenuItem1.Text = "1 - Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
             this.toolStripMenuItem2.Text = "2 - Produtos";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(185, 26);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.usuariosToolStripMenuItem1.Text = "3 - Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
@@ -157,20 +157,20 @@
             this.produtosToolStripMenuItem1});
             this.consultasToolStripMenuItem.Image = global::VendasApp.Properties.Resources.clientes;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.consultasToolStripMenuItem.Text = "4 - Consultas";
             // 
             // clientesToolStripMenuItem2
             // 
             this.clientesToolStripMenuItem2.Name = "clientesToolStripMenuItem2";
-            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(149, 26);
             this.clientesToolStripMenuItem2.Text = "Clientes";
             this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
             // 
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
             this.produtosToolStripMenuItem1.Text = "Produtos";
             this.produtosToolStripMenuItem1.Click += new System.EventHandler(this.produtosToolStripMenuItem1_Click);
             // 
@@ -246,10 +246,12 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(206, 20);
             this.textBox1.TabIndex = 15;
             this.textBox1.TabStop = false;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.WordWrap = false;
             // 
             // textBoxUsuarioLogado
             // 
@@ -260,6 +262,7 @@
             this.textBoxUsuarioLogado.Margin = new System.Windows.Forms.Padding(0);
             this.textBoxUsuarioLogado.Multiline = true;
             this.textBoxUsuarioLogado.Name = "textBoxUsuarioLogado";
+            this.textBoxUsuarioLogado.ReadOnly = true;
             this.textBoxUsuarioLogado.Size = new System.Drawing.Size(206, 26);
             this.textBoxUsuarioLogado.TabIndex = 16;
             this.textBoxUsuarioLogado.TabStop = false;
@@ -274,6 +277,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(0);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(206, 53);
             this.textBox3.TabIndex = 17;
             this.textBox3.TabStop = false;
@@ -289,9 +293,9 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(750, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBoxUsuarioLogado);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxUsuarioLogado);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel2);
