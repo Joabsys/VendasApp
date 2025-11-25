@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using VendasApp.Models;
 
@@ -52,7 +53,7 @@ namespace VendasApp.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
-                entity.Property(e => e.Preco).HasColumnType("decimal(10,2)");
+                entity.Property(e => e.Preco).HasColumnType("decimal(10,4").HasMaxLength(4);
                 entity.Property(e => e.Descricao).HasMaxLength(200).IsRequired();
                 entity.Property(e => e.Ativo).HasColumnType("BOOLEAN");
                 entity.Property(e => e.Quantidade);

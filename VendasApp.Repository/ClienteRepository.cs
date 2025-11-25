@@ -112,9 +112,9 @@ namespace VendasApp.Repository
         }
         public  List<Produto> BuscaProdutosPreco(FiltraProdutoPreco filtraProdutoPreco)
         {
-
-            return _contexto.Produtos.Where(b => b.Preco == filtraProdutoPreco.Preco).ToList();
+            //AsEnumerable atrasa o tempo de compilação de source de um tipo IEnumerable<T> para IEnumerable<T> si mesmo.
+            return _contexto.Produtos.AsEnumerable().Where(b => b.Preco >= filtraProdutoPreco.Preco).ToList();
         }
-
+        
     }
 }
