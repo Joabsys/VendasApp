@@ -102,7 +102,7 @@ namespace VendasApp.Crud
             }
             else
             {
-              //  if (Validacao(cliente))
+                if (Validacao(cliente))
                 {
 
 
