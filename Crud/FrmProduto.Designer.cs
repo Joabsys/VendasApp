@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxQuantidade = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPreco = new System.Windows.Forms.MaskedTextBox();
@@ -71,16 +71,20 @@
             // maskedTextBoxQuantidade
             // 
             this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(12, 160);
+            this.maskedTextBoxQuantidade.Mask = "00000";
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
             this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(213, 20);
             this.maskedTextBoxQuantidade.TabIndex = 3;
+            this.maskedTextBoxQuantidade.ValidatingType = typeof(int);
             // 
             // maskedTextBoxPreco
             // 
             this.maskedTextBoxPreco.Location = new System.Drawing.Point(12, 103);
+            this.maskedTextBoxPreco.Mask = "00000";
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
             this.maskedTextBoxPreco.Size = new System.Drawing.Size(213, 20);
             this.maskedTextBoxPreco.TabIndex = 2;
+            this.maskedTextBoxPreco.ValidatingType = typeof(int);
             // 
             // checkBoxAtivo
             // 
@@ -146,9 +150,9 @@
             // precoDataGridViewTextBoxColumn
             // 
             this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
             this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
             this.precoDataGridViewTextBoxColumn.ReadOnly = true;

@@ -24,7 +24,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
             if (maskedTextBoxQuantidade.Text != string.Empty && checkBoxAtivo.Checked != false && maskedTextBoxPreco.Text == string.Empty)
             {
                 filtraProdutoAtivo.Quantidade = Convert.ToInt32(maskedTextBoxQuantidade.Text);
@@ -32,12 +32,15 @@ namespace VendasApp.Relatorios.FiltroRelatorio
                 FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(filtraProdutoAtivo);
                 form.ShowDialog();
             }
-            else if (maskedTextBoxPreco.Text != string.Empty && maskedTextBoxQuantidade.Text == string.Empty && checkBoxAtivo.Checked != true)
+            else if (maskedTextBoxPreco.Text != string.Empty && maskedTextBoxQuantidade.Text == string.Empty && checkBoxAtivo.Checked != false)
             {
                 filtraProdutoPreco.Preco = Convert.ToDecimal(maskedTextBoxPreco.Text);
+                filtraProdutoPreco.Ativo = checkBoxAtivo.Checked;
                 FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(filtraProdutoPreco);
                 form.ShowDialog();
             }
+            
+
         }
     }
 }

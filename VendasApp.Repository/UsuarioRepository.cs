@@ -3,6 +3,7 @@ using System.Linq;
 using VendasApp.Data;
 using VendasApp.Models;
 
+
 namespace VendasApp.Repository
 {
     public class UsuarioRepository
@@ -86,9 +87,10 @@ namespace VendasApp.Repository
         /// </summary>
         /// <param name="login"></param>
         /// <returns></returns>
-        public Usuario Login(string login,string senha)
+        public Usuario Login(string login, string senha)
         {
             return _contexto.Usuarios.FirstOrDefault(u => u.Login == login && u.Senha == senha && u.Ativo == true);
         }
+        
     }
 }

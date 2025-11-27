@@ -580,8 +580,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.19063cm</Top>
-          <Left>20.51269cm</Left>
+          <Top>1.26118cm</Top>
+          <Left>22.50998cm</Left>
           <Height>1.43757cm</Height>
           <Width>2.135cm</Width>
           <ZIndex>2</ZIndex>
@@ -600,7 +600,7 @@
           <Value>produtos</Value>
           <Sizing>Fit</Sizing>
           <Top>0.10584cm</Top>
-          <Left>21.12124cm</Left>
+          <Left>23.14498cm</Left>
           <Height>1.08479cm</Height>
           <Width>1.5cm</Width>
           <ZIndex>3</ZIndex>

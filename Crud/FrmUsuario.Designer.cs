@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBoxLogin = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxSenha = new System.Windows.Forms.MaskedTextBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,12 +43,16 @@
             this.dataUltimoLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bs_Usuario = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textBoxSenha = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Usuario)).BeginInit();
             this.SuspendLayout();
             // 
             // maskedTextBoxCodigo
             // 
+            this.maskedTextBoxCodigo.Enabled = false;
             this.maskedTextBoxCodigo.Location = new System.Drawing.Point(12, 48);
             this.maskedTextBoxCodigo.Mask = "00000";
             this.maskedTextBoxCodigo.Name = "maskedTextBoxCodigo";
@@ -66,21 +68,6 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Código";
-            // 
-            // maskedTextBoxLogin
-            // 
-            this.maskedTextBoxLogin.Location = new System.Drawing.Point(12, 94);
-            this.maskedTextBoxLogin.Name = "maskedTextBoxLogin";
-            this.maskedTextBoxLogin.Size = new System.Drawing.Size(257, 20);
-            this.maskedTextBoxLogin.TabIndex = 2;
-            // 
-            // maskedTextBoxSenha
-            // 
-            this.maskedTextBoxSenha.Location = new System.Drawing.Point(12, 136);
-            this.maskedTextBoxSenha.Name = "maskedTextBoxSenha";
-            this.maskedTextBoxSenha.PasswordChar = '*';
-            this.maskedTextBoxSenha.Size = new System.Drawing.Size(257, 20);
-            this.maskedTextBoxSenha.TabIndex = 3;
             // 
             // checkBoxAtivo
             // 
@@ -201,19 +188,46 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(317, 415);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(105, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Novo Cadastro";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxLogin.Location = new System.Drawing.Point(12, 94);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(257, 20);
+            this.textBoxLogin.TabIndex = 11;
+            // 
+            // textBoxSenha
+            // 
+            this.textBoxSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxSenha.Location = new System.Drawing.Point(12, 136);
+            this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.Size = new System.Drawing.Size(257, 20);
+            this.textBoxSenha.TabIndex = 12;
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(735, 445);
+            this.Controls.Add(this.textBoxSenha);
+            this.Controls.Add(this.textBoxLogin);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBoxAtivo);
-            this.Controls.Add(this.maskedTextBoxSenha);
-            this.Controls.Add(this.maskedTextBoxLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBoxCodigo);
             this.Name = "FrmUsuario";
@@ -233,8 +247,6 @@
 
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxLogin;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxSenha;
         private System.Windows.Forms.CheckBox checkBoxAtivo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -247,5 +259,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataUltimoLoginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textBoxSenha;
     }
 }

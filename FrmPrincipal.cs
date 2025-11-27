@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendasApp.Crud;
 using VendasApp.Models;
+using VendasApp.Models.Dto;
 using VendasApp.Processamento;
 using VendasApp.Relatorios;
 using VendasApp.Relatorios.FiltroRelatorio;
@@ -18,9 +19,18 @@ namespace VendasApp.Views
 {
     public partial class FrmPrincipal : Form
     {
+        private string _Nome;
         public FrmPrincipal()
         {
             InitializeComponent();
+
+           
+        }
+        public FrmPrincipal(FrmLogin frmLogin)
+        {
+            InitializeComponent();
+
+            _Nome = frmLogin.maskedTextBoxUsuario.Text;
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
@@ -31,7 +41,8 @@ namespace VendasApp.Views
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmUsuario form = new FrmUsuario();
+            FrmUsuario form = new FrmUsuario(_Nome);
+            
             form.Show();
         }
 
@@ -44,6 +55,7 @@ namespace VendasApp.Views
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmProduto Form = new FrmProduto();
+            
             Form.Show();
         }
 

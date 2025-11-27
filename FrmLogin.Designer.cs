@@ -208,6 +208,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox maskedTextBoxUsuario;
+        public System.Windows.Forms.TextBox maskedTextBoxUsuario;
     }
 }

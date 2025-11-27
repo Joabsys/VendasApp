@@ -40,13 +40,6 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             clientesInativos = new FiltraClientesInativos();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex == 0 && CheckBoxAtivo.Checked && textBoxCidade.Text == string.Empty && textBoxBairro.Text == string.Empty)
@@ -137,6 +130,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
 
             }
 
+            textBoxBairro.Enabled = true;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,7 +148,10 @@ namespace VendasApp.Relatorios.FiltroRelatorio
                 CheckBoxAtivo.Enabled = false;
                 textBoxCidade.Enabled = false;
                 textBoxBairro.Enabled = false;
-
+                comboBox1.SelectedIndex = -1;
+                CheckBoxAtivo.CheckState = CheckState.Unchecked;
+                textBoxCidade.Text = "";
+                textBoxBairro.Text = "";
             }
             else
             {
@@ -164,6 +161,27 @@ namespace VendasApp.Relatorios.FiltroRelatorio
                 textBoxBairro.Enabled = true;
 
             }
+        }
+
+        private void textBoxCidade_Click(object sender, EventArgs e)
+        {
+            textBoxBairro.Enabled = false;
+            textBoxBairro.Text = "";
+        }
+
+        private void textBoxCidade_MouseLeave(object sender, EventArgs e)
+        {
+            textBoxBairro.Enabled = true;
+        }
+
+        private void textBoxBairro_Click(object sender, EventArgs e)
+        {
+            textBoxCidade.Enabled = false;
+        }
+
+        private void textBoxBairro_MouseLeave(object sender, EventArgs e)
+        {
+            textBoxCidade.Enabled = true;
         }
     }
 }

@@ -9,19 +9,21 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendasApp.Crud;
 using VendasApp.Data;
 using VendasApp.Models;
+using VendasApp.Models.Dto;
 using VendasApp.Repository;
 
 namespace VendasApp.Views
 {
     public partial class FrmLogin : Form
     {
-
-
+      
         public FrmLogin()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,15 +36,16 @@ namespace VendasApp.Views
             FrmLogin frl = new FrmLogin();
             frl.maskedTextBoxUsuario.Text = login;
 
-            
             if (usuario != null)
-            {
+            {//att data ultimo login
+                usuario.DataUltimoLogin = DateTime.Now;
+                usuarioRepository.Atualizar(usuario);
 
-                FrmPrincipal form = new FrmPrincipal();
-                //exibe usuario logado no sistema
+                FrmPrincipal form = new FrmPrincipal(frl );
 
-                form.textBoxUsuarioLogado.Text = frl.maskedTextBoxUsuario.Text;
                 this.Hide();
+                //exibe usuario logado no sistema
+                form.textBoxUsuarioLogado.Text = frl.maskedTextBoxUsuario.Text;
                 form.ShowDialog();
                 this.Close();
 

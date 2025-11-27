@@ -90,6 +90,8 @@
             this.textBoxCidade.Name = "textBoxCidade";
             this.textBoxCidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxCidade.TabIndex = 8;
+            this.textBoxCidade.Click += new System.EventHandler(this.textBoxCidade_Click);
+            this.textBoxCidade.MouseLeave += new System.EventHandler(this.textBoxCidade_MouseLeave);
             // 
             // label2
             // 
@@ -107,6 +109,8 @@
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.Size = new System.Drawing.Size(100, 20);
             this.textBoxBairro.TabIndex = 10;
+            this.textBoxBairro.Click += new System.EventHandler(this.textBoxBairro_Click);
+            this.textBoxBairro.MouseLeave += new System.EventHandler(this.textBoxBairro_MouseLeave);
             // 
             // labelBairro
             // 

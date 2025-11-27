@@ -58,8 +58,6 @@ namespace VendasApp.Crud
         private void FrmCliente_Load(object sender, EventArgs e)
         {
 
-
-
             Bindings();
         }
         private void Bs_Cliente_CurrentChanged(object sender, EventArgs e)
