@@ -6,7 +6,7 @@ using VendasApp.Models;
 
 namespace VendasApp.Data
 {
-    public class Contexto : DbContext 
+    public class Contexto : DbContext
     {
         public Contexto() : base()
         {
@@ -18,7 +18,8 @@ namespace VendasApp.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
+        public DbSet<Vendas>  Vendas { get; set; }
+        public DbSet<VendasItem> VendasItem { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -71,6 +72,44 @@ namespace VendasApp.Data
                 entity.Property(e => e.Senha).HasMaxLength(100).IsRequired();
                 entity.Property(e => e.DataUltimoLogin);
             });
+            modelBuilder.Entity<Vendas>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.ValorTotal).HasColumnType("decimal(10,4").HasMaxLength(4);
+
+                entity.Property(e => e.IdCliente);
+                entity.HasOne(u => u.Cliente).WithMany()
+                      .HasForeignKey(u => u.IdCliente)
+                      .OnDelete(DeleteBehavior.NoAction);
+
+
+
+            });
+            modelBuilder.Entity<VendasItem>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id)
+                      .ValueGeneratedOnAdd();
+                entity.Property(e => e.Valor)
+                      .HasColumnType("decimal(10,4")
+                      .HasMaxLength(4);
+
+                entity.Property(e => e.Quantidade);
+                entity.Property(e => e.IdProduto);
+                entity.HasOne(u => u.Produto)
+                      .WithMany()
+                      .HasForeignKey(u => u.IdProduto)
+                      .OnDelete(DeleteBehavior.NoAction);
+
+
+                entity.HasOne(uc => uc.Vendas)
+                      .WithMany(u => u.VendasItem)
+                      .HasForeignKey(uc => uc.IdVendas)
+                      .OnDelete(DeleteBehavior.Cascade);
+
+            });
+
         }
     }
 }
