@@ -18,8 +18,8 @@ namespace VendasApp.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Vendas>  Vendas { get; set; }
-        public DbSet<VendasItem> VendasItem { get; set; }
+        //public DbSet<Vendas>  Vendas { get; set; }
+        //public DbSet<VendasItem> VendasItem { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -54,7 +54,7 @@ namespace VendasApp.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
-                entity.Property(e => e.Preco).HasColumnType("decimal(10,4").HasMaxLength(4);
+                entity.Property(e => e.Preco).HasColumnType("Decimal(10,2)");
                 entity.Property(e => e.Descricao).HasMaxLength(200).IsRequired();
                 entity.Property(e => e.Ativo).HasColumnType("BOOLEAN");
                 entity.Property(e => e.Quantidade);
@@ -76,7 +76,7 @@ namespace VendasApp.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
-                entity.Property(e => e.ValorTotal).HasColumnType("decimal(10,4").HasMaxLength(4);
+                entity.Property(e => e.ValorTotal).HasColumnType("decimal(10,4)");
 
                 entity.Property(e => e.IdCliente);
                 entity.HasOne(u => u.Cliente).WithMany()
@@ -92,7 +92,7 @@ namespace VendasApp.Data
                 entity.Property(e => e.Id)
                       .ValueGeneratedOnAdd();
                 entity.Property(e => e.Valor)
-                      .HasColumnType("decimal(10,4")
+                      .HasColumnType("decimal(10,4)")
                       .HasMaxLength(4);
 
                 entity.Property(e => e.Quantidade);
