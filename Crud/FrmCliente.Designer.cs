@@ -96,7 +96,6 @@
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Documento";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -215,7 +214,6 @@
             // 
             this.Bs_Cliente.AllowNew = true;
             this.Bs_Cliente.DataSource = typeof(VendasApp.Models.Cliente);
-            this.Bs_Cliente.CurrentChanged += new System.EventHandler(this.Bs_Cliente_CurrentChanged);
             // 
             // checkBoxAtivo
             // 

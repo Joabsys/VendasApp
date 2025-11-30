@@ -8,6 +8,8 @@ namespace VendasApp.Models
     public class VendasItem
     {
         public int Id { get; set; }
+        [NotMapped]
+        public string NomeDoProduto { get; set; }
         public Produto Produto { get; set; }
         [ForeignKey("Produto")]
         public int IdProduto { get; set; }

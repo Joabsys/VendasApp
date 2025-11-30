@@ -211,8 +211,10 @@
             this.textBoxSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxSenha.Location = new System.Drawing.Point(12, 136);
             this.textBoxSenha.Name = "textBoxSenha";
+            this.textBoxSenha.PasswordChar = '*';
             this.textBoxSenha.Size = new System.Drawing.Size(257, 20);
             this.textBoxSenha.TabIndex = 12;
+            this.textBoxSenha.UseSystemPasswordChar = true;
             // 
             // FrmUsuario
             // 

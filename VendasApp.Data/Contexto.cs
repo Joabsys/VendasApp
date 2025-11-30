@@ -18,8 +18,8 @@ namespace VendasApp.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-        //public DbSet<Vendas>  Vendas { get; set; }
-        //public DbSet<VendasItem> VendasItem { get; set; }
+        public DbSet<Vendas>  Vendas { get; set; }
+        public DbSet<VendasItem> VendasItem { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

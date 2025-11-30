@@ -61,6 +61,7 @@ namespace VendasApp.Crud
         private void button2_Click(object sender, EventArgs e)
         {
             Usuario usuario = Bs_Usuario.Current as Usuario;
+           
             if (usuario.Login == _nome)
             {
                 MessageBox.Show("Não é possivel deletar o usuario logado!", "Atenção");

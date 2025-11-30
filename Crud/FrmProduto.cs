@@ -32,11 +32,6 @@ namespace VendasApp.Crud
 
         }
 
-        private void BS_Produto_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmProduto_Shown(object sender, EventArgs e)
         {
             CarregaDados();

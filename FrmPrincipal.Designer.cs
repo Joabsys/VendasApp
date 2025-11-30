@@ -200,6 +200,7 @@
             this.VendasToolStripMenuItem.Name = "VendasToolStripMenuItem";
             this.VendasToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.VendasToolStripMenuItem.Text = "2 - Vendas";
+            this.VendasToolStripMenuItem.Click += new System.EventHandler(this.VendasToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -312,7 +313,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.TransparencyKey = System.Drawing.Color.Transparent;
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.Shown += new System.EventHandler(this.FrmPrincipal_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

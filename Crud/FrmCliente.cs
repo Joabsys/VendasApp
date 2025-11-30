@@ -20,11 +20,13 @@ namespace VendasApp.Crud
     {
 
         private ClienteRepository clienteRepository;
+        private VendasRepository vendasRepository;
 
         public FrmCliente()
         {
             InitializeComponent();
             clienteRepository = new ClienteRepository(new Contexto());
+            vendasRepository = new VendasRepository(new Contexto());
 
 
         }
@@ -46,6 +48,7 @@ namespace VendasApp.Crud
         private void FrmCliente_Shown(object sender, EventArgs e)
         {
             CarregaDados();
+           
 
 
         }
@@ -59,10 +62,6 @@ namespace VendasApp.Crud
         {
 
             Bindings();
-        }
-        private void Bs_Cliente_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -92,7 +91,7 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Cliente cliente = Bs_Cliente.Current as Cliente;
-            if (cliente.Cep == "" || cliente.Nome == ""|| cliente.Bairro == "" ||
+            if (cliente.Cep == "" || cliente.Nome == "" || cliente.Bairro == "" ||
                 cliente.Tipodocumento == null || cliente.Documento == ""
                 || cliente.Cidade == "" || cliente.Endereco == "" || cliente.Ativo == false)
             {
@@ -107,6 +106,7 @@ namespace VendasApp.Crud
                     if (cliente.Id == null)
                     {
                         clienteRepository.Inserir(cliente);
+                     
                     }
                     else
                     {
@@ -117,11 +117,6 @@ namespace VendasApp.Crud
                     button3.Enabled = true;
                 }
             }
-            
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
 
         }
         private bool Validacao(Cliente cliente)

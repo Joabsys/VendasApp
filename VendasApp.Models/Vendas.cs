@@ -12,6 +12,8 @@ namespace VendasApp.Models
             VendasItem = new List<VendasItem>();
         }
         public int Id { get; set; }
+        [NotMapped]
+        public string NomeDoCliente { get; set; }
         public Cliente Cliente { get; set; }
         [ForeignKey("Cliente")]
         public int IdCliente { get; set; }

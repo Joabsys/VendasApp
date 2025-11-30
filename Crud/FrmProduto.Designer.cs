@@ -71,16 +71,20 @@
             // maskedTextBoxQuantidade
             // 
             this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(12, 160);
+            this.maskedTextBoxQuantidade.Mask = "00000";
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
             this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(213, 20);
             this.maskedTextBoxQuantidade.TabIndex = 3;
+            this.maskedTextBoxQuantidade.ValidatingType = typeof(int);
             // 
             // maskedTextBoxPreco
             // 
             this.maskedTextBoxPreco.Location = new System.Drawing.Point(12, 103);
+            this.maskedTextBoxPreco.Mask = "00000";
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
             this.maskedTextBoxPreco.Size = new System.Drawing.Size(213, 20);
             this.maskedTextBoxPreco.TabIndex = 2;
+            this.maskedTextBoxPreco.ValidatingType = typeof(int);
             // 
             // checkBoxAtivo
             // 
@@ -171,7 +175,6 @@
             // BS_Produto
             // 
             this.BS_Produto.DataSource = typeof(VendasApp.Models.Produto);
-            this.BS_Produto.CurrentChanged += new System.EventHandler(this.BS_Produto_CurrentChanged);
             // 
             // label1
             // 

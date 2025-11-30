@@ -77,13 +77,6 @@ namespace VendasApp.Views
             Form.Show();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-            
-            
-        }
-
         public void FrmPrincipal_Shown(object sender, EventArgs e)
         {
             textBox1.Text = DateTime.Now.ToString();
@@ -105,6 +98,12 @@ namespace VendasApp.Views
         {
             FrmRelatorioProdutoFiltro Form = new FrmRelatorioProdutoFiltro();
             Form.Show();
+        }
+
+        private void VendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVendas frmVendas = new FrmVendas();
+            frmVendas.Show();
         }
     }
 }
