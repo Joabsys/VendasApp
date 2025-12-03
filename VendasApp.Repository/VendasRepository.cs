@@ -61,7 +61,7 @@ namespace VendasApp.Repository
         /// <returns></returns>
         public Vendas BuscarPorId(int id)
         {
-            return _contexto.Vendas.FirstOrDefault(a=>a.Id==id);
+            return _contexto.Vendas.FirstOrDefault(a => a.Id == id);
         }
         public Vendas BuscaTodoPorId(int id)
         {
@@ -76,5 +76,7 @@ namespace VendasApp.Repository
         {
             return _contexto.Vendas.ToList();
         }
+        
+
     }
 }

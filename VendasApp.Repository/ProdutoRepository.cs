@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using System.Collections.Generic;
 using System.Linq;
 using VendasApp.Data;
 using VendasApp.Models;
@@ -71,7 +72,5 @@ namespace VendasApp.Repository
             return _contexto.Produtos.ToList();
         }
         
-
-
     }
 }
