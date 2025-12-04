@@ -39,12 +39,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
             this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
             this.SuspendLayout();
@@ -103,14 +105,15 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
             this.ColumnProduto,
-            this.Valor,
-            this.Quantidade,
+            this.ColumnValor,
+            this.ColumnQuantidade,
             this.CdCliente,
             this.ClienteNome});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 174);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 174);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 195);
+            this.dataGridView1.Size = new System.Drawing.Size(801, 274);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // maskedTextBoxNomeCliente
@@ -141,6 +144,16 @@
             // 
             this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(370, 143);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Salvar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ColumnCodigo
             // 
             this.ColumnCodigo.DataPropertyName = "IdProduto";
@@ -153,17 +166,17 @@
             this.ColumnProduto.HeaderText = "Produto";
             this.ColumnProduto.Name = "ColumnProduto";
             // 
-            // Valor
+            // ColumnValor
             // 
-            this.Valor.DataPropertyName = "Valor";
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
+            this.ColumnValor.DataPropertyName = "Valor";
+            this.ColumnValor.HeaderText = "Valor";
+            this.ColumnValor.Name = "ColumnValor";
             // 
-            // Quantidade
+            // ColumnQuantidade
             // 
-            this.Quantidade.DataPropertyName = "Quantidade";
-            this.Quantidade.HeaderText = "Quantidade";
-            this.Quantidade.Name = "Quantidade";
+            this.ColumnQuantidade.DataPropertyName = "Quantidade";
+            this.ColumnQuantidade.HeaderText = "Quantidade";
+            this.ColumnQuantidade.Name = "ColumnQuantidade";
             // 
             // CdCliente
             // 
@@ -179,11 +192,22 @@
             this.ClienteNome.Name = "ClienteNome";
             this.ClienteNome.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(370, 96);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Totalizar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // FrmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.maskedTextBoxValorTotal);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -216,11 +240,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox maskedTextBoxValorTotal;
         private System.Windows.Forms.BindingSource Bs_Vendas;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProduto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNome;
+        private System.Windows.Forms.Button button3;
     }
 }
