@@ -20,13 +20,13 @@ namespace VendasApp.Crud
     {
 
         private ClienteRepository clienteRepository;
-        private VendasRepository vendasRepository;
+        
 
         public FrmCliente()
         {
             InitializeComponent();
             clienteRepository = new ClienteRepository(new Contexto());
-            vendasRepository = new VendasRepository(new Contexto());
+            
 
 
         }

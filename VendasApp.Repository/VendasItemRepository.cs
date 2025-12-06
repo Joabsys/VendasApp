@@ -9,7 +9,7 @@ using VendasApp.Models.Dto;
 
 namespace VendasApp.Repository
 {
-    public class VendasRepository
+    public class VendasItemRepository
     {
         private readonly Contexto _contexto;
 
@@ -17,29 +17,13 @@ namespace VendasApp.Repository
         /// Construtor que força passar o contexto na instancia da classe
         /// </summary>
         /// <param name="contexto"></param>
-        public VendasRepository(Contexto contexto)
+        public VendasItemRepository(Contexto contexto)
         {
             _contexto = contexto;
         }
-        /// <summary>
-        /// Inseri o registro na tabela
-        /// </summary>
-        /// <param name="Vendas"></param>
-        public void Inserir(Vendas Vendas)
-        {
-            _contexto.Vendas.Add(Vendas);
-            _contexto.SaveChanges();
-        }
+        
 
-        /// <summary>
-        /// Atualiza o registro na tabela
-        /// </summary>
-        /// <param name="Vendas"></param>
-        public void Atualizar(Vendas Vendas)
-        {
-            _contexto.Vendas.Update(Vendas);
-            _contexto.SaveChanges();
-        }
+        
 
         /// <summary>
         /// Excluir o registro na tabela
@@ -47,10 +31,10 @@ namespace VendasApp.Repository
         /// <param name="id"></param>
         public void Excluir(int id)
         {
-            var Vendas = _contexto.Vendas.Find(id);
-            if (Vendas != null)
+            var VendasItem = _contexto.VendasItem.Find(id);
+            if (VendasItem != null)
             {
-                _contexto.Vendas.Remove(Vendas);
+                _contexto.VendasItem.Remove(VendasItem);
                 _contexto.SaveChanges();
             }
         }
@@ -60,13 +44,13 @@ namespace VendasApp.Repository
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Vendas BuscarPorId(int id)
+        public VendasItem BuscarPorId(int id)
         {
-            return _contexto.Vendas.FirstOrDefault(a => a.Id == id);
+            return _contexto.VendasItem.FirstOrDefault(a => a.Id == id);
         }
-        public Vendas BuscaTodoPorId(int id)
+        public List<VendasItem> BuscaTodoPorId(FiltraClientePorCodigo filtraClientePorCodigo)
         {
-            return _contexto.Vendas.Include(a => a.VendasItem).ThenInclude(a => a.Produto).Include(a => a.Cliente).FirstOrDefault(a=>a.Id == id);
+            return _contexto.VendasItem.Where(a => a.IdVendas == filtraClientePorCodigo.Codigo).ToList();
         }
 
         /// <summary>
@@ -77,7 +61,7 @@ namespace VendasApp.Repository
         {
             return _contexto.Vendas.ToList();
         }
-        
+
 
     }
 }

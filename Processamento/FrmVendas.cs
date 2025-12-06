@@ -98,12 +98,12 @@ namespace VendasApp.Processamento
         {
 
             Vendas vendas = Bs_Vendas.Current as Vendas;
-            if (vendas.IdCliente != 0)
-            {
+            
 
                 vendasRepository.Inserir(vendas);
-            }
-            MessageBox.Show(" Pedido salvo com sucesso");
+                MessageBox.Show(" Pedido salvo com sucesso");
+            
+            Bs_Vendas.AddNew();
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

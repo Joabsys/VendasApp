@@ -200,18 +200,6 @@
     <Compile Include="Processamento\FrmInventario.Designer.cs">
       <DependentUpon>FrmInventario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Processamento\FrmProcessarCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Processamento\FrmProcessarCliente.Designer.cs">
-      <DependentUpon>FrmProcessarCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Processamento\FrmProcessarProduto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Processamento\FrmProcessarProduto.Designer.cs">
-      <DependentUpon>FrmProcessarProduto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Processamento\FrmVendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +244,12 @@
     <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoRelatorio.Designer.cs">
       <DependentUpon>FrmRelatorioProdutoRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioVendasFiltro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FiltroRelatorio\FrmRelatorioVendasFiltro.Designer.cs">
+      <DependentUpon>FrmRelatorioVendasFiltro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Relatorios\FrmRelatorioCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +268,12 @@
     <Compile Include="Relatorios\FrmRelatorioUsuario.Designer.cs">
       <DependentUpon>FrmRelatorioUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Relatorios\FrmRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\FrmRelatorioVendas.Designer.cs">
+      <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Validacoes\ValidacaoCliente.cs" />
     <EmbeddedResource Include="Crud\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
@@ -286,12 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Processamento\FrmInventario.resx">
       <DependentUpon>FrmInventario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Processamento\FrmProcessarCliente.resx">
-      <DependentUpon>FrmProcessarCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Processamento\FrmProcessarProduto.resx">
-      <DependentUpon>FrmProcessarProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Processamento\FrmVendas.resx">
       <DependentUpon>FrmVendas.cs</DependentUpon>
@@ -309,6 +303,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\Designer\ReportUsuario.rdlc" />
     <EmbeddedResource Include="Relatorios\Designer\ReportCliente.rdlc" />
+    <EmbeddedResource Include="Relatorios\Designer\ReportVendasItens.rdlc" />
     <EmbeddedResource Include="Relatorios\Designer\RportProduto.rdlc" />
     <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioClienteRelatorio.resx">
       <DependentUpon>FrmRelatorioClienteRelatorio.cs</DependentUpon>
@@ -322,8 +317,11 @@
     <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioProdutoRelatorio.resx">
       <DependentUpon>FrmRelatorioProdutoRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Relatorios\FiltroRelatorio\ReportRelatorioCliente.rdlc" />
-    <EmbeddedResource Include="Relatorios\FiltroRelatorio\ReportRelatorioProduto.rdlc" />
+    <EmbeddedResource Include="Relatorios\Designer\ReportRelatorioCliente.rdlc" />
+    <EmbeddedResource Include="Relatorios\Designer\ReportRelatorioProduto.rdlc" />
+    <EmbeddedResource Include="Relatorios\FiltroRelatorio\FrmRelatorioVendasFiltro.resx">
+      <DependentUpon>FrmRelatorioVendasFiltro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRelatorioCliente.resx">
       <DependentUpon>FrmRelatorioCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Relatorios\FrmRelatorioUsuario.resx">
       <DependentUpon>FrmRelatorioUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FrmRelatorioVendas.resx">
+      <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\VendasApp.Models.Cliente.datasource" />

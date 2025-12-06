@@ -1,6 +1,6 @@
-﻿namespace VendasApp.Relatorios.FiltroRelatorio
+﻿namespace VendasApp.Relatorios
 {
-    partial class FrmRelatorioClienteRelatorio
+    partial class FrmRelatorioVendas
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "VendasApp.Relatorios.Designer.ReportRelatorioCliente.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "VendasApp.Relatorios.Designer.ReportVendasItens.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
@@ -42,17 +42,17 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
             // 
-            // FrmRelatorioClienteRelatorio
+            // FrmVendasItens
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FrmRelatorioClienteRelatorio";
+            this.Name = "FrmVendasItens";
             this.ShowIcon = false;
-            this.Text = "RelatorioCliente";
+            this.Text = "Vendas dos Itens";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmRelatorioClienteRelatorio_Load);
+            this.Load += new System.EventHandler(this.FrmVendasItens_Load);
             this.ResumeLayout(false);
 
         }

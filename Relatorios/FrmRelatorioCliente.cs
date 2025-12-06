@@ -37,12 +37,13 @@ namespace VendasApp.Relatorios
             {
                 reportDataSource = new ReportDataSource("dsCliente", clienteRepository.BuscarTodos());
             }
-            else {
+            else
+            {
                 reportDataSource = new ReportDataSource("dsCliente", clienteRepository.BuscarPorDocumento(tipodocumentoParametro.Value));
             }
 
             reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-            reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
         }
     }
 }

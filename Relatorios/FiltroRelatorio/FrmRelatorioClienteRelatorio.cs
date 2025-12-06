@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendasApp.Models;
 using VendasApp.Models.Dto;
 using VendasApp.Models.Enums;
 using VendasApp.Repository;
@@ -83,9 +84,13 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             {
 
                 reportViewer1.LocalReport.DataSources.Clear();
-                ReportDataSource reportdatasource = new ReportDataSource("DataSetRelatorioTipoDocumento", clienteRepository.BuscarClienteAtivo(_filtraClientesAtivos));
+                List<Cliente> varl = clienteRepository.BuscarClienteAtivo(_filtraClientesAtivos);
+
+                ReportDataSource reportdatasource = new ReportDataSource("DataSetRelatorioTipoDocumento", varl);
                 reportViewer1.LocalReport.DataSources.Add(reportdatasource);
                 this.reportViewer1.RefreshReport();
+
+                
             }
 
 

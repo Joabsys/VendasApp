@@ -105,5 +105,13 @@ namespace VendasApp.Views
             FrmVendas frmVendas = new FrmVendas();
             frmVendas.Show();
         }
+
+        
+        private void vendasToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmRelatorioVendasFiltro FrmRelatorioVendasFiltro = new FrmRelatorioVendasFiltro();
+                
+            FrmRelatorioVendasFiltro.Show();
+        }
     }
 }
