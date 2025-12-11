@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.maskedTextBoxIdCliente = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,15 +49,21 @@
             this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(370, 58);
+            this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(441, 89);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 22);
+            this.button1.Size = new System.Drawing.Size(88, 30);
             this.button1.TabIndex = 1;
             this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
@@ -62,16 +71,21 @@
             // 
             // maskedTextBoxIdCliente
             // 
-            this.maskedTextBoxIdCliente.Location = new System.Drawing.Point(12, 58);
+            this.maskedTextBoxIdCliente.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxIdCliente.Location = new System.Drawing.Point(13, 92);
+            this.maskedTextBoxIdCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBoxIdCliente.Mask = "00000";
             this.maskedTextBoxIdCliente.Name = "maskedTextBoxIdCliente";
-            this.maskedTextBoxIdCliente.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxIdCliente.Size = new System.Drawing.Size(116, 26);
             this.maskedTextBoxIdCliente.TabIndex = 0;
+            this.maskedTextBoxIdCliente.ValidatingType = typeof(int);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(181, 9);
+            this.label1.Location = new System.Drawing.Point(203, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 26);
             this.label1.TabIndex = 3;
@@ -81,7 +95,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(118, 34);
+            this.label2.Location = new System.Drawing.Point(133, 67);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 21);
             this.label2.TabIndex = 4;
@@ -91,7 +106,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 34);
+            this.label4.Location = new System.Drawing.Point(13, 67);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 21);
             this.label4.TabIndex = 6;
@@ -100,6 +116,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
@@ -108,16 +125,19 @@
             this.ColumnQuantidade,
             this.CdCliente,
             this.ClienteNome});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 175);
+            this.dataGridView1.Location = new System.Drawing.Point(19, 229);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(632, 344);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // ColumnCodigo
             // 
             this.ColumnCodigo.DataPropertyName = "IdProduto";
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnCodigo.HeaderText = "Codigo";
             this.ColumnCodigo.Name = "ColumnCodigo";
             // 
@@ -126,16 +146,23 @@
             this.ColumnProduto.DataPropertyName = "NomeDoProduto";
             this.ColumnProduto.HeaderText = "Produto";
             this.ColumnProduto.Name = "ColumnProduto";
+            this.ColumnProduto.ReadOnly = true;
             // 
             // ColumnValor
             // 
             this.ColumnValor.DataPropertyName = "Valor";
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle8;
             this.ColumnValor.HeaderText = "Valor";
             this.ColumnValor.Name = "ColumnValor";
             // 
             // ColumnQuantidade
             // 
             this.ColumnQuantidade.DataPropertyName = "Quantidade";
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.ColumnQuantidade.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnQuantidade.HeaderText = "Quantidade";
             this.ColumnQuantidade.Name = "ColumnQuantidade";
             // 
@@ -155,35 +182,44 @@
             // 
             // maskedTextBoxNomeCliente
             // 
-            this.maskedTextBoxNomeCliente.Location = new System.Drawing.Point(118, 58);
+            this.maskedTextBoxNomeCliente.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxNomeCliente.Location = new System.Drawing.Point(137, 92);
+            this.maskedTextBoxNomeCliente.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxNomeCliente.Name = "maskedTextBoxNomeCliente";
             this.maskedTextBoxNomeCliente.ReadOnly = true;
-            this.maskedTextBoxNomeCliente.Size = new System.Drawing.Size(224, 20);
+            this.maskedTextBoxNomeCliente.Size = new System.Drawing.Size(261, 26);
             this.maskedTextBoxNomeCliente.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 107);
+            this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 140);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.Size = new System.Drawing.Size(79, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "ValorTotal";
             // 
             // maskedTextBoxValorTotal
             // 
             this.maskedTextBoxValorTotal.Enabled = false;
-            this.maskedTextBoxValorTotal.Location = new System.Drawing.Point(16, 124);
+            this.maskedTextBoxValorTotal.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBoxValorTotal.Location = new System.Drawing.Point(19, 162);
+            this.maskedTextBoxValorTotal.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxValorTotal.Name = "maskedTextBoxValorTotal";
-            this.maskedTextBoxValorTotal.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxValorTotal.ReadOnly = true;
+            this.maskedTextBoxValorTotal.Size = new System.Drawing.Size(116, 26);
             this.maskedTextBoxValorTotal.TabIndex = 14;
             this.maskedTextBoxValorTotal.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(370, 121);
+            this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(441, 178);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(88, 30);
             this.button2.TabIndex = 3;
             this.button2.Text = "Salvar";
             this.button2.UseVisualStyleBackColor = true;
@@ -193,11 +229,36 @@
             // 
             this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::VendasApp.Properties.Resources.cerrar;
+            this.pictureBox1.Location = new System.Drawing.Point(642, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(670, 24);
+            this.panel1.TabIndex = 16;
+            // 
             // FrmVendas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 450);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(670, 588);
+            this.ControlBox = false;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.maskedTextBoxValorTotal);
             this.Controls.Add(this.dataGridView1);
@@ -208,12 +269,21 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBoxIdCliente);
             this.Controls.Add(this.button1);
+            this.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmVendas";
-            this.Text = "Vendas";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Diditação de Pedidos";
             this.Load += new System.EventHandler(this.FrmVendas_Load);
             this.Shown += new System.EventHandler(this.FrmVendas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +308,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNome;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

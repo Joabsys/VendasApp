@@ -72,6 +72,7 @@ namespace VendasApp.Data
                 entity.Property(e => e.Senha).HasMaxLength(100).IsRequired();
                 entity.Property(e => e.DataUltimoLogin);
             });
+            //Vendas
             modelBuilder.Entity<Vendas>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -86,6 +87,7 @@ namespace VendasApp.Data
 
 
             });
+            //VendasItem
             modelBuilder.Entity<VendasItem>(entity =>
             {
                 entity.HasKey(e => e.Id);

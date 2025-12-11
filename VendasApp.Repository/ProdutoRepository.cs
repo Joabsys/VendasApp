@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System.Collections.Generic;
 using System.Linq;
 using VendasApp.Data;
 using VendasApp.Models;
+using VendasApp.Models.Dto;
 
 namespace VendasApp.Repository
 {
@@ -60,7 +62,11 @@ namespace VendasApp.Repository
         /// <returns></returns>
         public Produto BuscarPorId(int id)
         {
-            return _contexto.Produtos.Find(id);
+            return _contexto.Produtos.Select(a => new Produto
+            {
+                Descricao = a.Descricao,
+                Id=a.Id
+            }).FirstOrDefault(b => b.Id == id);
         }
 
         /// <summary>
@@ -71,6 +77,27 @@ namespace VendasApp.Repository
         {
             return _contexto.Produtos.ToList();
         }
-        
+        public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)
+        {
+            return _contexto.Produtos.Where(b => b.Ativo == filtraProdutoAtivo.Ativo && b.Quantidade >= filtraProdutoAtivo.Quantidade).ToList();
+
+        }
+        public List<Produto> BuscaProdutosPreco(FiltraProdutoPreco filtraProdutoPreco)
+        {
+            //AsEnumerable atrasa o tempo de compilação de source de um tipo IEnumerable<T> para IEnumerable<T> si mesmo.
+            return _contexto.Produtos.AsEnumerable().Where(b => b.Ativo == filtraProdutoPreco.Ativo && b.Preco >= filtraProdutoPreco.Preco).ToList();
+        }
+        public List<Produto> BuscaProdutosPorDataCadastro(FiltraProdutoPorData filtraProdutoPorData)
+        {
+            //AsEnumerable atrasa o tempo de compilação de source de um tipo IEnumerable<T> para IEnumerable<T> si mesmo.
+            return _contexto.Produtos.AsEnumerable().Where(b => b.Ativo == filtraProdutoPorData.Ativo && b.DataInclusao >= filtraProdutoPorData.DataDeCadastro).ToList();
+        }
+        public List<Produto> BuscaProdutosPorDataValidade(FiltraProdutoPorDataValidade filtraprodutoPorDataValidade)
+        {
+            //AsEnumerable atrasa o tempo de compilação de source de um tipo IEnumerable<T> para IEnumerable<T> si mesmo.
+            return _contexto.Produtos.AsEnumerable().Where(b => b.Ativo == filtraprodutoPorDataValidade.Ativo && b.DataInclusao >= filtraprodutoPorDataValidade.DataDeValidade).ToList();
+        }
+
+
     }
 }

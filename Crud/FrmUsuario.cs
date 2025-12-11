@@ -125,5 +125,10 @@ namespace VendasApp.Crud
             checkBoxAtivo.Checked = false;
             button2.Enabled = false;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

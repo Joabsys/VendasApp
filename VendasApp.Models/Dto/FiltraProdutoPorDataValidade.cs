@@ -4,12 +4,9 @@ using System.Text;
 
 namespace VendasApp.Models.Dto
 {
-    public class FiltraProdutoAtivo
+    public class FiltraProdutoPorDataValidade
     {
         public bool Ativo { get; set; }
-        public int Quantidade { get; set; }
-        
-
+        public DateTime DataDeValidade { get; set; }
     }
-
 }

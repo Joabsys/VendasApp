@@ -64,11 +64,18 @@ namespace VendasApp.Repository
         {
             return _contexto.Vendas.FirstOrDefault(a => a.Id == id);
         }
+        public List<Vendas> ListaTodoPorId(int filtraVenda)
+        {
+            return _contexto.Vendas.Include(a=>a.Cliente).Where(a => a.Id == filtraVenda).Select(a=>new Vendas() {
+            Id=a.Id, IdCliente=a.IdCliente, NomeDoCliente = a.Cliente.Nome,ValorTotal=a.ValorTotal
+            }).ToList();
+        }
+        
         public Vendas BuscaTodoPorId(int id)
         {
-            return _contexto.Vendas.Include(a => a.VendasItem).ThenInclude(a => a.Produto).Include(a => a.Cliente).FirstOrDefault(a=>a.Id == id);
+            return _contexto.Vendas.Include(a => a.VendasItem).ThenInclude(a => a.Produto).Include(a=>a.Cliente).FirstOrDefault(a=>a.Id == id);
         }
-
+        
         /// <summary>
         /// Seleciona todos os registros da tabela
         /// </summary>

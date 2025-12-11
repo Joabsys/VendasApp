@@ -7,27 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VendasApp.Models;
 using VendasApp.Models.Dto;
 
 namespace VendasApp.Relatorios.FiltroRelatorio
 {
     public partial class FrmRelatorioVendasFiltro : Form
     {
-        private FiltraClientePorCodigo filtraClientePorCodigo;
+        private FiltraVenda filtraVenda;
         public FrmRelatorioVendasFiltro()
         {
             InitializeComponent();
-            filtraClientePorCodigo = new FiltraClientePorCodigo();
+            filtraVenda = new FiltraVenda();
         }
         
-
-        
-
         private void button1_Click(object sender, EventArgs e)
         {
-            filtraClientePorCodigo.Codigo = Convert.ToInt32(textBoxCodigoCliente.Text);
-            FrmRelatorioVendas form = new FrmRelatorioVendas(filtraClientePorCodigo);
+            filtraVenda.CodigoPedido = Convert.ToInt32(textBoxCodigoDoPedido.Text);
+            
+            FrmRelatorioVendas form = new FrmRelatorioVendas(filtraVenda);
             form.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

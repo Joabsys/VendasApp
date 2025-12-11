@@ -135,13 +135,18 @@ namespace VendasApp.Crud
             if (comboBoxTipoDocumento.SelectedIndex == 0)
             {
                 maskedTextBoxDocumento.Text = "";
-                maskedTextBoxDocumento.Mask = "999.999.999-99";
+                maskedTextBoxDocumento.Mask = "999,999,999-99";
             }
             else
             {
                 maskedTextBoxDocumento.Text = "";
-                maskedTextBoxDocumento.Mask = "99.999.999/9999-99";
+                maskedTextBoxDocumento.Mask = "99,999,999/9999-99";
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

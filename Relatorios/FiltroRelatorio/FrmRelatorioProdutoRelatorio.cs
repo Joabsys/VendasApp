@@ -18,19 +18,35 @@ namespace VendasApp.Relatorios.FiltroRelatorio
     {
         private FiltraProdutoAtivo _filtraProdutoAtivo;
         private FiltraProdutoPreco _filtraProdutoPreco;
-        private ClienteRepository clienteRepository;
+        private ProdutoRepository produtoRepository;
+        private FiltraProdutoPorData _filtraProdutoPorData;
+        private FiltraProdutoPorDataValidade _filtraProdutoPorDataValidade;
         public FrmRelatorioProdutoRelatorio(FiltraProdutoAtivo filtraProdutoAtivo)
         {
             InitializeComponent();
-            clienteRepository = new ClienteRepository(new Data.Contexto());
+            produtoRepository = new ProdutoRepository(new Data.Contexto());
             _filtraProdutoAtivo = filtraProdutoAtivo;
 
         }
         public FrmRelatorioProdutoRelatorio(FiltraProdutoPreco filtraProdutoPreco)
         {
             InitializeComponent();
-            clienteRepository = new ClienteRepository(new Data.Contexto());
+            produtoRepository = new ProdutoRepository(new Data.Contexto());
             _filtraProdutoPreco = filtraProdutoPreco;
+
+        }
+        public FrmRelatorioProdutoRelatorio(FiltraProdutoPorDataValidade filtraProdutoPorDataValidade)
+        {
+            InitializeComponent();
+            produtoRepository = new ProdutoRepository(new Data.Contexto());
+            _filtraProdutoPorDataValidade = filtraProdutoPorDataValidade;
+
+        }
+        public FrmRelatorioProdutoRelatorio(FiltraProdutoPorData filtraProdutoPorData)
+        {
+            InitializeComponent();
+            produtoRepository = new ProdutoRepository(new Data.Contexto());
+            _filtraProdutoPorData = filtraProdutoPorData;
 
         }
 
@@ -39,14 +55,28 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             if (_filtraProdutoAtivo != null)
             {
                 reportViewer1.LocalReport.DataSources.Clear();
-                ReportDataSource reportDataSource = new ReportDataSource("DataSetProduto", clienteRepository.BuscaProdutosAtivos(_filtraProdutoAtivo));
+                ReportDataSource reportDataSource = new ReportDataSource("DataSetProduto", produtoRepository.BuscaProdutosAtivos(_filtraProdutoAtivo));
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource);
                 this.reportViewer1.RefreshReport();
             }
             else if (_filtraProdutoPreco != null)
             {
                 reportViewer1.LocalReport.DataSources.Clear();
-                ReportDataSource reportDataSource = new ReportDataSource("DataSetProduto", clienteRepository.BuscaProdutosPreco(_filtraProdutoPreco));
+                ReportDataSource reportDataSource = new ReportDataSource("DataSetProduto", produtoRepository.BuscaProdutosPreco(_filtraProdutoPreco));
+                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+                this.reportViewer1.RefreshReport();
+            }
+            else if (_filtraProdutoPorData != null)
+            {
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource reportDataSource = new ReportDataSource("DataSetProduto", produtoRepository.BuscaProdutosPorDataCadastro(_filtraProdutoPorData));
+                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+                this.reportViewer1.RefreshReport();
+            }
+            else if (_filtraProdutoPorDataValidade != null)
+            {
+                reportViewer1.LocalReport.DataSources.Clear();
+                ReportDataSource reportDataSource = new ReportDataSource("DataSetProduto", produtoRepository.BuscaProdutosPorDataValidade(_filtraProdutoPorDataValidade));
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource);
                 this.reportViewer1.RefreshReport();
             }

@@ -79,25 +79,9 @@ namespace VendasApp.Processamento
             return;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-
-            
+            this.Close();
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            
-
-        }
-
-        
-        
-
-        
-        
-            
     }
 }

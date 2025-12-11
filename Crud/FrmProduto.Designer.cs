@@ -55,45 +55,52 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePickerDTValidade = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDTInclusao = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Produto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // maskedTextBoxCodigo
             // 
-            this.maskedTextBoxCodigo.Location = new System.Drawing.Point(12, 40);
+            this.maskedTextBoxCodigo.Location = new System.Drawing.Point(14, 52);
+            this.maskedTextBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxCodigo.Name = "maskedTextBoxCodigo";
             this.maskedTextBoxCodigo.ReadOnly = true;
-            this.maskedTextBoxCodigo.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBoxCodigo.Size = new System.Drawing.Size(116, 22);
             this.maskedTextBoxCodigo.TabIndex = 0;
             this.maskedTextBoxCodigo.TabStop = false;
             // 
             // maskedTextBoxQuantidade
             // 
-            this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(12, 160);
+            this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(14, 209);
+            this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxQuantidade.Mask = "00000";
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
-            this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(213, 20);
+            this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(248, 22);
             this.maskedTextBoxQuantidade.TabIndex = 3;
             this.maskedTextBoxQuantidade.ValidatingType = typeof(int);
             // 
             // maskedTextBoxPreco
             // 
-            this.maskedTextBoxPreco.Location = new System.Drawing.Point(12, 103);
-            this.maskedTextBoxPreco.Mask = "00000";
+            this.maskedTextBoxPreco.Location = new System.Drawing.Point(14, 135);
+            this.maskedTextBoxPreco.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBoxPreco.Mask = "0000.00";
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
-            this.maskedTextBoxPreco.Size = new System.Drawing.Size(213, 20);
+            this.maskedTextBoxPreco.Size = new System.Drawing.Size(248, 22);
             this.maskedTextBoxPreco.TabIndex = 2;
-            this.maskedTextBoxPreco.ValidatingType = typeof(int);
             // 
             // checkBoxAtivo
             // 
             this.checkBoxAtivo.AutoSize = true;
             this.checkBoxAtivo.Checked = true;
             this.checkBoxAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxAtivo.Location = new System.Drawing.Point(154, 42);
+            this.checkBoxAtivo.Location = new System.Drawing.Point(138, 55);
+            this.checkBoxAtivo.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
-            this.checkBoxAtivo.Size = new System.Drawing.Size(50, 17);
+            this.checkBoxAtivo.Size = new System.Drawing.Size(55, 21);
             this.checkBoxAtivo.TabIndex = 1;
             this.checkBoxAtivo.Text = "Ativo";
             this.checkBoxAtivo.UseVisualStyleBackColor = true;
@@ -101,6 +108,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -111,10 +119,11 @@
             this.dataInclusaoDataGridViewTextBoxColumn,
             this.dataValidadeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.BS_Produto;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 229);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 299);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(837, 241);
             this.dataGridView1.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
@@ -179,35 +188,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Location = new System.Drawing.Point(14, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(47, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "Codigo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 144);
+            this.label2.Location = new System.Drawing.Point(10, 188);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Quantidade";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 87);
+            this.label3.Location = new System.Drawing.Point(10, 114);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Preço";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 420);
+            this.button1.Location = new System.Drawing.Point(14, 549);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(88, 30);
             this.button1.TabIndex = 8;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
@@ -215,9 +228,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(637, 420);
+            this.button2.Location = new System.Drawing.Point(743, 549);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(88, 30);
             this.button2.TabIndex = 9;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = true;
@@ -226,25 +240,28 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(334, 26);
+            this.label4.Location = new System.Drawing.Point(390, 34);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(63, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Descrição";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // maskedTextBoxDescricao
             // 
-            this.maskedTextBoxDescricao.Location = new System.Drawing.Point(337, 42);
+            this.maskedTextBoxDescricao.Location = new System.Drawing.Point(393, 55);
+            this.maskedTextBoxDescricao.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxDescricao.Name = "maskedTextBoxDescricao";
-            this.maskedTextBoxDescricao.Size = new System.Drawing.Size(187, 20);
+            this.maskedTextBoxDescricao.Size = new System.Drawing.Size(218, 22);
             this.maskedTextBoxDescricao.TabIndex = 4;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(337, 419);
+            this.button3.Location = new System.Drawing.Point(393, 548);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 23);
+            this.button3.Size = new System.Drawing.Size(121, 30);
             this.button3.TabIndex = 12;
             this.button3.Text = "Novo Cadastro";
             this.button3.UseVisualStyleBackColor = true;
@@ -253,26 +270,29 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(334, 87);
+            this.label5.Location = new System.Drawing.Point(390, 114);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 13);
+            this.label5.Size = new System.Drawing.Size(103, 17);
             this.label5.TabIndex = 14;
             this.label5.Text = "Data de Validade";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(334, 144);
+            this.label6.Location = new System.Drawing.Point(390, 188);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.Size = new System.Drawing.Size(101, 17);
             this.label6.TabIndex = 16;
             this.label6.Text = "Data de Inclusão";
             // 
             // dateTimePickerDTValidade
             // 
-            this.dateTimePickerDTValidade.Location = new System.Drawing.Point(337, 103);
+            this.dateTimePickerDTValidade.Location = new System.Drawing.Point(393, 135);
+            this.dateTimePickerDTValidade.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerDTValidade.Name = "dateTimePickerDTValidade";
-            this.dateTimePickerDTValidade.Size = new System.Drawing.Size(187, 20);
+            this.dateTimePickerDTValidade.Size = new System.Drawing.Size(218, 22);
             this.dateTimePickerDTValidade.TabIndex = 5;
             // 
             // dateTimePickerDTInclusao
@@ -280,17 +300,42 @@
             this.dateTimePickerDTInclusao.AllowDrop = true;
             this.dateTimePickerDTInclusao.Enabled = false;
             this.dateTimePickerDTInclusao.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.dateTimePickerDTInclusao.Location = new System.Drawing.Point(337, 161);
+            this.dateTimePickerDTInclusao.Location = new System.Drawing.Point(393, 211);
+            this.dateTimePickerDTInclusao.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerDTInclusao.Name = "dateTimePickerDTInclusao";
-            this.dateTimePickerDTInclusao.Size = new System.Drawing.Size(187, 20);
+            this.dateTimePickerDTInclusao.Size = new System.Drawing.Size(218, 22);
             this.dateTimePickerDTInclusao.TabIndex = 0;
             this.dateTimePickerDTInclusao.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::VendasApp.Properties.Resources.cerrar;
+            this.pictureBox1.Location = new System.Drawing.Point(822, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(28, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(850, 24);
+            this.panel1.TabIndex = 18;
+            // 
             // FrmProduto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(850, 588);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerDTInclusao);
             this.Controls.Add(this.dateTimePickerDTValidade);
             this.Controls.Add(this.label6);
@@ -308,6 +353,9 @@
             this.Controls.Add(this.maskedTextBoxPreco);
             this.Controls.Add(this.maskedTextBoxQuantidade);
             this.Controls.Add(this.maskedTextBoxCodigo);
+            this.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProduto";
             this.ShowIcon = false;
             this.Text = "Cadastro de Produtos";
@@ -315,6 +363,8 @@
             this.Shown += new System.EventHandler(this.FrmProduto_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Produto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +397,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInclusaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataValidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

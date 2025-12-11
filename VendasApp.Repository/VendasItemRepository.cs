@@ -21,9 +21,9 @@ namespace VendasApp.Repository
         {
             _contexto = contexto;
         }
-        
 
-        
+
+
 
         /// <summary>
         /// Excluir o registro na tabela
@@ -48,20 +48,12 @@ namespace VendasApp.Repository
         {
             return _contexto.VendasItem.FirstOrDefault(a => a.Id == id);
         }
-        public List<VendasItem> BuscaTodoPorId(FiltraClientePorCodigo filtraClientePorCodigo)
+        public List<VendasItem> BuscaTodoPorId(int filtraVenda)
         {
-            return _contexto.VendasItem.Where(a => a.IdVendas == filtraClientePorCodigo.Codigo).ToList();
+            return _contexto.VendasItem.Include(a=>a.Produto).Where(a => a.IdVendas == filtraVenda).Select(a=>new VendasItem() { 
+            NomeDoProduto = a.Produto.Descricao, Id=a.Id, IdProduto = a.IdProduto, Quantidade=a.Quantidade,Valor=a.Valor
+            }).ToList();
         }
-
-        /// <summary>
-        /// Seleciona todos os registros da tabela
-        /// </summary>
-        /// <returns></returns>
-        public List<Vendas> BuscarTodos()
-        {
-            return _contexto.Vendas.ToList();
-        }
-
-
+        
     }
 }

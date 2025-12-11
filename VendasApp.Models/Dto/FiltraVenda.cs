@@ -4,8 +4,8 @@ using System.Text;
 
 namespace VendasApp.Models.Dto
 {
-    public class FiltraClientePorCodigo
+    public class FiltraVenda
     {
-        public int Codigo;
+        public int CodigoPedido { get; set; }
     }
 }

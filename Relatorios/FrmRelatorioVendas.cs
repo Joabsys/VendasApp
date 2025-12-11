@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,9 @@ namespace VendasApp.Relatorios
     {
         private VendasItemRepository vendasItemRepository;
         private VendasRepository vendasRepository;
-        private FiltraClientePorCodigo _filtraClientePorCodigo;
+        private FiltraVenda _filtraVenda;
+        
+       
         
         public FrmRelatorioVendas()
         {
@@ -27,27 +30,30 @@ namespace VendasApp.Relatorios
             vendasItemRepository = new VendasItemRepository(new Data.Contexto());
             vendasRepository = new VendasRepository(new Data.Contexto());
         }
-        public FrmRelatorioVendas(FiltraClientePorCodigo filtraClientePorCodigo)
+        public FrmRelatorioVendas(FiltraVenda filtraVenda)
         {
             InitializeComponent();
-            _filtraClientePorCodigo = filtraClientePorCodigo;
+            _filtraVenda = filtraVenda;
             vendasItemRepository = new VendasItemRepository(new Data.Contexto());
             vendasRepository = new VendasRepository(new Data.Contexto());
+            
         }
 
         private void FrmVendasItens_Load(object sender, EventArgs e)
         {
-            if (_filtraClientePorCodigo != null)
+            if (_filtraVenda.CodigoPedido !=0)
             {
+              
                 reportViewer1.LocalReport.DataSources.Clear();
-                ReportDataSource reportDataSource;
-                reportDataSource = new ReportDataSource("dsVenda", vendasItemRepository.BuscaTodoPorId(_filtraClientePorCodigo));
-                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
-                this.reportViewer1.RefreshReport();
                 ReportDataSource reportDataSource1;
-                reportDataSource1 = new ReportDataSource("DataSetVenda", vendasRepository.BuscarPorId(_filtraClientePorCodigo.Codigo));
+                reportDataSource1 = new ReportDataSource("DataSetVendas", vendasRepository.ListaTodoPorId(_filtraVenda.CodigoPedido));
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-                this.reportViewer1.RefreshReport();
+
+                ReportDataSource reportDataSource;
+                reportDataSource = new ReportDataSource("DataSetVendas2", vendasItemRepository.BuscaTodoPorId(_filtraVenda.CodigoPedido));
+                reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+                reportViewer1.RefreshReport();
+
             }
         }
     }

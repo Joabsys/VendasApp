@@ -183,5 +183,10 @@ namespace VendasApp.Relatorios.FiltroRelatorio
         {
             textBoxCidade.Enabled = true;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

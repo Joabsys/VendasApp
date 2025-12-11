@@ -56,16 +56,21 @@ namespace VendasApp.Repository
                 _contexto.SaveChanges();
             }
         }
+        
 
         /// <summary>
         /// Realiza a busca a partir de um id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Cliente BuscarPorId(int id)
+        public Cliente BuscarPorId(int ?id)
         {
-            return _contexto.Clientes.Find(id);
+            return _contexto.Clientes.Select(a => new Cliente
+            {
+                Nome = a.Nome,Id=a.Id
+            }).FirstOrDefault(b=>b.Id == id);
         }
+        
 
         /// <summary>
         /// Seleciona todos os registros da tabela
@@ -75,6 +80,7 @@ namespace VendasApp.Repository
         {
             return _contexto.Clientes.ToList();
         }
+        
 
         public List<Cliente> BuscarPorDocumento(Models.Enums.TipoDocumentoEnums.Tipodocumento tipodocumento)
         {
@@ -105,16 +111,7 @@ namespace VendasApp.Repository
 
             return _contexto.Clientes.Where(b => b.Ativo == clientesInativos.Ativo).ToList();
         }
-        public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)
-        {
-            return _contexto.Produtos.Where(b => b.Ativo == filtraProdutoAtivo.Ativo && b.Quantidade >= filtraProdutoAtivo.Quantidade).ToList();
 
-        }
-        public  List<Produto> BuscaProdutosPreco(FiltraProdutoPreco filtraProdutoPreco)
-        {
-            //AsEnumerable atrasa o tempo de compilação de source de um tipo IEnumerable<T> para IEnumerable<T> si mesmo.
-            return _contexto.Produtos.AsEnumerable().Where(b => b.Ativo == filtraProdutoPreco.Ativo && b.Preco >= filtraProdutoPreco.Preco).ToList();
-        }
-        
+
     }
 }
