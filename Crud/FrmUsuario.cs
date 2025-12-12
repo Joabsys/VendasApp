@@ -34,7 +34,7 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Usuario usuario = Bs_Usuario.Current as Usuario;
-            if (textBoxLogin.Text == "" || textBoxSenha.Text == "" || checkBoxAtivo.Checked != true)
+            if (textBoxLogin.Text == "" || textBoxSenha.Text == "")
             {
                 MessageBox.Show("Existem campos não preenchidos, verifique!");
             }
@@ -52,8 +52,9 @@ namespace VendasApp.Crud
                 }
                 MessageBox.Show("Usuario cadastrado/atualizado com sucesso");
                 Bs_Usuario.ResetCurrentItem();
-                checkBoxAtivo.Checked = true;
+                
                 button2.Enabled = true;
+                checkBoxAtivo.Enabled = true;
             }
 
         }
@@ -122,8 +123,11 @@ namespace VendasApp.Crud
         private void button3_Click(object sender, EventArgs e)
         {
             Bs_Usuario.AddNew();
-            checkBoxAtivo.Checked = false;
+            Usuario usuario = Bs_Usuario.Current as Usuario;
+            checkBoxAtivo.CheckState = CheckState.Checked;
+            usuario.Ativo = true;
             button2.Enabled = false;
+            checkBoxAtivo.Enabled = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

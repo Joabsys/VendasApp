@@ -80,7 +80,10 @@ namespace VendasApp.Crud
             button3.Enabled = false;
             Produto produto = BS_Produto.Current as Produto;
             produto.DataInclusao = DateTime.Now;
-            checkBoxAtivo.CheckState = CheckState.Unchecked;
+            produto.DataValidade = DateTime.Now;
+            checkBoxAtivo.CheckState = CheckState.Checked;
+            produto.Ativo = true;
+            checkBoxAtivo.Enabled = false;
             BS_Produto.ResetCurrentItem();
 
 
@@ -91,7 +94,7 @@ namespace VendasApp.Crud
             Produto produto = BS_Produto.Current as Produto;
             if (produto.Preco == null || produto.DataInclusao == null ||
                 produto.DataValidade == null || produto.Quantidade == null
-                || produto.Descricao == "" || produto.Ativo == false)
+                || produto.Descricao == "")
             {
                 MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
@@ -112,6 +115,7 @@ namespace VendasApp.Crud
                 MessageBox.Show("Produto salvo com sucesso!");
 
                 button3.Enabled = true;
+                checkBoxAtivo.Enabled = true;
             }
         }
 

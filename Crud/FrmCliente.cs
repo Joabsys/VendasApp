@@ -84,7 +84,10 @@ namespace VendasApp.Crud
         {
 
             Bs_Cliente.AddNew();
-            checkBoxAtivo.CheckState = CheckState.Unchecked;
+            Cliente cliente = Bs_Cliente.Current as Cliente;
+            checkBoxAtivo.CheckState = CheckState.Checked;
+            cliente.Ativo = true;
+            checkBoxAtivo.Enabled = false;
             button3.Enabled = false;
         }
 
@@ -93,7 +96,7 @@ namespace VendasApp.Crud
             Cliente cliente = Bs_Cliente.Current as Cliente;
             if (cliente.Cep == "" || cliente.Nome == "" || cliente.Bairro == "" ||
                 cliente.Tipodocumento == null || cliente.Documento == ""
-                || cliente.Cidade == "" || cliente.Endereco == "" || cliente.Ativo == false)
+                || cliente.Cidade == "" || cliente.Endereco == "")
             {
                 MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
@@ -115,6 +118,7 @@ namespace VendasApp.Crud
                     MessageBox.Show("Cliente salvo com sucesso!");
 
                     button3.Enabled = true;
+                    checkBoxAtivo.Enabled = true;
                 }
             }
 

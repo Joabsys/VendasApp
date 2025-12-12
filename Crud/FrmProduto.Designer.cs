@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxQuantidade = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxPreco = new System.Windows.Forms.MaskedTextBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@
             this.dateTimePickerDTInclusao = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.maskedTextBoxPreco = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Produto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,18 +79,9 @@
             this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxQuantidade.Mask = "00000";
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
-            this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(248, 22);
+            this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(116, 22);
             this.maskedTextBoxQuantidade.TabIndex = 3;
             this.maskedTextBoxQuantidade.ValidatingType = typeof(int);
-            // 
-            // maskedTextBoxPreco
-            // 
-            this.maskedTextBoxPreco.Location = new System.Drawing.Point(14, 135);
-            this.maskedTextBoxPreco.Margin = new System.Windows.Forms.Padding(4);
-            this.maskedTextBoxPreco.Mask = "0000.00";
-            this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
-            this.maskedTextBoxPreco.Size = new System.Drawing.Size(248, 22);
-            this.maskedTextBoxPreco.TabIndex = 2;
             // 
             // checkBoxAtivo
             // 
@@ -159,9 +150,9 @@
             // precoDataGridViewTextBoxColumn
             // 
             this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
             this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
             this.precoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -329,12 +320,20 @@
             this.panel1.Size = new System.Drawing.Size(850, 24);
             this.panel1.TabIndex = 18;
             // 
+            // maskedTextBoxPreco
+            // 
+            this.maskedTextBoxPreco.Location = new System.Drawing.Point(12, 134);
+            this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
+            this.maskedTextBoxPreco.Size = new System.Drawing.Size(118, 22);
+            this.maskedTextBoxPreco.TabIndex = 19;
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(850, 588);
+            this.Controls.Add(this.maskedTextBoxPreco);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerDTInclusao);
             this.Controls.Add(this.dateTimePickerDTValidade);
@@ -350,7 +349,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.checkBoxAtivo);
-            this.Controls.Add(this.maskedTextBoxPreco);
             this.Controls.Add(this.maskedTextBoxQuantidade);
             this.Controls.Add(this.maskedTextBoxCodigo);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -358,6 +356,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmProduto";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produtos";
             this.Load += new System.EventHandler(this.FrmProduto_Load);
             this.Shown += new System.EventHandler(this.FrmProduto_Shown);
@@ -374,7 +373,6 @@
 
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCodigo;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxQuantidade;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxPreco;
         private System.Windows.Forms.CheckBox checkBoxAtivo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
@@ -399,5 +397,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataValidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox maskedTextBoxPreco;
     }
 }
