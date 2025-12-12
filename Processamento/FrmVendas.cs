@@ -20,7 +20,7 @@ namespace VendasApp.Processamento
         private ClienteRepository clienteRepository;
         private VendasRepository vendasRepository;
         private ProdutoRepository produtoRepository;
-        
+
 
         public FrmVendas()
         {
@@ -28,7 +28,7 @@ namespace VendasApp.Processamento
             clienteRepository = new ClienteRepository(new Data.Contexto());
             produtoRepository = new ProdutoRepository(new Data.Contexto());
             vendasRepository = new VendasRepository(new Data.Contexto());
-                        
+
         }
 
         private void FrmVendas_Load(object sender, EventArgs e)
@@ -54,12 +54,13 @@ namespace VendasApp.Processamento
             Vendas vendas = Bs_Vendas.Current as Vendas;
             vendas.IdCliente = clienteRepository.BuscarPorId(vendas.IdCliente).Id;
 
-            if (vendas.IdCliente!=0)
+            if (vendas.IdCliente != 0)
             {
                 vendas.NomeDoCliente = clienteRepository.BuscarPorId(vendas.IdCliente).Nome;
                 Bs_Vendas.ResetCurrentItem();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Codigo do cliente inexistente, Verifique!");
             }
         }
@@ -86,8 +87,10 @@ namespace VendasApp.Processamento
                     Vendas vendas = Bs_Vendas.Current as Vendas;
                     int rcCodigo = vendas.VendasItem[e.RowIndex].IdProduto;
                     vendas.VendasItem[e.RowIndex].NomeDoProduto = produtoRepository.BuscarPorId(rcCodigo).Descricao;
-                    
+                   
+
                 }
+                
 
 
             }
@@ -106,6 +109,17 @@ namespace VendasApp.Processamento
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            if (e.Cell.ColumnIndex == 1)
+            {
+                Vendas vendas = Bs_Vendas.Current as Vendas;
+                int rcCodigo = vendas.VendasItem[e.Cell.RowIndex].IdProduto;
+                vendas.VendasItem[e.Cell.RowIndex].Valor = produtoRepository.BuscarPrecoPorId(rcCodigo).Preco;
+            }
+
         }
     }
 }

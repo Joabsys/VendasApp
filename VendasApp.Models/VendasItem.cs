@@ -14,7 +14,7 @@ namespace VendasApp.Models
         [ForeignKey("Produto")]
         public int IdProduto { get; set; }
         public int IdVendas { get; set; }
-        public decimal Valor { get; set; }
+        public decimal? Valor { get; set; }
         public int Quantidade { get; set; }
         public virtual Vendas Vendas { get; set; }
     }

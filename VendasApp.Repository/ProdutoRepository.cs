@@ -68,6 +68,14 @@ namespace VendasApp.Repository
                 Id=a.Id
             }).FirstOrDefault(b => b.Id == id);
         }
+        public Produto BuscarPrecoPorId(int id)
+        {
+            return _contexto.Produtos.Select(a => new Produto
+            {
+                Preco = a.Preco,
+                Id = a.Id
+            }).FirstOrDefault(b => b.Id == id);
+        }
 
         /// <summary>
         /// Seleciona todos os registros da tabela

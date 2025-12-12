@@ -38,23 +38,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.maskedTextBoxNomeCliente = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maskedTextBoxNomeCliente = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -130,55 +130,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(632, 344);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dataGridView1_CellStateChanged);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.DataPropertyName = "IdProduto";
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColumnCodigo.HeaderText = "Codigo";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            // 
-            // ColumnProduto
-            // 
-            this.ColumnProduto.DataPropertyName = "NomeDoProduto";
-            this.ColumnProduto.HeaderText = "Produto";
-            this.ColumnProduto.Name = "ColumnProduto";
-            this.ColumnProduto.ReadOnly = true;
-            // 
-            // ColumnValor
-            // 
-            this.ColumnValor.DataPropertyName = "Valor";
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ColumnValor.HeaderText = "Valor";
-            this.ColumnValor.Name = "ColumnValor";
-            // 
-            // ColumnQuantidade
-            // 
-            this.ColumnQuantidade.DataPropertyName = "Quantidade";
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.ColumnQuantidade.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColumnQuantidade.HeaderText = "Quantidade";
-            this.ColumnQuantidade.Name = "ColumnQuantidade";
-            // 
-            // CdCliente
-            // 
-            this.CdCliente.DataPropertyName = "IdCliente";
-            this.CdCliente.HeaderText = "Codigo  do CLiente";
-            this.CdCliente.Name = "CdCliente";
-            this.CdCliente.Visible = false;
-            // 
-            // ClienteNome
-            // 
-            this.ClienteNome.DataPropertyName = "NomeDoCliente";
-            this.ClienteNome.HeaderText = "CLiente";
-            this.ClienteNome.Name = "ClienteNome";
-            this.ClienteNome.Visible = false;
             // 
             // maskedTextBoxNomeCliente
             // 
@@ -225,10 +178,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Bs_Vendas
-            // 
-            this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -250,6 +199,57 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 24);
             this.panel1.TabIndex = 16;
+            // 
+            // Bs_Vendas
+            // 
+            this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.DataPropertyName = "IdProduto";
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            // 
+            // ColumnProduto
+            // 
+            this.ColumnProduto.DataPropertyName = "NomeDoProduto";
+            this.ColumnProduto.HeaderText = "Produto";
+            this.ColumnProduto.Name = "ColumnProduto";
+            // 
+            // ColumnValor
+            // 
+            this.ColumnValor.DataPropertyName = "Valor";
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ColumnValor.HeaderText = "Valor";
+            this.ColumnValor.Name = "ColumnValor";
+            // 
+            // ColumnQuantidade
+            // 
+            this.ColumnQuantidade.DataPropertyName = "Quantidade";
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.ColumnQuantidade.DefaultCellStyle = dataGridViewCellStyle9;
+            this.ColumnQuantidade.HeaderText = "Quantidade";
+            this.ColumnQuantidade.Name = "ColumnQuantidade";
+            // 
+            // CdCliente
+            // 
+            this.CdCliente.DataPropertyName = "IdCliente";
+            this.CdCliente.HeaderText = "Codigo  do CLiente";
+            this.CdCliente.Name = "CdCliente";
+            this.CdCliente.Visible = false;
+            // 
+            // ClienteNome
+            // 
+            this.ClienteNome.DataPropertyName = "NomeDoCliente";
+            this.ClienteNome.HeaderText = "CLiente";
+            this.ClienteNome.Name = "ClienteNome";
+            this.ClienteNome.Visible = false;
             // 
             // FrmVendas
             // 
@@ -281,9 +281,9 @@
             this.Load += new System.EventHandler(this.FrmVendas_Load);
             this.Shown += new System.EventHandler(this.FrmVendas_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,13 +302,13 @@
         private System.Windows.Forms.TextBox maskedTextBoxValorTotal;
         private System.Windows.Forms.BindingSource Bs_Vendas;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNome;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
     }
 }

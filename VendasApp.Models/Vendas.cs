@@ -17,7 +17,7 @@ namespace VendasApp.Models
         public Cliente Cliente { get; set; }
         [ForeignKey("Cliente")]
         public int ?IdCliente { get; set; }
-        public decimal ValorTotal { get; set; }
+        public decimal ?ValorTotal { get; set; }
         public virtual IList<VendasItem> VendasItem { get; set; }
 
     }
