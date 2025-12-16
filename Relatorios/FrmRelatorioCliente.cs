@@ -1,10 +1,14 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Microsoft.Reporting.WinForms;
+using Microsoft.ReportingServices.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,11 +21,12 @@ namespace VendasApp.Relatorios
     {
         private ClienteRepository clienteRepository;
         private TipoDocumentoEnums.Tipodocumento? tipodocumentoParametro;
+        private LocalReport report;
         public FrmRelatorioCliente()
         {
             InitializeComponent();
             clienteRepository = new ClienteRepository(new Data.Contexto());
-
+            report = new LocalReport();
         }
         public FrmRelatorioCliente(TipoDocumentoEnums.Tipodocumento? tipodocumento)
         {
@@ -41,9 +46,10 @@ namespace VendasApp.Relatorios
             {
                 reportDataSource = new ReportDataSource("dsCliente", clienteRepository.BuscarPorDocumento(tipodocumentoParametro.Value));
             }
-
+           
             reportViewer1.LocalReport.DataSources.Add(reportDataSource);
             this.reportViewer1.RefreshReport();
+            
         }
     }
 }

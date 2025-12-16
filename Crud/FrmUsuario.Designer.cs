@@ -36,11 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataUltimoLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bs_Usuario = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -48,6 +43,11 @@
             this.textBoxSenha = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.senhaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataUltimoLoginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Usuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -137,54 +137,6 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ativoDataGridViewTextBoxColumn
-            // 
-            this.ativoDataGridViewTextBoxColumn.DataPropertyName = "Ativo";
-            this.ativoDataGridViewTextBoxColumn.HeaderText = "Ativo";
-            this.ativoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ativoDataGridViewTextBoxColumn.Name = "ativoDataGridViewTextBoxColumn";
-            this.ativoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ativoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ativoDataGridViewTextBoxColumn.ToolTipText = "Sim";
-            this.ativoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
-            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loginDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // senhaDataGridViewTextBoxColumn
-            // 
-            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "Senha";
-            this.senhaDataGridViewTextBoxColumn.HeaderText = "Senha";
-            this.senhaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
-            this.senhaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.senhaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataUltimoLoginDataGridViewTextBoxColumn
-            // 
-            this.dataUltimoLoginDataGridViewTextBoxColumn.DataPropertyName = "DataUltimoLogin";
-            this.dataUltimoLoginDataGridViewTextBoxColumn.HeaderText = "DataUltimoLogin";
-            this.dataUltimoLoginDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataUltimoLoginDataGridViewTextBoxColumn.Name = "dataUltimoLoginDataGridViewTextBoxColumn";
-            this.dataUltimoLoginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataUltimoLoginDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Bs_Usuario
             // 
             this.Bs_Usuario.DataSource = typeof(VendasApp.Models.Usuario);
@@ -254,6 +206,54 @@
             this.panel1.Size = new System.Drawing.Size(706, 24);
             this.panel1.TabIndex = 14;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // ativoDataGridViewTextBoxColumn
+            // 
+            this.ativoDataGridViewTextBoxColumn.DataPropertyName = "Ativo";
+            this.ativoDataGridViewTextBoxColumn.HeaderText = "Ativo";
+            this.ativoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ativoDataGridViewTextBoxColumn.Name = "ativoDataGridViewTextBoxColumn";
+            this.ativoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ativoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ativoDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ativoDataGridViewTextBoxColumn.ToolTipText = "Sim";
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loginDataGridViewTextBoxColumn.Width = 130;
+            // 
+            // senhaDataGridViewTextBoxColumn
+            // 
+            this.senhaDataGridViewTextBoxColumn.DataPropertyName = "Senha";
+            this.senhaDataGridViewTextBoxColumn.HeaderText = "Senha";
+            this.senhaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.senhaDataGridViewTextBoxColumn.Name = "senhaDataGridViewTextBoxColumn";
+            this.senhaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.senhaDataGridViewTextBoxColumn.Visible = false;
+            this.senhaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataUltimoLoginDataGridViewTextBoxColumn
+            // 
+            this.dataUltimoLoginDataGridViewTextBoxColumn.DataPropertyName = "DataUltimoLogin";
+            this.dataUltimoLoginDataGridViewTextBoxColumn.HeaderText = "Data/Hora Ultimo Login";
+            this.dataUltimoLoginDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataUltimoLoginDataGridViewTextBoxColumn.Name = "dataUltimoLoginDataGridViewTextBoxColumn";
+            this.dataUltimoLoginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataUltimoLoginDataGridViewTextBoxColumn.Width = 200;
+            // 
             // FrmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -301,15 +301,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.BindingSource Bs_Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataUltimoLoginDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.TextBox textBoxSenha;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn senhaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataUltimoLoginDataGridViewTextBoxColumn;
     }
 }

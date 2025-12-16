@@ -34,17 +34,10 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>I</Value>
-                              <Style>
-                                <FontFamily>Arial Black</FontFamily>
-                              </Style>
-                            </TextRun>
-                            <TextRun>
-                              <Value>d</Value>
+                              <Value>Código</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>

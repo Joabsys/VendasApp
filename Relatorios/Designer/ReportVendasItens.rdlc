@@ -253,7 +253,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Produto</Value>
+                                  <Value>Código</Value>
                                   <Style>
                                     <FontFamily>Arial Black</FontFamily>
                                     <FontSize>12pt</FontSize>

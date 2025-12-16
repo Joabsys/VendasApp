@@ -31,7 +31,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id</Value>
+                              <Value>Código</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -94,6 +94,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -221,7 +222,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Ativo.Value</Value>
+                              <Value>=IIf(Fields!Ativo.Value = false,"Não","Sim")</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>

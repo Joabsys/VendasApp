@@ -103,7 +103,7 @@ namespace VendasApp.Repository
         public List<Produto> BuscaProdutosPorDataValidade(FiltraProdutoPorDataValidade filtraprodutoPorDataValidade)
         {
             //AsEnumerable atrasa o tempo de compilação de source de um tipo IEnumerable<T> para IEnumerable<T> si mesmo.
-            return _contexto.Produtos.AsEnumerable().Where(b => b.Ativo == filtraprodutoPorDataValidade.Ativo && b.DataInclusao >= filtraprodutoPorDataValidade.DataDeValidade).ToList();
+            return _contexto.Produtos.AsEnumerable().Where(b => b.Ativo == filtraprodutoPorDataValidade.Ativo && b.DataValidade >= filtraprodutoPorDataValidade.DataDeValidade).ToList();
         }
 
 

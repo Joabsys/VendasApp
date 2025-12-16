@@ -14,11 +14,13 @@ namespace VendasApp.Relatorios
 {
     public partial class FrmRelatorioUsuario : Form
     {
-        private UsuarioRepository usuariorepository;   
+        private UsuarioRepository usuariorepository;
+        
         public FrmRelatorioUsuario()
         {
             InitializeComponent();
             usuariorepository = new UsuarioRepository(new Data.Contexto());
+            
         }
 
         private void FrmRelatorioUsuario_Load(object sender, EventArgs e)

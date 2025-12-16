@@ -6,7 +6,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.25412cm</Width>
+              <Width>1.77505cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>7.31308cm</Width>
@@ -34,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id</Value>
+                              <Value>Código</Value>
                               <Style>
                                 <FontFamily>Arial Black</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -412,7 +412,7 @@
         <Top>0.07056cm</Top>
         <Left>0.34396cm</Left>
         <Height>1.9994cm</Height>
-        <Width>21.8804cm</Width>
+        <Width>22.40133cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -425,7 +425,7 @@
       <BackgroundColor>LightGrey</BackgroundColor>
     </Style>
   </Body>
-  <Width>8.74975in</Width>
+  <Width>8.95484in</Width>
   <Page>
     <PageHeader>
       <Height>2.73403cm</Height>
@@ -567,8 +567,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.19063cm</Top>
-          <Left>20.08936cm</Left>
+          <Top>1.2259cm</Top>
+          <Left>20.61029cm</Left>
           <Height>1.43757cm</Height>
           <Width>2.135cm</Width>
           <ZIndex>2</ZIndex>
@@ -587,7 +587,7 @@
           <Value>ID32251301404511524</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.10584cm</Top>
-          <Left>20.72436cm</Left>
+          <Left>21.24529cm</Left>
           <Height>1.08479cm</Height>
           <Width>1.5cm</Width>
           <ZIndex>3</ZIndex>

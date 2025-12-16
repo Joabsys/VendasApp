@@ -52,7 +52,7 @@ namespace VendasApp.Processamento
         {
 
             Vendas vendas = Bs_Vendas.Current as Vendas;
-            vendas.IdCliente = clienteRepository.BuscarPorId(vendas.IdCliente).Id;
+           
 
             if (vendas.IdCliente != 0)
             {

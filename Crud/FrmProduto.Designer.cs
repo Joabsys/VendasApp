@@ -114,7 +114,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(837, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(823, 241);
             this.dataGridView1.TabIndex = 4;
             // 
             // idDataGridViewTextBoxColumn
@@ -136,7 +136,7 @@
             // descricaoDataGridViewTextBoxColumn
             // 
             this.descricaoDataGridViewTextBoxColumn.DataPropertyName = "Descricao";
-            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
+            this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descrição";
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -153,24 +153,26 @@
             dataGridViewCellStyle1.Format = "N2";
             dataGridViewCellStyle1.NullValue = null;
             this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.precoDataGridViewTextBoxColumn.HeaderText = "Preco";
+            this.precoDataGridViewTextBoxColumn.HeaderText = "Preço";
             this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
             this.precoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // dataInclusaoDataGridViewTextBoxColumn
             // 
             this.dataInclusaoDataGridViewTextBoxColumn.DataPropertyName = "DataInclusao";
-            this.dataInclusaoDataGridViewTextBoxColumn.HeaderText = "DataInclusao";
+            this.dataInclusaoDataGridViewTextBoxColumn.HeaderText = "Data de Inclusão";
             this.dataInclusaoDataGridViewTextBoxColumn.Name = "dataInclusaoDataGridViewTextBoxColumn";
             this.dataInclusaoDataGridViewTextBoxColumn.ReadOnly = true;
             this.dataInclusaoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataInclusaoDataGridViewTextBoxColumn.Width = 150;
             // 
             // dataValidadeDataGridViewTextBoxColumn
             // 
             this.dataValidadeDataGridViewTextBoxColumn.DataPropertyName = "DataValidade";
-            this.dataValidadeDataGridViewTextBoxColumn.HeaderText = "DataValidade";
+            this.dataValidadeDataGridViewTextBoxColumn.HeaderText = "Data de Validade";
             this.dataValidadeDataGridViewTextBoxColumn.Name = "dataValidadeDataGridViewTextBoxColumn";
             this.dataValidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataValidadeDataGridViewTextBoxColumn.Width = 150;
             // 
             // BS_Produto
             // 
@@ -388,6 +390,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePickerDTValidade;
         private System.Windows.Forms.DateTimePicker dateTimePickerDTInclusao;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox maskedTextBoxPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ativoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
@@ -395,8 +400,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataInclusaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataValidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox maskedTextBoxPreco;
     }
 }

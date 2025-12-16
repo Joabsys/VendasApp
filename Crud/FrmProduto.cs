@@ -92,7 +92,7 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Produto produto = BS_Produto.Current as Produto;
-            if (produto.Preco == null || produto.DataInclusao == null ||
+            if (produto.Preco <0 || produto.DataInclusao == null ||
                 produto.DataValidade == null || produto.Quantidade == null
                 || produto.Descricao == "")
             {
