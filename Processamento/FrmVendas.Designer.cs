@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.maskedTextBoxIdCliente = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,16 +45,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_NrPedido = new System.Windows.Forms.BindingSource(this.components);
+            this.maskedTextBoxNrPedido = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnQuantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_NrPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -84,7 +89,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 27);
+            this.label1.Location = new System.Drawing.Point(188, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 26);
@@ -124,7 +129,8 @@
             this.ColumnValor,
             this.ColumnQuantidade,
             this.CdCliente,
-            this.ClienteNome});
+            this.ClienteNome,
+            this.Id});
             this.dataGridView1.Location = new System.Drawing.Point(19, 229);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -169,7 +175,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(441, 178);
+            this.button2.Location = new System.Drawing.Point(441, 162);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 30);
@@ -204,12 +210,34 @@
             // 
             this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
             // 
+            // bs_NrPedido
+            // 
+            this.bs_NrPedido.DataSource = typeof(VendasApp.Models.Vendas);
+            // 
+            // maskedTextBoxNrPedido
+            // 
+            this.maskedTextBoxNrPedido.Enabled = false;
+            this.maskedTextBoxNrPedido.Location = new System.Drawing.Point(551, 89);
+            this.maskedTextBoxNrPedido.Name = "maskedTextBoxNrPedido";
+            this.maskedTextBoxNrPedido.Size = new System.Drawing.Size(100, 22);
+            this.maskedTextBoxNrPedido.TabIndex = 17;
+            this.maskedTextBoxNrPedido.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(529, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(141, 17);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "N° Ultimo Ped. Digitado";
+            // 
             // ColumnCodigo
             // 
             this.ColumnCodigo.DataPropertyName = "IdProduto";
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnCodigo.HeaderText = "Codigo";
             this.ColumnCodigo.Name = "ColumnCodigo";
             // 
@@ -218,22 +246,23 @@
             this.ColumnProduto.DataPropertyName = "NomeDoProduto";
             this.ColumnProduto.HeaderText = "Produto";
             this.ColumnProduto.Name = "ColumnProduto";
+            this.ColumnProduto.ReadOnly = true;
             // 
             // ColumnValor
             // 
             this.ColumnValor.DataPropertyName = "Valor";
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnValor.HeaderText = "Valor";
             this.ColumnValor.Name = "ColumnValor";
             // 
             // ColumnQuantidade
             // 
             this.ColumnQuantidade.DataPropertyName = "Quantidade";
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.ColumnQuantidade.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.ColumnQuantidade.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnQuantidade.HeaderText = "Quantidade";
             this.ColumnQuantidade.Name = "ColumnQuantidade";
             // 
@@ -251,6 +280,13 @@
             this.ClienteNome.Name = "ClienteNome";
             this.ClienteNome.Visible = false;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
             // FrmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -258,7 +294,9 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(670, 588);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.maskedTextBoxNrPedido);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.maskedTextBoxValorTotal);
             this.Controls.Add(this.dataGridView1);
@@ -266,9 +304,9 @@
             this.Controls.Add(this.maskedTextBoxNomeCliente);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.maskedTextBoxIdCliente);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -284,6 +322,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_NrPedido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,11 +343,15 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource bs_NrPedido;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxNrPedido;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnQuantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
     }
 }

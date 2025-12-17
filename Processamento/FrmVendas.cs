@@ -38,6 +38,8 @@ namespace VendasApp.Processamento
             dataGridView1.DataMember = nameof(Vendas.VendasItem);
             dataGridView1.DataSource = Bs_Vendas;
 
+
+
         }
 
         private void Bindings()
@@ -52,7 +54,7 @@ namespace VendasApp.Processamento
         {
 
             Vendas vendas = Bs_Vendas.Current as Vendas;
-           
+
 
             if (vendas.IdCliente != 0)
             {
@@ -67,6 +69,8 @@ namespace VendasApp.Processamento
 
         private void FrmVendas_Shown(object sender, EventArgs e)
         {
+            maskedTextBoxNrPedido.Text = vendasRepository.BuscarUltimoIdDaVenda().Id.ToString();
+            
             Bs_Vendas.AddNew();
 
         }
@@ -87,10 +91,10 @@ namespace VendasApp.Processamento
                     Vendas vendas = Bs_Vendas.Current as Vendas;
                     int rcCodigo = vendas.VendasItem[e.RowIndex].IdProduto;
                     vendas.VendasItem[e.RowIndex].NomeDoProduto = produtoRepository.BuscarPorId(rcCodigo).Descricao;
-                   
+
 
                 }
-                
+
 
 
             }
@@ -103,7 +107,11 @@ namespace VendasApp.Processamento
             Vendas vendas = Bs_Vendas.Current as Vendas;
             vendasRepository.Inserir(vendas);
             MessageBox.Show(" Pedido salvo com sucesso");
+            maskedTextBoxNrPedido.Text = vendasRepository.BuscarUltimoIdDaVenda().Id.ToString();
             Bs_Vendas.AddNew();
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

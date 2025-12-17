@@ -64,6 +64,20 @@ namespace VendasApp.Repository
         {
             return _contexto.Vendas.FirstOrDefault(a => a.Id == id);
         }
+        public Vendas BuscarUltimoIdDaVenda()
+        {
+            return _contexto.Vendas.Select(a => new Vendas()
+            {
+                Id = a.Id
+            }).AsEnumerable().Last();
+        }
+        public List<Vendas> BuscartodosPorID()
+        {
+            return _contexto.Vendas.Select(a => new Vendas()
+            {
+                Id = a.Id
+            }).ToList();
+        }
         public List<Vendas> ListaTodoPorId(int filtraVenda)
         {
             return _contexto.Vendas.Include(a=>a.Cliente).Where(a => a.Id == filtraVenda).Select(a=>new Vendas() {
