@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking.Internal;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using System;
 using System.Collections.Generic;
@@ -60,19 +62,36 @@ namespace VendasApp.Processamento
                     //Aqui eu faço a operação
                     if (inventario.Operacao == Models.Enums.OperacaoEnum.Operacao.Soma)
                     {
-                        produto.Quantidade += inventario.Quantidade;
 
-                        produtoRepository.Atualizar(produto);
+                        if ((produto.Quantidade + inventario.Quantidade) < 100000)
+                        {
+                            produto.Quantidade += inventario.Quantidade;
+                            produtoRepository.Atualizar(produto);
+                            produtoBindingSource.ResetCurrentItem();
+                            MessageBox.Show("Produto atualizado com sucesso!");
+                        }
+                        else
+                        {
 
-                        produtoBindingSource.ResetCurrentItem();
-                        MessageBox.Show("Produto atualizado com sucesso!");
+                            MessageBox.Show("Estoque atingiu o limite maximo, Verifique!");
+                        }
+
+
                     }
-                    else
+                    else if (inventario.Operacao == Models.Enums.OperacaoEnum.Operacao.Subtracao)
                     {
-                        inventario.Operacao = Models.Enums.OperacaoEnum.Operacao.Subtracao;
-                        produto.Quantidade -= inventario.Quantidade;
-                        produtoBindingSource.ResetCurrentItem();
-                        MessageBox.Show("Produto atualizado com sucesso!");
+                        if ((produto.Quantidade - inventario.Quantidade) >= 0)
+                        {
+                            inventario.Operacao = Models.Enums.OperacaoEnum.Operacao.Subtracao;
+                            produto.Quantidade -= inventario.Quantidade;
+                            produtoBindingSource.ResetCurrentItem();
+                            MessageBox.Show("Produto atualizado com sucesso!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Total informado fará o estoque ficar negativo, Verifique!");
+                        }
+
                     }
                 }
             }

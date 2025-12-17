@@ -122,9 +122,11 @@
             // 
             this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(635, 163);
             this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.maskedTextBoxQuantidade.Mask = "00000";
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
-            this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(171, 22);
+            this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(174, 22);
             this.maskedTextBoxQuantidade.TabIndex = 3;
+            this.maskedTextBoxQuantidade.ValidatingType = typeof(int);
             // 
             // label2
             // 
