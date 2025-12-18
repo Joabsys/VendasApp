@@ -18,11 +18,13 @@ namespace VendasApp.Relatorios.FiltroRelatorio
     {
         private VendasRepository vendasRepository;
         private FiltraVenda filtraVenda;
+        private Vendas vendas;
         public FrmRelatorioVendasFiltro()
         {
             InitializeComponent();
             filtraVenda = new FiltraVenda();
             vendasRepository = new VendasRepository(new Data.Contexto());
+            vendas = new Vendas();    
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
 
         private void FrmRelatorioVendasFiltro_Shown(object sender, EventArgs e)
         {
-            foreach (var i in vendasRepository.BuscartodosPorID())
+            foreach(var i in vendasRepository.BuscartodosPorID())
             {
 
                 comboBoxConsultaPedidos.Items.Add(i.Id);

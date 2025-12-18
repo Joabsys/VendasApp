@@ -8,10 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using VendasApp.Models;
 using VendasApp.Models.Dto;
+using VendasApp.Relatorios;
 using VendasApp.Repository;
 using VendasApp.Validacoes;
+
 
 namespace VendasApp.Processamento
 {
@@ -20,6 +23,8 @@ namespace VendasApp.Processamento
         private ClienteRepository clienteRepository;
         private VendasRepository vendasRepository;
         private ProdutoRepository produtoRepository;
+        private FiltraVenda filtraVenda;
+        
 
 
         public FrmVendas()
@@ -28,6 +33,8 @@ namespace VendasApp.Processamento
             clienteRepository = new ClienteRepository(new Data.Contexto());
             produtoRepository = new ProdutoRepository(new Data.Contexto());
             vendasRepository = new VendasRepository(new Data.Contexto());
+            filtraVenda = new FiltraVenda();
+            
 
         }
 
@@ -69,8 +76,7 @@ namespace VendasApp.Processamento
 
         private void FrmVendas_Shown(object sender, EventArgs e)
         {
-            maskedTextBoxNrPedido.Text = vendasRepository.BuscarUltimoIdDaVenda().Id.ToString();
-            
+           maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
             Bs_Vendas.AddNew();
 
         }
@@ -107,10 +113,19 @@ namespace VendasApp.Processamento
             Vendas vendas = Bs_Vendas.Current as Vendas;
             vendasRepository.Inserir(vendas);
             MessageBox.Show(" Pedido salvo com sucesso");
-            maskedTextBoxNrPedido.Text = vendasRepository.BuscarUltimoIdDaVenda().Id.ToString();
+            maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
             Bs_Vendas.AddNew();
+            
 
 
+            DialogResult dialogResult = MessageBox.Show("Deseja emitir o pedido?", "Atenção", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                filtraVenda.CodigoPedido = Convert.ToInt32(maskedTextBoxNrPedido.Text);
+                FrmRelatorioVendas form = new FrmRelatorioVendas(filtraVenda);
+                form.ShowDialog();
+            }
 
         }
 

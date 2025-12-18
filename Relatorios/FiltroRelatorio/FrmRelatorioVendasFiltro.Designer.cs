@@ -31,11 +31,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxCodigoDoPedido = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxConsultaPedidos = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxConsultaPedidos = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -79,6 +79,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de Pedido";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(163, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 21);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Selecionar Pedido:";
+            // 
+            // comboBoxConsultaPedidos
+            // 
+            this.comboBoxConsultaPedidos.FormattingEnabled = true;
+            this.comboBoxConsultaPedidos.Location = new System.Drawing.Point(167, 55);
+            this.comboBoxConsultaPedidos.Name = "comboBoxConsultaPedidos";
+            this.comboBoxConsultaPedidos.Size = new System.Drawing.Size(141, 29);
+            this.comboBoxConsultaPedidos.TabIndex = 6;
+            this.comboBoxConsultaPedidos.Click += new System.EventHandler(this.comboBoxConsultaPedidos_Click);
+            this.comboBoxConsultaPedidos.MouseLeave += new System.EventHandler(this.comboBoxConsultaPedidos_MouseLeave_1);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -110,25 +129,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 24);
             this.panel1.TabIndex = 7;
-            // 
-            // comboBoxConsultaPedidos
-            // 
-            this.comboBoxConsultaPedidos.FormattingEnabled = true;
-            this.comboBoxConsultaPedidos.Location = new System.Drawing.Point(167, 55);
-            this.comboBoxConsultaPedidos.Name = "comboBoxConsultaPedidos";
-            this.comboBoxConsultaPedidos.Size = new System.Drawing.Size(141, 29);
-            this.comboBoxConsultaPedidos.TabIndex = 6;
-            this.comboBoxConsultaPedidos.Click += new System.EventHandler(this.comboBoxConsultaPedidos_Click);
-            this.comboBoxConsultaPedidos.MouseLeave += new System.EventHandler(this.comboBoxConsultaPedidos_MouseLeave_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(163, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Selecionar Pedido:";
             // 
             // FrmRelatorioVendasFiltro
             // 
