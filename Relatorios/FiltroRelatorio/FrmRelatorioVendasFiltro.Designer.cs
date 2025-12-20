@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBoxCodigoDoPedido = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxCodigoDoPedido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxConsultaPedidos = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
@@ -54,22 +52,10 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBoxCodigoDoPedido
-            // 
-            this.textBoxCodigoDoPedido.Location = new System.Drawing.Point(7, 58);
-            this.textBoxCodigoDoPedido.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxCodigoDoPedido.Name = "textBoxCodigoDoPedido";
-            this.textBoxCodigoDoPedido.Size = new System.Drawing.Size(141, 26);
-            this.textBoxCodigoDoPedido.TabIndex = 4;
-            this.textBoxCodigoDoPedido.Click += new System.EventHandler(this.textBoxCodigoDoPedido_Click);
-            this.textBoxCodigoDoPedido.MouseLeave += new System.EventHandler(this.textBoxCodigoDoPedido_MouseLeave_1);
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.comboBoxConsultaPedidos);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxCodigoDoPedido);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 40);
@@ -79,34 +65,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de Pedido";
             // 
+            // textBoxCodigoDoPedido
+            // 
+            this.textBoxCodigoDoPedido.Location = new System.Drawing.Point(84, 75);
+            this.textBoxCodigoDoPedido.Name = "textBoxCodigoDoPedido";
+            this.textBoxCodigoDoPedido.Size = new System.Drawing.Size(141, 26);
+            this.textBoxCodigoDoPedido.TabIndex = 8;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(163, 31);
+            this.label2.Location = new System.Drawing.Point(88, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 21);
             this.label2.TabIndex = 7;
             this.label2.Text = "Selecionar Pedido:";
-            // 
-            // comboBoxConsultaPedidos
-            // 
-            this.comboBoxConsultaPedidos.FormattingEnabled = true;
-            this.comboBoxConsultaPedidos.Location = new System.Drawing.Point(167, 55);
-            this.comboBoxConsultaPedidos.Name = "comboBoxConsultaPedidos";
-            this.comboBoxConsultaPedidos.Size = new System.Drawing.Size(141, 29);
-            this.comboBoxConsultaPedidos.TabIndex = 6;
-            this.comboBoxConsultaPedidos.Click += new System.EventHandler(this.comboBoxConsultaPedidos_Click);
-            this.comboBoxConsultaPedidos.MouseLeave += new System.EventHandler(this.comboBoxConsultaPedidos_MouseLeave_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Numero do Pedido:";
             // 
             // pictureBox1
             // 
@@ -145,7 +118,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Pedido";
-            this.Shown += new System.EventHandler(this.FrmRelatorioVendasFiltro_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -157,12 +129,10 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBoxCodigoDoPedido;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxConsultaPedidos;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxCodigoDoPedido;
     }
 }

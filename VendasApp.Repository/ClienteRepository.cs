@@ -80,7 +80,11 @@ namespace VendasApp.Repository
         {
             return _contexto.Clientes.ToList();
         }
-        
+        public List<Cliente> BuscarId(int ?cliente)
+        {
+            return _contexto.Clientes.Where(a=>a.Id==cliente && a.Id!=null).ToList();
+        }
+
 
         public List<Cliente> BuscarPorDocumento(Models.Enums.TipoDocumentoEnums.Tipodocumento tipodocumento)
         {

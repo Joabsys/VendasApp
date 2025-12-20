@@ -64,19 +64,26 @@ namespace VendasApp.Repository
         {
             return _contexto.Vendas.FirstOrDefault(a => a.Id == id);
         }
-        
+
         public List<Vendas> BuscartodosPorID()
         {
             return _contexto.Vendas.Where(a => a.Id > 0).AsEnumerable().ToList();
         }
-        
+        public List<Vendas> BuscaID(int vendas)
+        {
+            return _contexto.Vendas.Where(a => a.Id==vendas && a.Id > 0).AsEnumerable().ToList();
+        }
         public List<Vendas> ListaTodoPorId(int filtraVenda)
         {
-            return _contexto.Vendas.Include(a=>a.Cliente).Where(a => a.Id == filtraVenda).Select(a=>new Vendas() {
-            Id=a.Id, IdCliente=a.IdCliente, NomeDoCliente = a.Cliente.Nome,ValorTotal=a.ValorTotal
+            return _contexto.Vendas.Include(a => a.Cliente).Where(a => a.Id == filtraVenda).Select(a => new Vendas()
+            {
+                Id = a.Id,
+                IdCliente = a.IdCliente,
+                NomeDoCliente = a.Cliente.Nome,
+                ValorTotal = a.ValorTotal
             }).ToList();
         }
-        
+
         /// <summary>
         /// Seleciona todos os registros da tabela
         /// </summary>
@@ -85,7 +92,7 @@ namespace VendasApp.Repository
         {
             return _contexto.Vendas.ToList();
         }
-        
+
 
     }
 }

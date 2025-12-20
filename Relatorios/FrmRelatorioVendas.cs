@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using VendasApp.Models;
 using VendasApp.Models.Dto;
 using VendasApp.Repository;
+using VendasApp.Validacoes;
 
 namespace VendasApp.Relatorios
 {
@@ -21,9 +22,11 @@ namespace VendasApp.Relatorios
         private VendasItemRepository vendasItemRepository;
         private VendasRepository vendasRepository;
         private FiltraVenda _filtraVenda;
-        
-       
-        
+        private bool venda;
+        private ValidaPedido vendas;
+
+
+
         public FrmRelatorioVendas()
         {
             InitializeComponent();
@@ -36,14 +39,15 @@ namespace VendasApp.Relatorios
             _filtraVenda = filtraVenda;
             vendasItemRepository = new VendasItemRepository(new Data.Contexto());
             vendasRepository = new VendasRepository(new Data.Contexto());
-            
+            vendas = new ValidaPedido();
+
         }
 
         private void FrmVendasItens_Load(object sender, EventArgs e)
         {
-            if (_filtraVenda.CodigoPedido !=0)
+            venda = vendas.validarPedido(_filtraVenda.CodigoPedido);
+            if (venda)
             {
-              
                 reportViewer1.LocalReport.DataSources.Clear();
                 ReportDataSource reportDataSource1;
                 reportDataSource1 = new ReportDataSource("DataSetVendas", vendasRepository.ListaTodoPorId(_filtraVenda.CodigoPedido));
@@ -54,6 +58,11 @@ namespace VendasApp.Relatorios
                 reportViewer1.LocalReport.DataSources.Add(reportDataSource);
                 reportViewer1.RefreshReport();
 
+            }
+            else
+            {
+                MessageBox.Show("Numero do pedido não encontrado,Verifique!");
+                this.Close();
             }
         }
     }

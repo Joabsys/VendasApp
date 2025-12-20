@@ -85,6 +85,10 @@ namespace VendasApp.Repository
         {
             return _contexto.Produtos.ToList();
         }
+        public List<Produto> BuscarId(int produto)
+        {
+            return _contexto.Produtos.Where(a=>a.Id==produto&& a.Id!=null).ToList();
+        }
         public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)
         {
             return _contexto.Produtos.Where(b => b.Ativo == filtraProdutoAtivo.Ativo && b.Quantidade >= filtraProdutoAtivo.Quantidade).ToList();

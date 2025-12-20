@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,7 +25,10 @@ namespace VendasApp.Processamento
         private VendasRepository vendasRepository;
         private ProdutoRepository produtoRepository;
         private FiltraVenda filtraVenda;
-        
+        private ValidaProduto validaProduto;
+        private bool valida;
+        private ValidaClienteNaVenda ValidaCliente;
+
 
 
         public FrmVendas()
@@ -34,14 +38,15 @@ namespace VendasApp.Processamento
             produtoRepository = new ProdutoRepository(new Data.Contexto());
             vendasRepository = new VendasRepository(new Data.Contexto());
             filtraVenda = new FiltraVenda();
-            
-
+            validaProduto = new ValidaProduto();
+            ValidaCliente = new ValidaClienteNaVenda();
         }
 
         private void FrmVendas_Load(object sender, EventArgs e)
         {
             Bindings();
             dataGridView1.AutoGenerateColumns = false;
+
             dataGridView1.DataMember = nameof(Vendas.VendasItem);
             dataGridView1.DataSource = Bs_Vendas;
 
@@ -61,22 +66,26 @@ namespace VendasApp.Processamento
         {
 
             Vendas vendas = Bs_Vendas.Current as Vendas;
+            valida = ValidaCliente.ValidarCLienteNaVenda(vendas.IdCliente);
 
-
-            if (vendas.IdCliente != 0)
+            if (valida)
             {
                 vendas.NomeDoCliente = clienteRepository.BuscarPorId(vendas.IdCliente).Nome;
                 Bs_Vendas.ResetCurrentItem();
             }
             else
             {
-                MessageBox.Show("Codigo do cliente inexistente, Verifique!");
+                MessageBox.Show("Cliente não encontrado, Verifique!");
+                vendas.NomeDoCliente = "";
+                vendas.IdCliente = null;
+                Bs_Vendas.ResetCurrentItem();
             }
         }
 
         private void FrmVendas_Shown(object sender, EventArgs e)
         {
-           maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
+            maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
+
             Bs_Vendas.AddNew();
 
         }
@@ -95,13 +104,26 @@ namespace VendasApp.Processamento
                 if (e.ColumnIndex == 0)
                 {
                     Vendas vendas = Bs_Vendas.Current as Vendas;
-                    int rcCodigo = vendas.VendasItem[e.RowIndex].IdProduto;
-                    vendas.VendasItem[e.RowIndex].NomeDoProduto = produtoRepository.BuscarPorId(rcCodigo).Descricao;
+                    valida = validaProduto.ValidarProduto(vendas.VendasItem[e.RowIndex].IdProduto);
+
+                    if (valida)
+                    {
+                        int rcCodigo = vendas.VendasItem[e.RowIndex].IdProduto;
+                        vendas.VendasItem[e.RowIndex].NomeDoProduto = produtoRepository.BuscarPorId(rcCodigo).Descricao;
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Produto não encontrado!");
+                        vendas.VendasItem[e.RowIndex].NomeDoProduto = "";
+                        vendas.VendasItem[e.RowIndex].Valor = 0;
+                    }
+
 
 
                 }
 
-
+                
 
             }
 
@@ -115,7 +137,7 @@ namespace VendasApp.Processamento
             MessageBox.Show(" Pedido salvo com sucesso");
             maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
             Bs_Vendas.AddNew();
-            
+
 
 
             DialogResult dialogResult = MessageBox.Show("Deseja emitir o pedido?", "Atenção", MessageBoxButtons.YesNo);
@@ -136,13 +158,33 @@ namespace VendasApp.Processamento
 
         private void dataGridView1_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
+            
             if (e.Cell.ColumnIndex == 1)
             {
                 Vendas vendas = Bs_Vendas.Current as Vendas;
-                int rcCodigo = vendas.VendasItem[e.Cell.RowIndex].IdProduto;
-                vendas.VendasItem[e.Cell.RowIndex].Valor = produtoRepository.BuscarPrecoPorId(rcCodigo).Preco;
+                valida = validaProduto.ValidarProduto(vendas.VendasItem[e.Cell.RowIndex].IdProduto);
+
+                if (valida == true)
+                {
+                    int rcCodigo = vendas.VendasItem[e.Cell.RowIndex].IdProduto;
+                    vendas.VendasItem[e.Cell.RowIndex].Valor = produtoRepository.BuscarPrecoPorId(rcCodigo).Preco;
+                    vendas.ValorTotal = vendas.VendasItem.Sum(a => a.Quantidade * a.Valor);
+                    Bs_Vendas.ResetCurrentItem();
+                }
+               
             }
+        }
+
+        private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            
 
         }
+
+        
     }
 }

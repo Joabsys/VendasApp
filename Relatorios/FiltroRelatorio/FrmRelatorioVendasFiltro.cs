@@ -33,11 +33,7 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             {
                 filtraVenda.CodigoPedido = Convert.ToInt32(textBoxCodigoDoPedido.Text);
             }
-            else if (comboBoxConsultaPedidos.SelectedItem != null) {
-                //captura o item selecionado pelo usuario no combobox
-                filtraVenda.CodigoPedido = Convert.ToInt32(comboBoxConsultaPedidos.SelectedItem);
-            }
-               
+             
             FrmRelatorioVendas form = new FrmRelatorioVendas(filtraVenda);
             form.ShowDialog();
         }
@@ -45,62 +41,6 @@ namespace VendasApp.Relatorios.FiltroRelatorio
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void FrmRelatorioVendasFiltro_Shown(object sender, EventArgs e)
-        {
-            foreach(var i in vendasRepository.BuscartodosPorID())
-            {
-
-                comboBoxConsultaPedidos.Items.Add(i.Id);
-            }
-        }
-
-        private void comboBoxConsultaPedidos_MouseHover(object sender, EventArgs e)
-        {
-            textBoxCodigoDoPedido.Text = "";
-            textBoxCodigoDoPedido.Enabled = false;
-            
-        }
-
-        private void textBoxCodigoDoPedido_MouseHover(object sender, EventArgs e)
-        {
-            comboBoxConsultaPedidos.Enabled = false;
-            comboBoxConsultaPedidos.SelectedItem = null;
-            
-        }
-
-        private void textBoxCodigoDoPedido_MouseLeave(object sender, EventArgs e)
-        {
-            comboBoxConsultaPedidos.Enabled = true;
-        }
-
-        private void comboBoxConsultaPedidos_MouseLeave(object sender, EventArgs e)
-        {
-            textBoxCodigoDoPedido.Text = "";
-            textBoxCodigoDoPedido.Enabled = true;
-        }
-
-        private void textBoxCodigoDoPedido_Click(object sender, EventArgs e)
-        {
-            comboBoxConsultaPedidos.SelectedItem = null;
-            comboBoxConsultaPedidos.Enabled = false;
-        }
-
-        private void comboBoxConsultaPedidos_Click(object sender, EventArgs e)
-        {
-            textBoxCodigoDoPedido.Text = "";
-            textBoxCodigoDoPedido.Enabled = false;
-        }
-
-        private void comboBoxConsultaPedidos_MouseLeave_1(object sender, EventArgs e)
-        {
-            textBoxCodigoDoPedido.Enabled = true;
-        }
-
-        private void textBoxCodigoDoPedido_MouseLeave_1(object sender, EventArgs e)
-        {
-            comboBoxConsultaPedidos.Enabled = true;
         }
     }
 }

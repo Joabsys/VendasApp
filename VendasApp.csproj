@@ -276,6 +276,9 @@
       <DependentUpon>FrmRelatorioVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Validacoes\ValidacaoCliente.cs" />
+    <Compile Include="Validacoes\ValidaClienteNaVenda.cs" />
+    <Compile Include="Validacoes\ValidaPedido.cs" />
+    <Compile Include="Validacoes\ValidaProduto.cs" />
     <EmbeddedResource Include="Crud\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
