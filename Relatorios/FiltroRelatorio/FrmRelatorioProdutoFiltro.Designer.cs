@@ -80,23 +80,27 @@
             // maskedTextBoxDTCadastro
             // 
             this.maskedTextBoxDTCadastro.Location = new System.Drawing.Point(352, 96);
-            this.maskedTextBoxDTCadastro.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.maskedTextBoxDTCadastro.Margin = new System.Windows.Forms.Padding(5);
             this.maskedTextBoxDTCadastro.Mask = "00/00/0000";
             this.maskedTextBoxDTCadastro.Name = "maskedTextBoxDTCadastro";
             this.maskedTextBoxDTCadastro.Size = new System.Drawing.Size(148, 26);
             this.maskedTextBoxDTCadastro.TabIndex = 4;
+            this.maskedTextBoxDTCadastro.TabStop = false;
             this.maskedTextBoxDTCadastro.Click += new System.EventHandler(this.maskedTextBoxDTCadastro_Click);
+            this.maskedTextBoxDTCadastro.MouseLeave += new System.EventHandler(this.maskedTextBoxDTCadastro_MouseLeave);
             // 
             // maskedTextBoxDTvalidade
             // 
             this.maskedTextBoxDTvalidade.Location = new System.Drawing.Point(352, 206);
-            this.maskedTextBoxDTvalidade.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.maskedTextBoxDTvalidade.Margin = new System.Windows.Forms.Padding(5);
             this.maskedTextBoxDTvalidade.Mask = "00/00/0000";
             this.maskedTextBoxDTvalidade.Name = "maskedTextBoxDTvalidade";
             this.maskedTextBoxDTvalidade.Size = new System.Drawing.Size(148, 26);
             this.maskedTextBoxDTvalidade.TabIndex = 5;
+            this.maskedTextBoxDTvalidade.TabStop = false;
             this.maskedTextBoxDTvalidade.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxDTvalidade.Click += new System.EventHandler(this.maskedTextBoxDTvalidade_Click);
+            this.maskedTextBoxDTvalidade.MouseLeave += new System.EventHandler(this.maskedTextBoxDTvalidade_MouseLeave);
             // 
             // label3
             // 
@@ -125,10 +129,10 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(225, 258);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Consultar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -139,39 +143,44 @@
             this.checkBoxAtivo.Enabled = false;
             this.checkBoxAtivo.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxAtivo.Location = new System.Drawing.Point(136, 52);
-            this.checkBoxAtivo.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.checkBoxAtivo.Margin = new System.Windows.Forms.Padding(5);
             this.checkBoxAtivo.Name = "checkBoxAtivo";
             this.checkBoxAtivo.Size = new System.Drawing.Size(63, 25);
             this.checkBoxAtivo.TabIndex = 1;
+            this.checkBoxAtivo.TabStop = false;
             this.checkBoxAtivo.Text = "Ativo";
             this.checkBoxAtivo.UseVisualStyleBackColor = true;
             // 
             // maskedTextBoxQuantidade
             // 
             this.maskedTextBoxQuantidade.Location = new System.Drawing.Point(36, 95);
-            this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.maskedTextBoxQuantidade.Margin = new System.Windows.Forms.Padding(5);
             this.maskedTextBoxQuantidade.Mask = "00000";
             this.maskedTextBoxQuantidade.Name = "maskedTextBoxQuantidade";
             this.maskedTextBoxQuantidade.Size = new System.Drawing.Size(148, 26);
             this.maskedTextBoxQuantidade.TabIndex = 2;
+            this.maskedTextBoxQuantidade.TabStop = false;
             this.maskedTextBoxQuantidade.Click += new System.EventHandler(this.maskedTextBoxQuantidade_Click);
+            this.maskedTextBoxQuantidade.MouseLeave += new System.EventHandler(this.maskedTextBoxQuantidade_MouseLeave);
             // 
             // maskedTextBoxPreco
             // 
             this.maskedTextBoxPreco.Location = new System.Drawing.Point(36, 205);
-            this.maskedTextBoxPreco.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.maskedTextBoxPreco.Margin = new System.Windows.Forms.Padding(5);
             this.maskedTextBoxPreco.Mask = "00000";
             this.maskedTextBoxPreco.Name = "maskedTextBoxPreco";
             this.maskedTextBoxPreco.Size = new System.Drawing.Size(148, 26);
             this.maskedTextBoxPreco.TabIndex = 3;
+            this.maskedTextBoxPreco.TabStop = false;
             this.maskedTextBoxPreco.Click += new System.EventHandler(this.maskedTextBoxPreco_Click);
+            this.maskedTextBoxPreco.MouseLeave += new System.EventHandler(this.maskedTextBoxPreco_MouseLeave);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::VendasApp.Properties.Resources.cerrar;
             this.pictureBox1.Location = new System.Drawing.Point(512, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,7 +226,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmRelatorioProdutoFiltro";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

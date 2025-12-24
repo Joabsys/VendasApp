@@ -45,17 +45,35 @@ namespace VendasApp.Relatorios.FiltroRelatorio
             }
             else if (maskedTextBoxDTCadastro.Text != string.Empty && checkBoxAtivo.Checked != false && maskedTextBoxQuantidade.Text == string.Empty && maskedTextBoxPreco.Text == "" && maskedTextBoxDTvalidade.Text == "  /  /")
             {
-                filtraProdutoPorData.DataDeCadastro = Convert.ToDateTime(maskedTextBoxDTCadastro.Text);
-                filtraProdutoPorData.Ativo = checkBoxAtivo.Checked;
-                FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(filtraProdutoPorData);
-                form.ShowDialog();
+                DateTime data = DateTime.Now;
+                if (DateTime.TryParse((maskedTextBoxDTCadastro.Text), out data))
+                {
+
+                    filtraProdutoPorData.DataDeCadastro = Convert.ToDateTime(maskedTextBoxDTCadastro.Text);
+                    filtraProdutoPorData.Ativo = checkBoxAtivo.Checked;
+                    FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(filtraProdutoPorData);
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("O campo data está inválido, verifique!");
+                }
             }
             else if (maskedTextBoxDTCadastro.Text == "  /  /" && checkBoxAtivo.Checked != false && maskedTextBoxQuantidade.Text == string.Empty && maskedTextBoxPreco.Text == "" && maskedTextBoxDTvalidade.Text != string.Empty)
             {
-                FiltraProdutoPorDataValidade.DataDeValidade = Convert.ToDateTime(maskedTextBoxDTvalidade.Text);
-                FiltraProdutoPorDataValidade.Ativo = checkBoxAtivo.Checked;
-                FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(FiltraProdutoPorDataValidade);
-                form.ShowDialog();
+                DateTime data = DateTime.Now;
+                if (DateTime.TryParse((maskedTextBoxDTvalidade.Text), out data))
+                {
+
+                    FiltraProdutoPorDataValidade.DataDeValidade = Convert.ToDateTime(maskedTextBoxDTvalidade.Text);
+                    FiltraProdutoPorDataValidade.Ativo = checkBoxAtivo.Checked;
+                    FrmRelatorioProdutoRelatorio form = new FrmRelatorioProdutoRelatorio(FiltraProdutoPorDataValidade);
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("O campo data está inválido,verifique!");
+                }
             }
 
 
@@ -68,22 +86,79 @@ namespace VendasApp.Relatorios.FiltroRelatorio
 
         private void maskedTextBoxQuantidade_Click(object sender, EventArgs e)
         {
-            checkBoxAtivo.CheckState= CheckState.Checked;
+            checkBoxAtivo.CheckState = CheckState.Checked;
+            maskedTextBoxPreco.Enabled = false;
+            maskedTextBoxDTvalidade.Enabled = false;
+            maskedTextBoxDTCadastro.Enabled = false;
+            maskedTextBoxPreco.Text = "";
+            maskedTextBoxDTvalidade.Text = "";
+            maskedTextBoxDTCadastro.Text = "";
+
+
         }
 
         private void maskedTextBoxPreco_Click(object sender, EventArgs e)
         {
             checkBoxAtivo.CheckState = CheckState.Checked;
+            maskedTextBoxQuantidade.Enabled = false;
+            maskedTextBoxDTvalidade.Enabled = false;
+            maskedTextBoxDTCadastro.Enabled = false;
+            maskedTextBoxQuantidade.Text = "";
+            maskedTextBoxDTCadastro.Text = "";
+            maskedTextBoxDTvalidade.Text = "";
+          
+
         }
 
         private void maskedTextBoxDTCadastro_Click(object sender, EventArgs e)
         {
             checkBoxAtivo.CheckState = CheckState.Checked;
+            maskedTextBoxDTvalidade.Enabled = false;
+            maskedTextBoxPreco.Enabled = false;
+            maskedTextBoxQuantidade.Enabled = false;
+            maskedTextBoxDTvalidade.Text = "";
+            maskedTextBoxPreco.Text = "";
+            maskedTextBoxQuantidade.Text = "";
         }
 
         private void maskedTextBoxDTvalidade_Click(object sender, EventArgs e)
         {
             checkBoxAtivo.CheckState = CheckState.Checked;
+            maskedTextBoxPreco.Enabled = false;
+            maskedTextBoxQuantidade.Enabled = false;
+            maskedTextBoxDTCadastro.Enabled = false;
+            maskedTextBoxPreco.Text = "";
+            maskedTextBoxQuantidade.Text = "";
+            maskedTextBoxDTCadastro.Text = "";
+
+        }
+
+        private void maskedTextBoxDTvalidade_MouseLeave(object sender, EventArgs e)
+        {
+            maskedTextBoxPreco.Enabled = true;
+            maskedTextBoxQuantidade.Enabled = true;
+            maskedTextBoxDTCadastro.Enabled = true;
+        }
+
+        private void maskedTextBoxQuantidade_MouseLeave(object sender, EventArgs e)
+        {
+            maskedTextBoxPreco.Enabled = true;
+            maskedTextBoxDTCadastro.Enabled = true;
+            maskedTextBoxDTvalidade.Enabled = true;
+        }
+
+        private void maskedTextBoxPreco_MouseLeave(object sender, EventArgs e)
+        {
+            maskedTextBoxDTCadastro.Enabled = true;
+            maskedTextBoxDTvalidade.Enabled = true;
+            maskedTextBoxQuantidade.Enabled = true;
+        }
+
+        private void maskedTextBoxDTCadastro_MouseLeave(object sender, EventArgs e)
+        {
+            maskedTextBoxPreco.Enabled = true;
+            maskedTextBoxDTvalidade.Enabled = true;
+            maskedTextBoxQuantidade.Enabled = true;
         }
     }
 }
