@@ -29,25 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.maskedTextBoxIdCliente = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maskedTextBoxNomeCliente = new System.Windows.Forms.MaskedTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_NrPedido = new System.Windows.Forms.BindingSource(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBoxNrPedido = new System.Windows.Forms.TextBox();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +43,16 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maskedTextBoxNomeCliente = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.maskedTextBoxNrPedido = new System.Windows.Forms.TextBox();
+            this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_NrPedido = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -136,9 +134,62 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(632, 344);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dataGridView1_CellStateChanged);
+            this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.DataPropertyName = "IdProduto";
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.MaxInputLength = 5;
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ColumnProduto
+            // 
+            this.ColumnProduto.DataPropertyName = "NomeDoProduto";
+            this.ColumnProduto.HeaderText = "Produto";
+            this.ColumnProduto.Name = "ColumnProduto";
+            this.ColumnProduto.ReadOnly = true;
+            // 
+            // ColumnValor
+            // 
+            this.ColumnValor.DataPropertyName = "Valor";
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColumnValor.HeaderText = "Valor";
+            this.ColumnValor.MaxInputLength = 5;
+            this.ColumnValor.Name = "ColumnValor";
+            // 
+            // ColumnQuantidade
+            // 
+            this.ColumnQuantidade.DataPropertyName = "Quantidade";
+            this.ColumnQuantidade.HeaderText = "Quantidade";
+            this.ColumnQuantidade.MaxInputLength = 5;
+            this.ColumnQuantidade.Name = "ColumnQuantidade";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // CdCliente
+            // 
+            this.CdCliente.DataPropertyName = "IdCliente";
+            this.CdCliente.HeaderText = "Codigo  do CLiente";
+            this.CdCliente.Name = "CdCliente";
+            this.CdCliente.Visible = false;
+            // 
+            // ClienteNome
+            // 
+            this.ClienteNome.DataPropertyName = "NomeDoCliente";
+            this.ClienteNome.HeaderText = "CLiente";
+            this.ClienteNome.Name = "ClienteNome";
+            this.ClienteNome.Visible = false;
             // 
             // maskedTextBoxNomeCliente
             // 
@@ -207,14 +258,6 @@
             this.panel1.Size = new System.Drawing.Size(670, 24);
             this.panel1.TabIndex = 16;
             // 
-            // Bs_Vendas
-            // 
-            this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
-            // 
-            // bs_NrPedido
-            // 
-            this.bs_NrPedido.DataSource = typeof(VendasApp.Models.Vendas);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -233,61 +276,13 @@
             this.maskedTextBoxNrPedido.Size = new System.Drawing.Size(100, 27);
             this.maskedTextBoxNrPedido.TabIndex = 19;
             // 
-            // ColumnCodigo
+            // Bs_Vendas
             // 
-            this.ColumnCodigo.DataPropertyName = "IdProduto";
-            dataGridViewCellStyle7.NullValue = null;
-            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ColumnCodigo.HeaderText = "Codigo";
-            this.ColumnCodigo.MaxInputLength = 5;
-            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
             // 
-            // ColumnProduto
+            // bs_NrPedido
             // 
-            this.ColumnProduto.DataPropertyName = "NomeDoProduto";
-            this.ColumnProduto.HeaderText = "Produto";
-            this.ColumnProduto.Name = "ColumnProduto";
-            this.ColumnProduto.ReadOnly = true;
-            // 
-            // ColumnValor
-            // 
-            this.ColumnValor.DataPropertyName = "Valor";
-            dataGridViewCellStyle8.Format = "N2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ColumnValor.HeaderText = "Valor";
-            this.ColumnValor.MaxInputLength = 5;
-            this.ColumnValor.Name = "ColumnValor";
-            // 
-            // ColumnQuantidade
-            // 
-            this.ColumnQuantidade.DataPropertyName = "Quantidade";
-            dataGridViewCellStyle9.Format = "N0";
-            this.ColumnQuantidade.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColumnQuantidade.HeaderText = "Quantidade";
-            this.ColumnQuantidade.MaxInputLength = 5;
-            this.ColumnQuantidade.Name = "ColumnQuantidade";
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Visible = false;
-            // 
-            // CdCliente
-            // 
-            this.CdCliente.DataPropertyName = "IdCliente";
-            this.CdCliente.HeaderText = "Codigo  do CLiente";
-            this.CdCliente.Name = "CdCliente";
-            this.CdCliente.Visible = false;
-            // 
-            // ClienteNome
-            // 
-            this.ClienteNome.DataPropertyName = "NomeDoCliente";
-            this.ClienteNome.HeaderText = "CLiente";
-            this.ClienteNome.Name = "ClienteNome";
-            this.ClienteNome.Visible = false;
+            this.bs_NrPedido.DataSource = typeof(VendasApp.Models.Vendas);
             // 
             // FrmVendas
             // 

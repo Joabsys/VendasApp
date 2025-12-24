@@ -87,7 +87,7 @@ namespace VendasApp.Repository
         }
         public List<Produto> BuscarId(int produto)
         {
-            return _contexto.Produtos.Where(a=>a.Id==produto&& a.Id!=null).ToList();
+            return _contexto.Produtos.AsEnumerable().Where(a=>a.Id==produto && a.Id!=null).ToList();
         }
         public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)
         {

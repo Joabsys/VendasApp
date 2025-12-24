@@ -12,14 +12,16 @@ namespace VendasApp.Validacoes
     {
         private ProdutoRepository produtoRepository;
         private List<Produto> validarproduto;
+        
         public ValidaProduto()
         {
 
             produtoRepository = new ProdutoRepository(new Data.Contexto());
+            
         }
         public bool ValidarProduto(int produto)
         {
-            validarproduto = produtoRepository.BuscarId(produto);
+                validarproduto = produtoRepository.BuscarId(produto);
             if (validarproduto.Count>0)
             {
                 return true;
