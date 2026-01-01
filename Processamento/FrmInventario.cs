@@ -84,6 +84,7 @@ namespace VendasApp.Processamento
                         {
                             inventario.Operacao = Models.Enums.OperacaoEnum.Operacao.Subtracao;
                             produto.Quantidade -= inventario.Quantidade;
+                            produtoRepository.Atualizar(produto);
                             produtoBindingSource.ResetCurrentItem();
                             MessageBox.Show("Produto atualizado com sucesso!");
                         }

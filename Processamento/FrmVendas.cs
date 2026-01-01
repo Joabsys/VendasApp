@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,6 @@ using VendasApp.Relatorios;
 using VendasApp.Repository;
 using VendasApp.Validacoes;
 
-
 namespace VendasApp.Processamento
 {
     public partial class FrmVendas : Form
@@ -27,7 +27,9 @@ namespace VendasApp.Processamento
         private FiltraVenda filtraVenda;
         private ValidaProduto validaProduto;
         private bool valida;
-        private ValidaClienteNaVenda ValidaCliente;
+        private ValidaClienteNaVenda validaCliente;
+        private List<Produto> qttPedido;
+        private bool pesquisaEstoque = false;
 
         public FrmVendas()
         {
@@ -37,7 +39,8 @@ namespace VendasApp.Processamento
             vendasRepository = new VendasRepository(new Data.Contexto());
             filtraVenda = new FiltraVenda();
             validaProduto = new ValidaProduto();
-            ValidaCliente = new ValidaClienteNaVenda();
+            validaCliente = new ValidaClienteNaVenda();
+            qttPedido = new List<Produto>();
         }
 
         private void FrmVendas_Load(object sender, EventArgs e)
@@ -45,10 +48,8 @@ namespace VendasApp.Processamento
             Bindings();
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.MultiSelect = false;
-
             dataGridView1.DataMember = nameof(Vendas.VendasItem);
             dataGridView1.DataSource = Bs_Vendas;
-
         }
 
         private void Bindings()
@@ -56,14 +57,12 @@ namespace VendasApp.Processamento
             maskedTextBoxIdCliente.DataBindings.Add(new Binding("Text", Bs_Vendas, nameof(Vendas.IdCliente), true));
             maskedTextBoxNomeCliente.DataBindings.Add(new Binding("Text", Bs_Vendas, nameof(Vendas.NomeDoCliente), true));
             maskedTextBoxValorTotal.DataBindings.Add(new Binding("Text", Bs_Vendas, nameof(Vendas.ValorTotal), true));
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             Vendas vendas = Bs_Vendas.Current as Vendas;
-            valida = ValidaCliente.ValidarCLienteNaVenda(vendas.IdCliente);
+            valida = validaCliente.ValidarCLienteNaVenda(vendas.IdCliente);
 
             if (valida)
             {
@@ -83,27 +82,53 @@ namespace VendasApp.Processamento
         {
             maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
             dataGridView1.Columns[columnName: "ColumnCodigo"].DefaultCellStyle.Format = "###.##";
-            
-
             Bs_Vendas.AddNew();
-
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+
             Vendas vendas = Bs_Vendas.Current as Vendas;
+
             if (e.RowIndex >= 0)
             {
                 if (e.ColumnIndex == 3)
                 {
+                    if (!pesquisaEstoque)
+                    {
+                        qttPedido = produtoRepository.BuscarTodos();
+                        pesquisaEstoque = true;
+                    }
 
-                    vendas.ValorTotal = vendas.VendasItem.Sum(a => a.Quantidade * a.Valor);
-                    Bs_Vendas.ResetCurrentItem();
+                    if (qttPedido[vendas.VendasItem[e.RowIndex].IdProduto - 1].Quantidade >= vendas.VendasItem[e.RowIndex].Quantidade)
+                    {
+
+                        if (qttPedido[vendas.VendasItem[e.RowIndex].IdProduto - 1].Quantidade - vendas.VendasItem[e.RowIndex].Quantidade >= 0)
+                        {
+                            vendas.ValorTotal = vendas.VendasItem.Sum(a => a.Quantidade * a.Valor);
+                            Bs_Vendas.ResetCurrentItem();
+                            buttonSalvar.Enabled = true;
+                            qttPedido[vendas.VendasItem[e.RowIndex].IdProduto - 1].Quantidade -= vendas.VendasItem[e.RowIndex].Quantidade;
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show($"Produto {vendas.VendasItem[e.RowIndex].IdProduto} sem saldo");
+                            buttonSalvar.Enabled = false;
+                        }
+
+                    }
+                    else
+                    {
+                        buttonSalvar.Enabled = false;
+                        MessageBox.Show($"Produto {vendas.VendasItem[e.RowIndex].IdProduto} sem saldo");
+                    }
+
                 }
                 if (e.ColumnIndex == 0)
                 {
-
-                    valida = validaProduto.ValidarProduto(vendas.VendasItem[e.RowIndex].IdProduto);
+                    valida = validaProduto.ValidarProduto(vendas.VendasItem[e.RowIndex].IdProduto);//valida se o codigo digitado do produto existe no BD
 
                     if (valida)
                     {
@@ -132,6 +157,10 @@ namespace VendasApp.Processamento
 
             Vendas vendas = Bs_Vendas.Current as Vendas;
             vendasRepository.Inserir(vendas);
+            foreach (var i in qttPedido)
+            {
+                produtoRepository.Atualizar(i);
+            }
             MessageBox.Show(" Pedido salvo com sucesso");
             maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
             Bs_Vendas.AddNew();
@@ -139,7 +168,6 @@ namespace VendasApp.Processamento
             DialogResult dialogResult = MessageBox.Show("Deseja emitir o pedido?", "Atenção", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-
                 filtraVenda.CodigoPedido = Convert.ToInt32(maskedTextBoxNrPedido.Text);
                 FrmRelatorioVendas form = new FrmRelatorioVendas(filtraVenda);
                 form.ShowDialog();
@@ -151,7 +179,6 @@ namespace VendasApp.Processamento
         {
             this.Close();
         }
-
         private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             Vendas vendas = Bs_Vendas.Current as Vendas;
@@ -160,10 +187,8 @@ namespace VendasApp.Processamento
                 int i;
                 if (!int.TryParse(Convert.ToString(e.FormattedValue), out i))
                 {
-
                     e.Cancel = true;
                     MessageBox.Show("O campo de Código está invalido, verifique!");
-
                 }
             }
 
@@ -174,7 +199,6 @@ namespace VendasApp.Processamento
                 {
                     e.Cancel = true;
                     MessageBox.Show("O campo de Valor está invalido, verifique!");
-
                 }
             }
             if (e.ColumnIndex == 3)
@@ -193,10 +217,9 @@ namespace VendasApp.Processamento
         {
             if (e.KeyData == Keys.Escape)
             {
-
                 dataGridView1.Columns[columnName: "ColumnCodigo"].DefaultCellStyle.Format = "###.##";
             }
-           
+
         }
     }
 }

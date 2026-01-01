@@ -40,6 +40,7 @@ namespace VendasApp.Repository
             _contexto.Produtos.Update(produto);
             _contexto.SaveChanges();
         }
+        
 
         /// <summary>
         /// Excluir o registro na tabela
@@ -89,6 +90,20 @@ namespace VendasApp.Repository
         {
             return _contexto.Produtos.AsEnumerable().Where(a=>a.Id==produto && a.Id!=null).ToList();
         }
+        public Produto BuscarQuantidadePorId(int ?produto)
+        {
+            return _contexto.Produtos.AsEnumerable().Select(a => new Produto()
+            {
+
+                Id = a.Id,
+                Quantidade = a.Quantidade
+            }).FirstOrDefault(b => b.Id == produto);
+        }
+        public List<Produto> BuscarQuantidade()
+        {
+            return _contexto.Produtos.AsEnumerable().Where(a=>a.Quantidade>0).ToList();
+        }
+
         public List<Produto> BuscaProdutosAtivos(FiltraProdutoAtivo filtraProdutoAtivo)
         {
             return _contexto.Produtos.Where(b => b.Ativo == filtraProdutoAtivo.Ativo && b.Quantidade >= filtraProdutoAtivo.Quantidade).ToList();

@@ -46,18 +46,18 @@
             this.maskedTextBoxNomeCliente = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.maskedTextBoxValorTotal = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonSalvar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBoxNrPedido = new System.Windows.Forms.TextBox();
             this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_NrPedido = new System.Windows.Forms.BindingSource(this.components);
+            this.bs_Produto = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_NrPedido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Produto)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -224,17 +224,17 @@
             this.maskedTextBoxValorTotal.TabIndex = 14;
             this.maskedTextBoxValorTotal.TabStop = false;
             // 
-            // button2
+            // buttonSalvar
             // 
-            this.button2.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(441, 162);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Salvar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonSalvar.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSalvar.Location = new System.Drawing.Point(441, 162);
+            this.buttonSalvar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSalvar.Name = "buttonSalvar";
+            this.buttonSalvar.Size = new System.Drawing.Size(88, 30);
+            this.buttonSalvar.TabIndex = 3;
+            this.buttonSalvar.Text = "Salvar";
+            this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 
@@ -280,9 +280,9 @@
             // 
             this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
             // 
-            // bs_NrPedido
+            // bs_Produto
             // 
-            this.bs_NrPedido.DataSource = typeof(VendasApp.Models.Vendas);
+            this.bs_Produto.DataSource = typeof(VendasApp.Models.Produto);
             // 
             // FrmVendas
             // 
@@ -294,7 +294,7 @@
             this.Controls.Add(this.maskedTextBoxNrPedido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonSalvar);
             this.Controls.Add(this.maskedTextBoxValorTotal);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -319,7 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_NrPedido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bs_Produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,10 +337,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox maskedTextBoxValorTotal;
         private System.Windows.Forms.BindingSource Bs_Vendas;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.BindingSource bs_NrPedido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox maskedTextBoxNrPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
@@ -350,5 +349,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNome;
+        private System.Windows.Forms.BindingSource bs_Produto;
     }
 }
