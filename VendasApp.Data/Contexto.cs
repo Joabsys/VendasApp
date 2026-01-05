@@ -16,6 +16,7 @@ namespace VendasApp.Data
 
         //Mapeaia as tabelas do banco de dados através das classes
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Vendas>  Vendas { get; set; }
@@ -48,7 +49,20 @@ namespace VendasApp.Data
                 entity.Property(e => e.Endereco).HasMaxLength(200);
                 entity.Property(e => e.Cidade).HasMaxLength(50);
             });
-
+            // Fornecedor
+            modelBuilder.Entity<Fornecedor>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+                entity.Property(e => e.Ativo).HasColumnType("BOOLEAN");
+                entity.Property(e => e.Nome).HasMaxLength(100).IsRequired();
+                entity.Property(e => e.Cep).HasMaxLength(10);
+                entity.Property(e => e.Tipodocumento);
+                entity.Property(e => e.Documento).HasMaxLength(20);
+                entity.Property(e => e.Bairro).HasMaxLength(50);
+                entity.Property(e => e.Endereco).HasMaxLength(200);
+                entity.Property(e => e.Cidade).HasMaxLength(50);
+            });
             // Produto
             modelBuilder.Entity<Produto>(entity =>
             {

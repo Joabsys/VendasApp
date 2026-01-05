@@ -133,21 +133,21 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(185, 26);
             this.clientesToolStripMenuItem1.Text = "1 - Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 26);
             this.toolStripMenuItem2.Text = "2 - Produtos";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(185, 26);
             this.usuariosToolStripMenuItem1.Text = "3 - Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
@@ -159,27 +159,28 @@
             this.vendasToolStripMenuItem2});
             this.consultasToolStripMenuItem.Image = global::VendasApp.Properties.Resources.clientes;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.consultasToolStripMenuItem.Text = "4 - Consultas";
+            this.consultasToolStripMenuItem.MouseHover += new System.EventHandler(this.consultasToolStripMenuItem_MouseHover);
             // 
             // clientesToolStripMenuItem2
             // 
             this.clientesToolStripMenuItem2.Name = "clientesToolStripMenuItem2";
-            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(149, 26);
+            this.clientesToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.clientesToolStripMenuItem2.Text = "Clientes";
             this.clientesToolStripMenuItem2.Click += new System.EventHandler(this.clientesToolStripMenuItem2_Click);
             // 
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.produtosToolStripMenuItem1.Text = "Produtos";
             this.produtosToolStripMenuItem1.Click += new System.EventHandler(this.produtosToolStripMenuItem1_Click);
             // 
             // vendasToolStripMenuItem2
             // 
             this.vendasToolStripMenuItem2.Name = "vendasToolStripMenuItem2";
-            this.vendasToolStripMenuItem2.Size = new System.Drawing.Size(149, 26);
+            this.vendasToolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
             this.vendasToolStripMenuItem2.Text = "Vendas";
             this.vendasToolStripMenuItem2.Click += new System.EventHandler(this.vendasToolStripMenuItem2_Click);
             // 
@@ -196,6 +197,7 @@
             this.processamentosToolStripMenuItem.Size = new System.Drawing.Size(210, 50);
             this.processamentosToolStripMenuItem.Text = "3 - Processamentos";
             this.processamentosToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.processamentosToolStripMenuItem.MouseHover += new System.EventHandler(this.processamentosToolStripMenuItem_MouseHover);
             // 
             // InventarioToolStripMenuItem
             // 

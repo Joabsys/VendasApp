@@ -27,11 +27,6 @@ namespace VendasApp.Crud
             Bindings();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmProduto_Shown(object sender, EventArgs e)
         {
             CarregaDados();
@@ -71,7 +66,7 @@ namespace VendasApp.Crud
             }
         }
 
-        
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -92,7 +87,7 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Produto produto = BS_Produto.Current as Produto;
-            if (produto.Preco <0 || produto.DataInclusao == null ||
+            if (produto.Preco < 0 || produto.DataInclusao == null ||
                 produto.DataValidade == null || produto.Quantidade == null
                 || produto.Descricao == "")
             {
@@ -102,18 +97,13 @@ namespace VendasApp.Crud
             {
                 if (produto.Id == null)
                 {
-
-
                     produtoRepository.Inserir(produto);
-
-
                 }
                 else
                 {
                     produtoRepository.Atualizar(produto);
                 }
                 MessageBox.Show("Produto salvo com sucesso!");
-
                 button3.Enabled = true;
                 checkBoxAtivo.Enabled = true;
             }

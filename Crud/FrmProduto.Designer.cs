@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.maskedTextBoxCodigo = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxQuantidade = new System.Windows.Forms.MaskedTextBox();
             this.checkBoxAtivo = new System.Windows.Forms.CheckBox();
@@ -113,7 +113,6 @@
             this.dataGridView1.Location = new System.Drawing.Point(14, 299);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(823, 241);
             this.dataGridView1.TabIndex = 4;
             // 
@@ -150,9 +149,9 @@
             // precoDataGridViewTextBoxColumn
             // 
             this.precoDataGridViewTextBoxColumn.DataPropertyName = "Preco";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "N2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.precoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.precoDataGridViewTextBoxColumn.HeaderText = "Preço";
             this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
             this.precoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -239,7 +238,6 @@
             this.label4.Size = new System.Drawing.Size(63, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Descrição";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // maskedTextBoxDescricao
             // 
@@ -335,6 +333,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(850, 588);
+            this.ControlBox = false;
             this.Controls.Add(this.maskedTextBoxPreco);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dateTimePickerDTInclusao);
@@ -354,8 +353,11 @@
             this.Controls.Add(this.maskedTextBoxQuantidade);
             this.Controls.Add(this.maskedTextBoxCodigo);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmProduto";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
@@ -28,8 +29,9 @@ namespace VendasApp.Processamento
         private ValidaProduto validaProduto;
         private bool valida;
         private ValidaClienteNaVenda validaCliente;
-        private List<Produto> qttPedido;
+        private List<Produto> estDisponivel;
         private bool pesquisaEstoque = false;
+
 
         public FrmVendas()
         {
@@ -40,7 +42,7 @@ namespace VendasApp.Processamento
             filtraVenda = new FiltraVenda();
             validaProduto = new ValidaProduto();
             validaCliente = new ValidaClienteNaVenda();
-            qttPedido = new List<Produto>();
+            estDisponivel = new List<Produto>();
         }
 
         private void FrmVendas_Load(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace VendasApp.Processamento
             if (valida)
             {
                 vendas.NomeDoCliente = clienteRepository.BuscarPorId(vendas.IdCliente).Nome;
+                dataGridView1.Enabled = true;
                 Bs_Vendas.ResetCurrentItem();
             }
             else
@@ -82,42 +85,46 @@ namespace VendasApp.Processamento
         {
             maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
             dataGridView1.Columns[columnName: "ColumnCodigo"].DefaultCellStyle.Format = "###.##";
+            dataGridView1.Enabled = false;
+            buttonSalvar.Enabled = false;
             Bs_Vendas.AddNew();
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            int indice = 0;
             Vendas vendas = Bs_Vendas.Current as Vendas;
 
             if (e.RowIndex >= 0)
             {
+
                 if (e.ColumnIndex == 3)
                 {
                     if (!pesquisaEstoque)
                     {
-                        qttPedido = produtoRepository.BuscarTodos();
-                        pesquisaEstoque = true;
+                        estDisponivel = produtoRepository.BuscarTodos();
+                    }
+                    // resolve a questão de lista com ID faltantes no nosso caso a lista não tem/tinha o ID = 4
+                    // localizando o ID do item, posteriormente atribuimos ele a proxima validação no caso o if
+                    foreach (Produto p in estDisponivel)
+                    {
+                        indice = estDisponivel.FindIndex(b => b.Id == (vendas.VendasItem[e.RowIndex].IdProduto));
                     }
 
-                    if (qttPedido[vendas.VendasItem[e.RowIndex].IdProduto - 1].Quantidade >= vendas.VendasItem[e.RowIndex].Quantidade)
+                    if (estDisponivel[indice].Quantidade >= vendas.VendasItem[e.RowIndex].Quantidade)
                     {
-
-                        if (qttPedido[vendas.VendasItem[e.RowIndex].IdProduto - 1].Quantidade - vendas.VendasItem[e.RowIndex].Quantidade >= 0)
+                        if (estDisponivel[indice].Quantidade - vendas.VendasItem[e.RowIndex].Quantidade >= 0)
                         {
                             vendas.ValorTotal = vendas.VendasItem.Sum(a => a.Quantidade * a.Valor);
                             Bs_Vendas.ResetCurrentItem();
+                            estDisponivel[indice].Quantidade -= vendas.VendasItem[e.RowIndex].Quantidade;
                             buttonSalvar.Enabled = true;
-                            qttPedido[vendas.VendasItem[e.RowIndex].IdProduto - 1].Quantidade -= vendas.VendasItem[e.RowIndex].Quantidade;
-
                         }
                         else
                         {
-
-                            MessageBox.Show($"Produto {vendas.VendasItem[e.RowIndex].IdProduto} sem saldo");
                             buttonSalvar.Enabled = false;
+                            MessageBox.Show($"Produto {vendas.VendasItem[e.RowIndex].IdProduto} sem saldo");
                         }
-
                     }
                     else
                     {
@@ -126,6 +133,7 @@ namespace VendasApp.Processamento
                     }
 
                 }
+
                 if (e.ColumnIndex == 0)
                 {
                     valida = validaProduto.ValidarProduto(vendas.VendasItem[e.RowIndex].IdProduto);//valida se o codigo digitado do produto existe no BD
@@ -140,10 +148,8 @@ namespace VendasApp.Processamento
                     }
                     else
                     {
+                        vendas.VendasItem[e.RowIndex].IdProduto = 0;
                         MessageBox.Show("Produto não encontrado!");
-                        vendas.VendasItem[e.RowIndex].NomeDoProduto = "";
-                        vendas.VendasItem[e.RowIndex].Valor = 0;
-
                     }
 
                 }
@@ -157,12 +163,14 @@ namespace VendasApp.Processamento
 
             Vendas vendas = Bs_Vendas.Current as Vendas;
             vendasRepository.Inserir(vendas);
-            foreach (var i in qttPedido)
+            foreach (var i in estDisponivel)
             {
                 produtoRepository.Atualizar(i);
             }
             MessageBox.Show(" Pedido salvo com sucesso");
             maskedTextBoxNrPedido.Text = vendasRepository.BuscartodosPorID().Last().Id.ToString();
+            buttonSalvar.Enabled = false;
+            dataGridView1.Enabled = false;
             Bs_Vendas.AddNew();
 
             DialogResult dialogResult = MessageBox.Show("Deseja emitir o pedido?", "Atenção", MessageBoxButtons.YesNo);
@@ -209,15 +217,6 @@ namespace VendasApp.Processamento
                     e.Cancel = true;
                     MessageBox.Show("O campo de quantidade está invalido, verifique!");
                 }
-            }
-
-        }
-
-        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyData == Keys.Escape)
-            {
-                dataGridView1.Columns[columnName: "ColumnCodigo"].DefaultCellStyle.Format = "###.##";
             }
 
         }

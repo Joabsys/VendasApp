@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.maskedTextBoxIdCliente = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,12 +52,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.maskedTextBoxNrPedido = new System.Windows.Forms.TextBox();
             this.Bs_Vendas = new System.Windows.Forms.BindingSource(this.components);
-            this.bs_Produto = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Produto)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -136,7 +134,6 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
-            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // ColumnCodigo
             // 
@@ -156,9 +153,9 @@
             // ColumnValor
             // 
             this.ColumnValor.DataPropertyName = "Valor";
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.ColumnValor.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnValor.HeaderText = "Valor";
             this.ColumnValor.MaxInputLength = 5;
             this.ColumnValor.Name = "ColumnValor";
@@ -280,10 +277,6 @@
             // 
             this.Bs_Vendas.DataSource = typeof(VendasApp.Models.Vendas);
             // 
-            // bs_Produto
-            // 
-            this.bs_Produto.DataSource = typeof(VendasApp.Models.Produto);
-            // 
             // FrmVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -319,7 +312,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Bs_Vendas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bs_Produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,6 +341,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn CdCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClienteNome;
-        private System.Windows.Forms.BindingSource bs_Produto;
     }
 }

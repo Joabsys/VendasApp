@@ -20,13 +20,13 @@ namespace VendasApp.Crud
     {
 
         private ClienteRepository clienteRepository;
-        
+
 
         public FrmCliente()
         {
             InitializeComponent();
             clienteRepository = new ClienteRepository(new Contexto());
-            
+
 
 
         }
@@ -48,7 +48,7 @@ namespace VendasApp.Crud
         private void FrmCliente_Shown(object sender, EventArgs e)
         {
             CarregaDados();
-           
+
 
 
         }
@@ -60,7 +60,16 @@ namespace VendasApp.Crud
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-
+            int l = 0;
+            l = clienteRepository.BuscarTodos().Count();
+            if (l > 0)
+            {
+                button1.Enabled = true;
+            }
+            else
+            {
+                button1.Enabled = false;
+            }
             Bindings();
         }
 
@@ -84,6 +93,7 @@ namespace VendasApp.Crud
         {
 
             Bs_Cliente.AddNew();
+            button1.Enabled = true;
             Cliente cliente = Bs_Cliente.Current as Cliente;
             checkBoxAtivo.CheckState = CheckState.Checked;
             cliente.Ativo = true;
@@ -94,9 +104,9 @@ namespace VendasApp.Crud
         private void button1_Click(object sender, EventArgs e)
         {
             Cliente cliente = Bs_Cliente.Current as Cliente;
-            if (cliente.Cep == "" || cliente.Nome == "" || cliente.Bairro == "" ||
-                cliente.Tipodocumento == null || cliente.Documento == ""
-                || cliente.Cidade == "" || cliente.Endereco == "")
+            if (cliente.Cep == string.Empty || cliente.Nome == string.Empty || cliente.Bairro == string.Empty ||
+                cliente.Tipodocumento == null || cliente.Documento == null
+                || cliente.Cidade == string.Empty || cliente.Endereco == string.Empty)
             {
                 MessageBox.Show("Existem campos não preenchidos, Verifique!");
             }
@@ -109,7 +119,7 @@ namespace VendasApp.Crud
                     if (cliente.Id == null)
                     {
                         clienteRepository.Inserir(cliente);
-                     
+
                     }
                     else
                     {
